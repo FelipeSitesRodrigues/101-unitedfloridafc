@@ -1,0 +1,46 @@
+/* ---------------------------------------------------------------- desempenho (base do 000)
+   content-visibility: o navegador só faz layout e pintura de cada seção abaixo da dobra quando ela
+   chega perto da tela; o primeiro layout deixa de ser a página inteira e o LCP do celular (a foto
+   do hero) pinta antes. Fica de fora o hero, a fita e os números (colados no hero). A reserva é só
+   a altura do conteúdo, sem o padding (memória content-visibility-altura-sem-padding), medida em
+   1440, 1024 e 390. O "auto" guarda a altura de verdade depois da primeira vez. No primeiro clique
+   numa âncora (99-desempenho.js) tudo é desenhado antes de rolar.                                */
+:is(.clube, .caminho, .uniformes, .loja, .fundador, .peneira, .franquias, .perguntas, .cta, .rodape) { content-visibility: auto; }
+.cv-pronto :is(.clube, .caminho, .uniformes, .loja, .fundador, .peneira, .franquias, .perguntas, .cta, .rodape) { content-visibility: visible; }
+.clube { contain-intrinsic-size: auto 33.4rem; }
+.caminho { contain-intrinsic-size: auto 38.3rem; }
+.uniformes { contain-intrinsic-size: auto 58.5rem; }
+.loja { contain-intrinsic-size: auto 53.3rem; }
+.fundador { contain-intrinsic-size: auto 35.4rem; }
+.peneira { contain-intrinsic-size: auto 37.7rem; }
+.franquias { contain-intrinsic-size: auto 39.0rem; }
+.perguntas { contain-intrinsic-size: auto 31.8rem; }
+.cta { contain-intrinsic-size: auto 7.5rem; }
+.rodape { contain-intrinsic-size: auto 14.7rem; }
+@media (max-width: 74.99em) {
+  .clube { contain-intrinsic-size: auto 34.3rem; }
+  .caminho { contain-intrinsic-size: auto 57.8rem; }
+  .uniformes { contain-intrinsic-size: auto 58.3rem; }
+  .loja { contain-intrinsic-size: auto 48.3rem; }
+  .fundador { contain-intrinsic-size: auto 45.0rem; }
+  .peneira { contain-intrinsic-size: auto 35.5rem; }
+  .franquias { contain-intrinsic-size: auto 66.1rem; }
+  .perguntas { contain-intrinsic-size: auto 45.5rem; }
+  .cta { contain-intrinsic-size: auto 12.1rem; }
+  .rodape { contain-intrinsic-size: auto 25.1rem; }
+}
+@media (max-width: 47.99em) {
+  .clube { contain-intrinsic-size: auto 48.2rem; }
+  .caminho { contain-intrinsic-size: auto 51.4rem; }
+  .uniformes { contain-intrinsic-size: auto 62.4rem; }
+  .loja { contain-intrinsic-size: auto 61.0rem; }
+  .fundador { contain-intrinsic-size: auto 75.2rem; }
+  .peneira { contain-intrinsic-size: auto 68.3rem; }
+  .franquias { contain-intrinsic-size: auto 61.5rem; }
+  .perguntas { contain-intrinsic-size: auto 53.9rem; }
+  .cta { contain-intrinsic-size: auto 16.7rem; }
+  .rodape { contain-intrinsic-size: auto 36.9rem; }
+}
+
+/* até a primeira pintura (js-abrindo, no <head>) a foto do clube não entra */
+.js-abrindo .clube__foto picture { display: none; }

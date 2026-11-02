@@ -1,0 +1,41 @@
+// Percorre a loja como cliente: do menu da home ao pagamento de demonstração. Servidor na 3411.
+import puppeteer from 'puppeteer-core'
+const [saida] = process.argv.slice(2)
+const b = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true, args: ['--hide-scrollbars'] })
+const g = await b.newPage()
+const erros = []
+g.on('pageerror', (e) => erros.push(e.message))
+g.on('response', (r) => { if (r.status() >= 400) erros.push(r.status() + ' ' + r.url()) })
+await g.setViewport({ width: 1440, height: 900 })
+await g.goto('http://localhost:3411/', { waitUntil: 'networkidle2' })
+console.log('menu:', await g.$$eval('.topo__menu ul a', (a) => a.map((x) => x.textContent).join(' > ')))
+await Promise.all([g.waitForNavigation({ waitUntil: 'networkidle2' }), g.click('.topo__menu a[href="/loja/"]')])
+await g.evaluate(() => localStorage.removeItem('ufc-sacola'))
+await g.reload({ waitUntil: 'networkidle2' })
+console.log('vitrine:', g.url(), 'cartões', await g.$$eval('.card', (c) => c.length))
+await Promise.all([g.waitForNavigation({ waitUntil: 'networkidle2' }), g.evaluate(() => document.querySelector('.card a.foto').click())])
+console.log('produto:', g.url(), await g.$eval('.compra-col h1', (h) => h.textContent))
+await g.screenshot({ path: `${saida}/produto.png`, fullPage: true })
+await g.click('#adicionar')
+await new Promise((r) => setTimeout(r, 600))
+console.log('sacola aberta:', await g.evaluate(() => document.documentElement.classList.contains('sacola-aberta')), await g.$eval('[data-qtd]', (q) => q.textContent))
+await g.screenshot({ path: `${saida}/sacola.png` })
+await g.goto('http://localhost:3411/loja/produto/?p=bone', { waitUntil: 'networkidle2' })
+await g.click('#adicionar')
+await new Promise((r) => setTimeout(r, 500))
+await Promise.all([g.waitForNavigation({ waitUntil: 'networkidle2' }), g.evaluate(() => document.querySelector('[data-fim] a').click())])
+console.log('checkout:', g.url(), await g.$eval('#total', (t) => t.textContent), '|', await g.$eval('#pagar', (t) => t.textContent))
+await g.screenshot({ path: `${saida}/checkout.png`, fullPage: true })
+await g.evaluate(() => document.querySelector('[name=pag][value=cartao]').click())
+console.log('cartão:', await g.$eval('#total', (t) => t.textContent), '|', await g.$eval('#pagar', (t) => t.textContent))
+await g.evaluate(() => document.getElementById('pagar').click())
+console.log('modal:', await g.$eval('#modal', (m) => m.classList.contains('on')))
+for (const w of [390, 1024]) {
+  await g.setViewport({ width: w, height: 844 })
+  for (const u of ['/loja/', '/loja/produto/?p=branca', '/loja/checkout/']) {
+    await g.goto('http://localhost:3411' + u, { waitUntil: 'networkidle2' })
+    console.log(w, u, 'largura', await g.evaluate(() => document.documentElement.scrollWidth))
+  }
+}
+console.log('erros:', erros.length ? erros : 'nenhum')
+await b.close()

@@ -1,0 +1,135 @@
+/* ---------------------------------------------------------------- uniformes
+   Redesenho de 2026-11-02 (mockup uniformes-redesenho-v2-aprovado): as camisas soltas num
+   vestiário escuro (ia/14-vestiario-fundo.png), sem vitrine nem caixa. Cada camisa tem um halo
+   de luz atrás e uma poça de luz no chão, que andam junto com ela.
+   Vitrine: a camisa do centro nítida e maior; as laterais menores, apagadas e desfocadas. O
+   desfoque é uma segunda imagem (já borrada no processar-imagens) que aparece por opacidade:
+   nunca filter: blur animado. A troca de lugar anda só em transform (05-uniformes.js).       */
+.uniformes { overflow: clip; padding: 64px 0 56px; }
+.uniformes__fundo { position: absolute; inset: 0; z-index: 0; }
+.uniformes__fundo img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 40%; }
+.uniformes::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgb(8 22 52 / .45) 0%, rgb(8 22 52 / 0) 24%, rgb(14 38 100 / 0) 66%, var(--marinho) 100%);
+  pointer-events: none;
+}
+.uniformes > .caixa { z-index: 1; }
+.uniformes__cabeca { display: grid; justify-items: center; text-align: center; }
+.uniformes__cabeca .titulo { margin-top: 14px; font-size: 64px; }
+.uniformes__cabeca .texto { margin-top: 12px; max-width: 34em; color: rgb(255 255 255 / .86); }
+
+.vitrine { position: relative; margin-top: 30px; }
+.vitrine__palco { position: relative; height: 540px; }
+.kit {
+  --x: 0px;
+  --s: 1;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 300px;
+  margin-left: -150px;
+  transform: translate3d(var(--x), 0, 0) scale(var(--s));
+  transform-origin: 50% 40%;
+  transition: transform .75s var(--ease), opacity .5s var(--ease-hover);
+  z-index: 2;
+}
+.kit[data-pos='-1'] { --x: -340px; --s: .68; z-index: 1; opacity: .6; }
+.kit[data-pos='1'] { --x: 340px; --s: .68; z-index: 1; opacity: .6; }
+.kit.kit--salta { opacity: 0; transition: opacity .18s linear; }
+.kit__fotos { position: relative; }
+/* halo de luz atrás da camisa e poça de luz no chão, embaixo dela */
+.kit__fotos::before {
+  content: '';
+  position: absolute;
+  inset: -18% -30%;
+  background: radial-gradient(closest-side, rgb(70 125 255 / .32), rgb(70 125 255 / 0));
+  z-index: -1;
+}
+.kit__fotos::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -22px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(130 175 255 / .55), rgb(14 38 100 / 0));
+  z-index: -1;
+}
+.kit__nitida img, .kit__borrada img, .kit__nitida, .kit__borrada { width: 100%; height: auto; }
+.kit__borrada { position: absolute; inset: 0; opacity: 0; transition: opacity .6s var(--ease-hover); }
+.kit:not([data-pos='0']) .kit__borrada { opacity: 1; }
+.kit__toque { position: absolute; inset: 0; z-index: 3; border-radius: var(--raio-card); display: none; }
+.kit:not([data-pos='0']) .kit__toque { display: block; }
+
+.kit__legenda { display: grid; justify-items: center; gap: 14px; margin-top: 30px; text-align: center; }
+.kit__nome { font: 700 24px/1 var(--f-rotulo); letter-spacing: -.02em; }
+.kit:not([data-pos='0']) .kit__nome { font-weight: 500; }
+.kit__comprar { min-height: 50px; padding: 0 34px; font-size: 17px; transition: filter .3s var(--ease-hover), opacity .4s var(--ease-hover), transform .4s var(--ease); }
+.kit__comprar .i { font-size: 16px; }
+.kit:not([data-pos='0']) .kit__comprar { opacity: 0; pointer-events: none; }
+
+.vitrine__seta {
+  position: absolute;
+  top: 160px;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  font-size: 22px;
+  background: linear-gradient(160deg, rgb(255 255 255 / .16), rgb(255 255 255 / .05));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .22), inset 0 1px 0 rgb(255 255 255 / .3);
+  transition: transform .3s var(--ease), background-color .3s var(--ease-hover);
+}
+.vitrine__seta:hover { transform: scale(1.06); background-color: rgb(255 255 255 / .1); }
+.vitrine__seta--ant { left: 6%; }
+.vitrine__seta--prox { right: 6%; }
+.vitrine__pontos { display: flex; justify-content: center; gap: 4px; margin-top: 10px; }
+.vitrine__pontos button { display: grid; place-items: center; width: 28px; height: 28px; }
+.vitrine__pontos button::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / .35); transition: background-color .3s var(--ease-hover), transform .3s var(--ease); }
+.vitrine__pontos button[aria-current='true']::before { background: var(--azul); transform: scale(1.2); }
+
+/* detalhes: 4 closes da camisa marinho, numa faixa baixa com o nome embaixo */
+.detalhes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1020px; margin: 22px auto 0; }
+.detalhe { display: grid; gap: 10px; justify-items: center; text-align: center; }
+.detalhe picture {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .12), 0 14px 30px -18px rgb(0 0 0 / .8);
+}
+.detalhe img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.detalhe:hover img { transform: scale(1.05); }
+.detalhe p { font: 600 16px/1.2 var(--f-rotulo); }
+
+@media (max-width: 74.99em) {
+  .kit[data-pos='-1'] { --x: -280PX; }
+  .kit[data-pos='1'] { --x: 280PX; }
+  .vitrine__seta--ant { left: 0; }
+  .vitrine__seta--prox { right: 0; }
+  .detalhes { gap: 12PX; }
+}
+@media (max-width: 47.99em) {
+  .vitrine__palco { height: 400PX; }
+  .kit { width: 230PX; margin-left: -115PX; }
+  .kit[data-pos='-1'] { --x: -150PX; --s: .62; opacity: .5; }
+  .kit[data-pos='1'] { --x: 150PX; --s: .62; opacity: .5; }
+  .kit:not([data-pos='0']) .kit__legenda { opacity: 0; }
+  .kit__nome { font-size: 20PX; }
+  .vitrine__seta { top: 130PX; width: 44PX; height: 44PX; font-size: 18PX; }
+  .detalhes { grid-template-columns: 1fr 1fr; gap: 10PX; }
+  .detalhe picture { aspect-ratio: 16 / 9; border-radius: 12PX; }
+  .detalhe p { font-size: 14.5PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kit, .kit__borrada { transition: none; }
+}

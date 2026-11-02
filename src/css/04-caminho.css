@@ -1,0 +1,53 @@
+/* ---------------------------------------------------------------- o caminho
+   Texto à esquerda; à direita, três faixas de foto cortadas na diagonal (como a fita azul),
+   descendo em escada da UPSL até a MLS. O corte é clip-path parado (nunca animado).        */
+.caminho__grade { display: grid; grid-template-columns: minmax(0, 380px) 1fr; gap: 56px; align-items: center; }
+.caminho__texto .texto { margin-top: 22px; }
+.caminho__cta { margin-top: 30px; }
+
+.etapas { display: grid; gap: 12px; }
+.etapa {
+  --corte: 34px;
+  position: relative;
+  height: 196px;
+  margin-left: calc(var(--i) * 26px);
+  margin-right: calc((2 - var(--i)) * 26px);
+  clip-path: polygon(var(--corte) 0, 100% 0, calc(100% - var(--corte)) 100%, 0 100%);
+  background: var(--marinho);
+  color: #fff;
+  isolation: isolate;
+}
+.etapa picture, .etapa img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 38%; z-index: -2; }
+/* na foto da US Open Cup o rosto fica no alto: a faixa baixa precisa mostrar o topo da foto */
+.etapa:nth-child(2) img { object-position: 60% 5%; }
+.etapa:nth-child(1) img { object-position: 60% 18%; }
+.etapa::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(8 22 52 / .92) 0%, rgb(8 22 52 / .7) 34%, rgb(8 22 52 / 0) 62%);
+}
+.etapa--destino::after { background: linear-gradient(90deg, rgb(8 22 52 / .9) 0%, rgb(8 22 52 / .55) 34%, rgb(8 22 52 / 0) 58%); }
+.etapa__txt { position: absolute; left: 64px; top: 50%; transform: translateY(-50%); }
+.etapa__n { font: 600 15px/1 var(--f-rotulo); letter-spacing: .01em; color: var(--celeste); }
+.etapa__nome { margin-top: 8px; font-size: 58px; font-weight: 700; letter-spacing: -.04em; line-height: .95; }
+.etapa__leg { margin-top: 10px; font-size: 16px; color: rgb(255 255 255 / .9); }
+
+@media (max-width: 74.99em) {
+  .caminho__grade { grid-template-columns: 1fr; gap: 36PX; }
+  .caminho__texto { max-width: 34em; }
+}
+@media (max-width: 47.99em) {
+  .etapas { gap: 10PX; margin-inline: -20PX; }
+  .etapa { --corte: 22PX; height: 168PX; margin-left: calc(var(--i) * 12PX); margin-right: calc((2 - var(--i)) * 12PX); }
+  .etapa picture, .etapa img { object-position: 72% 38%; }
+  .etapa:nth-child(2) img { object-position: 72% 5%; }
+  .etapa:nth-child(1) img { object-position: 72% 18%; }
+  .etapa:nth-child(2) .etapa__nome { font-size: 37PX; } /* no celular o nome longo encostava no rosto */
+  .etapa::after { background: linear-gradient(90deg, rgb(8 22 52 / .92) 0%, rgb(8 22 52 / .66) 46%, rgb(8 22 52 / .1) 80%); }
+  .etapa__txt { left: 40PX; right: 30PX; }
+  .etapa__n { font-size: 13PX; }
+  .etapa__nome { font-size: 44PX; }
+  .etapa__leg { font-size: 14.5PX; max-width: 15em; }
+}

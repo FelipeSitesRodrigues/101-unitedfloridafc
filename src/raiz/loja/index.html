@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loja oficial | United Florida FC</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/loja/loja.css">
+</head>
+<body>
+<div data-cabecalho></div>
+<main>
+<section class="banner"><div class="caixa banner__txt">
+  <p class="selo">Loja oficial</p>
+  <h1>Coleção <b>2027</b></h1>
+  <p class="t">As camisas oficiais Reebok do United Florida FC.</p>
+  <a class="vidro-azul botao" href="#colecao">Ver a coleção →</a>
+</div></section>
+<div class="chips" role="group" aria-label="Categorias"><button type="button" class="ativo" data-f="todos">Todos</button><button type="button" data-f="camisa">Camisas</button><button type="button" data-f="bone">Bonés</button></div>
+<section class="vitrine" id="colecao"><div class="caixa">
+  <h2>Coleção <b>2027</b></h2>
+  <p class="s">Uniformes oficiais e acessórios da temporada de estreia.</p>
+  <div class="grade" id="grade"></div>
+</div></section>
+</main>
+<div data-rodape></div>
+<script src="/loja/loja.js"></script>
+<script>
+const g = document.getElementById('grade')
+g.innerHTML = Object.entries(PRODUTOS).map(([id, p]) => `<article class="card" data-c="${p.cat}">
+  <a class="foto" href="/loja/produto/?p=${id}"><span class="tag">Novo</span><img src="${IMG}${p.foto}.webp" alt="${p.nome}" loading="lazy"></a>
+  <div class="compra">${p.cat === 'camisa' ? '<div class="tams">' + ['P', 'M', 'G', 'GG'].map((t, k) => `<button type="button" class="${k === 1 ? 'ativo' : ''}">${t}</button>`).join('') + '</div>' : ''}<button type="button" class="vidro-azul add" data-add="${id}">Adicionar à sacola →</button></div>
+  <a class="info" href="/loja/produto/?p=${id}"><h3>${p.nome}</h3><strong>${brl(p.preco)}</strong></a></article>`).join('')
+g.addEventListener('click', (e) => {
+  const b = e.target.closest('button')
+  if (!b) return
+  if (b.closest('.tams')) return b.parentNode.querySelectorAll('button').forEach((x) => x.classList.toggle('ativo', x === b))
+  if (b.dataset.add) {
+    const tam = b.closest('.compra').querySelector('.tams .ativo')
+    adicionar(b.dataset.add, tam ? tam.textContent : 'Único')
+  }
+})
+document.querySelector('.chips').addEventListener('click', (e) => {
+  const b = e.target.closest('button')
+  if (!b) return
+  document.querySelectorAll('.chips button').forEach((x) => x.classList.toggle('ativo', x === b))
+  g.querySelectorAll('.card').forEach((c) => { c.hidden = b.dataset.f !== 'todos' && c.dataset.c !== b.dataset.f })
+})
+</script>
+</body>
+</html>

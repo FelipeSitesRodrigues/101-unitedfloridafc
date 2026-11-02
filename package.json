@@ -1,0 +1,23 @@
+{
+  "name": "0101-united-florida-fc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Site do United Florida FC. HTML, CSS e JS estático em português e inglês, sem dependência em tempo de execução.",
+  "scripts": {
+    "build": "node build.mjs",
+    "publicar": "node build.mjs --publicar",
+    "serve": "node scripts/serve.mjs 3411",
+    "imagens": "node scripts/processar-imagens.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter-tight": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.2.0",
+    "@fontsource/mrs-saint-delafield": "^5.2.0",
+    "@imgly/background-removal-node": "^1.4.5",
+    "@phosphor-icons/core": "^2.1.1",
+    "cheerio": "^1.2.0",
+    "puppeteer-core": "^25.16.0",
+    "sharp": "^0.35.5"
+  }
+}

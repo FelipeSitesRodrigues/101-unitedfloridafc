@@ -1,0 +1,780 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preload" as="image" type="image/avif" media="(min-width: 48em)" imagesrcset="/assets/img/hero-fundo-1280.avif 1280w, /assets/img/hero-fundo-1672.avif 1672w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" media="(max-width: 47.99em)" imagesrcset="/assets/img/hero-celular-480.avif 480w, /assets/img/hero-celular-840.avif 840w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" media="(min-width: 48em)" imagesrcset="/assets/img/hero-jogadores-640.avif 640w, /assets/img/hero-jogadores-884.avif 884w" imagesizes="(max-width: 74.99em) 64vw, 56vw" fetchpriority="high">
+  <link rel="preload" href="/assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin="">
+  <script>
+    // js: liga as animações de entrada (sem JS tudo aparece no lugar). js-abrindo: até a primeira
+    // pintura a foto do clube (seção vizinha do hero) fica fora, pra não disputar a banda com a
+    // foto do hero no celular (memória cv-secao-vizinha-hero-lcp). Sai na 1ª pintura ou em 2,5 s.
+    (function () {
+      var h = document.documentElement
+      h.classList.add('js', 'js-abrindo')
+      var pronto = function () { h.classList.remove('js-abrindo') }
+      try {
+        new PerformanceObserver(function (l) { if (l.getEntriesByName('first-contentful-paint').length) pronto() }).observe({ type: 'paint', buffered: true })
+      } catch (e) { pronto() }
+      setTimeout(pronto, 2500)
+    })()
+  </script>
+  <title>United Florida FC | The Brazilian soccer club in Orlando, Florida</title>
+  <meta name="description" content="Brazilian soccer club based in Orlando, Florida. UPSL debut in 2027, Reebok kits, tryouts in Brazil with no age limit for adults and official franchises.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0E2664">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:image" content="/assets/img/og.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="United Florida FC">
+  <meta property="og:title" content="United Florida FC | The Brazilian club in Florida">
+  <meta property="og:description" content="Based in Orlando, debuting in the UPSL in 2027, with an open road to the US Open Cup. Dressed by Reebok.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Three United Florida FC players in the navy Reebok kit in a blue studio">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>:root{--anim-ease: cubic-bezier(.22,1,.36,1);--anim-mola: cubic-bezier(.34,1.4,.64,1);--anim-mola-suave: cubic-bezier(.3,1.22,.5,1);--anim-passo: 85ms;--anim-luz: #9CCBEB;--anim-luz-forte: #E4F2FF}.js [data-revela]{opacity: 0;transform: translate3d(0,2.125rem,0);--d: calc(var(--i,0) * var(--anim-passo) + var(--atraso,0ms));transition: opacity .8s var(--anim-ease) var(--d),transform 1s var(--anim-ease) var(--d),filter .9s var(--anim-ease) var(--d)}.js :is(p,h3,ul,.rotulo)[data-revela]:not([data-revela='grade'],.visivel){transform: translate3d(0,0.875rem,0);filter: blur(0.625rem)}.js [data-revela='esquerda']{transform: translate3d(-3.5rem,0,0)}.js [data-revela='direita']{transform: translate3d(3.5rem,0,0)}.js [data-revela='zoom']{transform: scale(.94)}.js [data-revela='grade']{transform: translate3d(0,4.375rem,0) scale(.9);--d: calc(var(--i,0) * 110ms + var(--atraso,0ms));transition: opacity .7s var(--anim-ease) var(--d),transform 1.1s var(--anim-mola-suave) var(--d)}.js [data-revela='palavras']{opacity: 1;transform: none}.js [data-revela].visivel{opacity: 1;transform: none;filter: none}.pw{display: inline-block;vertical-align: top}.pw__i,.pc{display: inline-block}.js [data-palavras] .pc{opacity: 0;transform: translate3d(0,.55em,0);transition: opacity .7s var(--anim-ease),transform 1.1s var(--anim-ease);transition-delay: calc(var(--c,0) * 24ms + var(--atraso,0ms))}.js .visivel[data-palavras] .pc,.js .visivel [data-palavras] .pc{opacity: 1;transform: none}.anim-hero .pw{overflow: clip;padding: .16em .04em .08em;margin: -.16em -.04em -.08em}.js .anim-hero[data-palavras] .pc{opacity: 1;transform: none;transition: none;animation: anim-letra-mascara .9s var(--anim-ease) both;animation-delay: calc(var(--c,0) * 18ms + var(--atraso,.2s))}@keyframes anim-letra-mascara{from{transform: translate3d(0,112%,0)}}.js .anim-hero-texto{animation: anim-desfoque .9s var(--anim-ease) var(--atraso,.45s) both}@keyframes anim-desfoque{from{opacity: 0;transform: translate3d(0,0.875rem,0);filter: blur(0.625rem)}}@property --bx{syntax: '<length-percentage>';inherits: true;initial-value: 50%}@property --by{syntax: '<length-percentage>';inherits: true;initial-value: 0%}@property --brilho-f{syntax: '<number>';inherits: true;initial-value: 0}[data-brilho]{position: relative;isolation: isolate;--brilho-cor: #fff,var(--anim-luz-forte) 22%,color-mix(in srgb,var(--anim-luz) 45%,transparent) 50%,transparent 75%;--brilho-luz: radial-gradient(4.375rem circle at var(--bx) var(--by),var(--brilho-cor))}[data-brilho]::after,.brilho::before,.brilho-fio,.brilho__volta{position: absolute;inset: 0;border-radius: inherit;mask: linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events: none}[data-brilho]::after,.brilho::before{content: '';background: var(--brilho-luz);opacity: var(--brilho-f);transition: opacity .45s ease}[data-brilho]::after,.brilho-fio{z-index: 1;padding: 1.5px}.brilho{position: absolute;inset: 0;z-index: -2;border-radius: inherit;filter: blur(0.4375rem);opacity: .9;pointer-events: none}.brilho::before,.brilho__volta{inset: -0.1875rem;padding: 0.3125rem}.brilho-fio,.brilho__volta{opacity: 0}.brilho__ponto{position: absolute;inset: 0}.brilho__ponto::before{content: '';position: absolute;left: -4.375rem;top: -4.375rem;width: 8.75rem;height: 8.75rem;border-radius: 50%;background: radial-gradient(closest-side,var(--brilho-cor))}.brilho-mouse[data-brilho]{--brilho-f: 1}.brilho-vivo[data-brilho]:not(.brilho-mouse) > .brilho-fio,.brilho-vivo[data-brilho]:not(.brilho-mouse) > .brilho > .brilho__volta{animation: brilho-acende 5s linear 1.2s infinite}.brilho-vivo[data-brilho]:not(.brilho-mouse) .brilho__ponto{animation: brilho-anda 5s linear 1.2s infinite}@keyframes brilho-anda{0%{transform: translate(12%,0)}14%{transform: translate(88%,0)}19%{transform: translate(100%,50%)}24%{transform: translate(88%,100%)}33%{transform: translate(12%,100%)}38%{transform: translate(0,50%)}43%,100%{transform: translate(12%,0)}}@keyframes brilho-acende{0%{opacity: 0}5%,38%{opacity: 1}43%,100%{opacity: 0}}@media (prefers-reduced-motion: reduce){.js [data-revela],.js [data-palavras] .pc,.js .anim-hero-texto{opacity: 1;transform: none;filter: none;transition: none;animation: none}.js .anim-hero[data-palavras] .pc{animation: none}.brilho-fio,.brilho__volta,.brilho__ponto{animation: none !important}}@font-face{font-family: 'Inter Tight';src: url(/assets/fonts/inter-tight.woff2) format('woff2');font-weight: 100 900;font-display: swap}@font-face{font-family: 'Inter';src: url(/assets/fonts/inter-400-700.woff2) format('woff2');font-weight: 400 700;font-display: swap}@font-face{font-family: 'Assinatura';src: url(/assets/fonts/assinatura.woff2) format('woff2');font-display: swap}@font-face{font-family: 'Inter Tight fallback';src: local('Arial');size-adjust: 97%;ascent-override: 100%;descent-override: 25%;line-gap-override: 0%}:root{color-scheme: light;--marinho: #0E2664;--marinho-escudo: #122A64;--marinho-profundo: #081634;--neve: #F8F8FA;--branco: #FFFFFF;--celeste: #9CCBEB;--azul: #1F5BFF;--azul-hover: #3B70FF;--cinza-azulado: #8A97B5;--tinta: #0E2664;--tinta-2: #4A5878;--linha-clara: #DCE1EC;--texto-escuro: rgb(255 255 255 / .76);--linha-escura: rgb(255 255 255 / .14);--vidro: rgb(255 255 255 / .06);--f-titulo: 'Inter Tight','Inter Tight fallback',Arial,sans-serif;--f-rotulo: 'Inter Tight','Inter Tight fallback',Arial,sans-serif;--f-texto: 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--largura: 77.5rem;--margem: max(24PX,calc((100% - var(--largura)) / 2));--raio-botao: 62.4375rem;--raio-card: 1.125rem;--raio-painel: 1.5rem;--pad: 4.5rem;--ease: cubic-bezier(.22,1,.36,1);--ease-hover: cubic-bezier(.4,0,.2,1)}html{font-size: 100%}@media (min-width: 75em){html{font-size: max(14.5PX,min(100vw / 90,100vh / 56.25))}}*,*::before,*::after{box-sizing: border-box}*{margin: 0}html{-webkit-text-size-adjust: 100%;text-size-adjust: 100%;scroll-behavior: smooth;scroll-padding-top: 5.375rem;background: var(--marinho-profundo)}body{min-height: 100vh;background: var(--neve);color: var(--tinta);font: 400 1.0625rem/1.6 var(--f-texto);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;overflow-x: clip}img,picture,svg,video{display: block;max-width: 100%}img{height: auto}a{color: inherit;text-decoration: none}ul,ol{list-style: none;padding: 0}button{font: inherit;color: inherit;background: none;border: 0;padding: 0;cursor: pointer}h1,h2,h3{font-family: var(--f-titulo);font-weight: 600;letter-spacing: -.03em;line-height: 1.02;text-wrap: balance}p{text-wrap: pretty}em{font-style: normal}::selection{background: var(--azul);color: #fff}:focus-visible{outline: 2px solid var(--azul);outline-offset: 0.1875rem;border-radius: 0.375rem}.escuro :focus-visible,.hero :focus-visible,.topo :focus-visible{outline-color: var(--celeste)}.i{width: 1em;height: 1em;fill: currentColor;flex: none}.sr-only{position: absolute;width: 1px;height: 1px;overflow: hidden;clip-path: inset(50%);white-space: nowrap}.pular{position: fixed;left: 1rem;top: -3.75rem;z-index: 100;padding: 0.625rem 1.125rem;border-radius: 6.1875rem;background: var(--azul);color: #fff;font: 600 1rem var(--f-rotulo);transition: top .3s var(--ease)}.pular:focus{top: 1rem}.secao{position: relative;padding: var(--pad) 0}.escuro{background: var(--marinho);color: #fff}.claro{background: var(--neve);color: var(--tinta)}.caixa{width: min(100% - 48PX,var(--largura));margin-inline: auto;position: relative}.selo{display: inline-flex;align-items: center;gap: 1rem;font: 500 1.0625rem/1.2 var(--f-rotulo);letter-spacing: -.005em}.selo::before{content: '';width: 2.5rem;height: 1.5px;background: currentColor;opacity: .85;flex: none}.titulo{font-size: 3.75rem;font-weight: 300;letter-spacing: -.025em;line-height: 1.04}.titulo em{font-weight: 700;letter-spacing: -.03em}.texto{font-size: 1.125rem;line-height: 1.62;color: var(--tinta-2);max-width: 34em}.escuro .texto{color: var(--texto-escuro)}.rotulo{font: 600 0.9375rem/1.2 var(--f-rotulo);letter-spacing: -.005em}.botoes{display: flex;flex-wrap: wrap;gap: 0.875rem}.botao{position: relative;display: inline-flex;align-items: center;justify-content: center;gap: 0.625rem;min-height: 3.375rem;padding: 0 1.875rem;border-radius: var(--raio-botao);font: 600 1.125rem/1 var(--f-rotulo);letter-spacing: 0;white-space: nowrap;transition: filter .3s var(--ease-hover),box-shadow .3s var(--ease-hover),background-color .3s var(--ease-hover),transform .4s var(--ease)}.botao .i{font-size: 1.125rem;transition: transform .4s var(--ease)}.botao:hover .i--seta{transform: translateX(0.25rem)}.botao:active{transform: scale(.98)}.botao--azul,.botao--celeste{color: #fff;background: radial-gradient(70% 90% at 50% -20%,rgb(255 255 255 / .38),rgb(255 255 255 / 0) 60%),radial-gradient(60% 70% at 50% 125%,rgb(205 225 255 / .6),rgb(205 225 255 / 0) 70%),linear-gradient(180deg,#4A7DFF 0%,#1F5BFF 52%,#1B50E6 100%);box-shadow: inset 0 1px 0 rgb(255 255 255 / .6),inset 0 0 0 1px rgb(255 255 255 / .3),inset 0 -1px 0 rgb(255 255 255 / .35),0 0.75rem 1.75rem -0.75rem rgb(31 91 255 / .9);text-shadow: 0 1px 1px rgb(10 30 90 / .35)}.botao--azul:hover,.botao--celeste:hover{filter: brightness(1.08) saturate(1.05)}.botao--marinho{background: var(--marinho);color: #fff;box-shadow: inset 0 1px 0 rgb(255 255 255 / .2),inset 0 0 0 1px rgb(255 255 255 / .12)}.botao--marinho:hover{background: #17357F}.botao--contorno{background: linear-gradient(180deg,rgb(255 255 255 / .14),rgb(255 255 255 / .04));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .38),inset 0 1px 0 rgb(255 255 255 / .45)}.botao--contorno:hover{background-color: rgb(255 255 255 / .08)}.claro .botao--contorno{background: linear-gradient(180deg,rgb(14 38 100 / .02),rgb(14 38 100 / .06));box-shadow: inset 0 0 0 1px rgb(14 38 100 / .35),inset 0 1px 0 rgb(255 255 255 / .9)}.claro .botao--contorno:hover{background-color: rgb(14 38 100 / .05)}.link-seta{display: inline-flex;align-items: center;gap: 0.625rem;font: 600 1.0625rem/1 var(--f-rotulo);letter-spacing: 0}.link-seta .i{font-size: 1.0625rem;transition: transform .4s var(--ease)}.link-seta:hover .i{transform: translateX(0.25rem)}.vidro{background: linear-gradient(160deg,rgb(255 255 255 / .1),rgb(255 255 255 / .03));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .14),inset 0 1px 0 rgb(255 255 255 / .18)}.bandeira{width: 1em;height: 1em;border-radius: 50%;object-fit: cover}@media (max-width: 74.99em){:root{--pad: 64PX}.titulo{font-size: clamp(40PX,6vw,54PX)}}@media (max-width: 47.99em){:root{--pad: 56PX}body{font-size: 16PX}.titulo{font-size: clamp(34PX,9.6vw,42PX)}.texto{font-size: 16.5PX}.selo{font-size: 15PX;gap: 12PX}.selo::before{width: 28PX}.botoes{gap: 10PX}.botoes > .botao{flex: 1 1 auto}.botao{min-height: 52PX;padding: 0 22PX;font-size: 16.5PX}}main{overflow-x: clip}.topo{position: fixed;inset: 0.75rem 0 auto;z-index: 50;display: flex;justify-content: center;padding-inline: 24PX;color: #fff;pointer-events: none}.topo__barra{position: relative;isolation: isolate;display: flex;align-items: center;gap: 1rem;width: min(100%,62.5rem);height: 3.875rem;padding: 0 0.5rem 0 0.875rem;border-radius: 62.4375rem;background: linear-gradient(180deg,rgb(255 255 255 / .16),rgb(255 255 255 / .05));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .22),inset 0 1px 0 rgb(255 255 255 / .34),0 1.125rem 2.5rem -1.125rem rgb(2 8 30 / .7);-webkit-backdrop-filter: blur(1.125rem) saturate(1.4);backdrop-filter: blur(1.125rem) saturate(1.4);pointer-events: auto}.topo__barra::before{content: '';position: absolute;inset: 0;z-index: -1;border-radius: inherit;background: rgb(8 22 52 / .72);opacity: 0;transition: opacity .4s var(--ease-hover)}.topo--solido .topo__barra::before,.topo--aberto .topo__barra::before{opacity: 1}.topo__marca{flex: none;display: block;border-radius: 50%}.topo__marca img{height: 2.75rem;width: auto}.topo__menu{flex: 1;display: flex;justify-content: center}.topo__menu ul{display: flex;gap: 0.25rem}.topo__menu a:not(.botao){display: block;padding: 0.625rem 1rem;border-radius: 62.4375rem;font: 500 0.9375rem/1 var(--f-rotulo);letter-spacing: .005em;color: rgb(255 255 255 / .9);transition: background-color .3s var(--ease-hover),box-shadow .3s var(--ease-hover),color .3s var(--ease-hover)}.topo__menu a:not(.botao):hover{background-color: rgb(255 255 255 / .08);color: #fff}.topo__menu a.ativo{color: #fff;background: linear-gradient(180deg,rgb(255 255 255 / .26),rgb(255 255 255 / .1));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28),inset 0 1px 0 rgb(255 255 255 / .45)}.topo__cta-menu{display: none}.idiomas{display: flex;align-items: center;gap: 0.375rem}.idiomas__op{display: grid;place-items: center;width: 2.125rem;height: 2.125rem;border-radius: 50%;font-size: 1.5rem;transition: transform .3s var(--ease),box-shadow .3s var(--ease-hover),opacity .3s var(--ease-hover)}.idiomas__op:not(.ativo){opacity: .75}.idiomas__op:hover{transform: scale(1.08);opacity: 1}.idiomas__op.ativo{box-shadow: 0 0 0 1.5px rgb(255 255 255 / .85)}.topo__cta{min-height: 2.875rem;padding: 0 1.375rem;font-size: 0.9688rem}.topo__abrir{display: none}@media (max-width: 74.99em){.topo{inset: 10PX 0 auto;padding-inline: 14PX}.topo__barra{gap: 10PX;height: 60PX;width: min(100%,760PX);padding: 0 8PX 0 10PX}.topo__marca{margin-right: auto}.topo__marca img{height: 42PX}.topo__cta{min-height: 44PX;padding: 0 18PX;font-size: 15PX}.topo__abrir{display: grid;place-content: center;gap: 6PX;width: 44PX;height: 44PX;border-radius: 50%;background: linear-gradient(180deg,rgb(255 255 255 / .18),rgb(255 255 255 / .06));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28),inset 0 1px 0 rgb(255 255 255 / .4)}.topo__traco{display: block;width: 18PX;height: 2px;background: #fff;border-radius: 2px;transition: transform .35s var(--ease)}.topo--aberto .topo__traco:first-child{transform: translateY(4PX) rotate(45deg)}.topo--aberto .topo__traco:last-child{transform: translateY(-4PX) rotate(-45deg)}.topo__menu{position: fixed;inset: 70PX 0 auto;z-index: -1;flex-direction: column;gap: 18PX;width: auto;max-width: 760PX;margin-inline: auto;padding: 12PX 18PX 20PX;border-radius: 26PX;background: rgb(8 22 52 / .97);box-shadow: inset 0 0 0 1px rgb(255 255 255 / .14),0 24PX 40PX rgb(0 0 0 / .35);opacity: 0;transform: translateY(-10PX);visibility: hidden;pointer-events: auto;transition: opacity .3s var(--ease-hover),transform .4s var(--ease),visibility 0s .4s}.topo--aberto .topo__menu{opacity: 1;transform: none;visibility: visible;transition: opacity .3s var(--ease-hover),transform .4s var(--ease)}.topo__menu ul{flex-direction: column;gap: 0}.topo__menu a:not(.botao){padding: 15PX 4PX;border-radius: 0;font-size: 19PX;border-bottom: 1px solid var(--linha-escura)}.topo__menu a.ativo{background: none;box-shadow: none;border-bottom-color: rgb(255 255 255 / .5)}.topo__cta-menu{display: inline-flex}}@media (max-width: 47.99em){.topo__cta{display: none}.idiomas__op{width: 32PX;height: 32PX;font-size: 23PX}}.hero{position: relative;display: grid;align-items: center;min-height: clamp(40rem,100svh,58.75rem);padding: 7.25rem 0 4rem;background: var(--marinho);color: #fff;overflow: clip;isolation: isolate}.topo-sentinela{position: absolute;inset: 0 0 auto;height: 5.625rem;pointer-events: none}.hero__fundo{position: absolute;inset: 0;z-index: -4}.hero__fundo img{width: 100%;height: 100%;object-fit: cover;object-position: 50% 62%}.hero::after{content: '';position: absolute;inset: 0;z-index: -3;background: linear-gradient(90deg,rgb(8 22 52 / .5) 0%,rgb(8 22 52 / .26) 34%,rgb(8 22 52 / 0) 56%),linear-gradient(0deg,rgb(10 28 76 / .7) 0%,rgb(10 28 76 / 0) 16%);pointer-events: none}.hero__palco{position: absolute;right: max(2vw,calc((100vw - 90rem) / 2 + 1.5rem));bottom: 4%;z-index: -2;height: min(84%,56vw);aspect-ratio: 884 / 897}.hero__foto,.hero__foto img{display: block;width: 100%;height: 100%}.hero__foto img{max-width: none;object-fit: contain;object-position: 50% 100%}.ponto{position: absolute;left: var(--x);top: var(--y);display: flex;align-items: center;gap: 0;transform: translate(-0.375rem,-50%);font: 600 0.875rem/1.15 var(--f-rotulo);letter-spacing: -.005em;color: #fff;text-shadow: 0 1px 0.375rem rgb(4 12 40 / .6)}.ponto::before{content: '';width: 0.75rem;height: 0.75rem;flex: none;border-radius: 50%;background: #fff;box-shadow: 0 0 0 0.25rem rgb(255 255 255 / .22),0 0 0.875rem 0.1875rem rgb(160 200 255 / .9)}.ponto::after{content: '';order: 1;width: var(--linha,4rem);height: 1.5px;background: linear-gradient(90deg,rgb(255 255 255 / .9),rgb(255 255 255 / .55))}.ponto__rotulo{order: 2;padding-left: 0.625rem;white-space: nowrap}.ponto--esq{flex-direction: row-reverse;transform: translate(calc(-100% + 0.375rem),-50%)}.ponto--esq::after{background: linear-gradient(270deg,rgb(255 255 255 / .9),rgb(255 255 255 / .55))}.ponto--esq .ponto__rotulo{padding: 0 0.625rem 0 0;text-align: right}.ponto:hover .ponto__rotulo{text-decoration: underline;text-underline-offset: 0.1875rem}.hero__conteudo{display: grid;justify-items: start}.hero__titulo{max-width: 6.3em;margin-top: 1.625rem;font-size: 5.75rem;line-height: 1;letter-spacing: -.03em}.hero__titulo em{display: block;letter-spacing: -.035em}.hero__texto{max-width: 30em;margin-top: 1.625rem;font-size: 1.1875rem;line-height: 1.5;color: rgb(255 255 255 / .92)}.hero__botoes{margin-top: 2.125rem}.hero__peneiras{display: flex;align-items: center;gap: 1.375rem;margin-top: 3.5rem;font-size: 1rem;line-height: 1.4;color: rgb(255 255 255 / .9)}.hero__rostos{display: flex}.hero__rostos picture,.hero__rostos > img{width: 3.125rem;height: 3.125rem;border-radius: 50%;overflow: hidden;box-shadow: 0 0 0 2px #fff;flex: none}.hero__rostos picture + picture{margin-left: -0.75rem}.hero__rostos img{width: 100%;height: 100%;object-fit: cover}.hero__peneiras-texto{padding-left: 1.375rem;border-left: 1.5px solid rgb(255 255 255 / .55)}.hero__peneiras:hover .hero__peneiras-texto{color: #fff}@media (max-width: 74.99em){.hero{min-height: clamp(580PX,92svh,820PX);padding: 104PX 0 56PX}.hero__titulo{font-size: clamp(60PX,8.4vw,84PX)}.hero__palco{right: -2vw;height: min(80%,66vw)}.ponto{display: none}.hero::after{background: linear-gradient(90deg,rgb(8 22 52 / .78) 0%,rgb(8 22 52 / .5) 42%,rgb(8 22 52 / 0) 64%),linear-gradient(0deg,rgb(10 28 76 / .7) 0%,rgb(10 28 76 / 0) 16%)}}@media (max-width: 47.99em){.hero{min-height: 0;padding: 96PX 0 48PX;align-items: start;grid-template-areas: 'selo' 'titulo' 'foto' 'texto' 'botoes' 'peneiras';background: radial-gradient(120% 55% at 50% 45%,#2152D6 0%,#133488 55%,var(--marinho) 100%)}.hero::after{background: linear-gradient(0deg,rgb(10 28 76 / .6) 0%,rgb(10 28 76 / 0) 14%)}.hero__conteudo{display: contents}.hero__conteudo > *{margin-inline: 20PX}.hero__selo{grid-area: selo;justify-self: start}.hero__titulo{grid-area: titulo;font-size: clamp(44PX,13vw,58PX);margin-top: 16PX;max-width: none}.hero__fundo{display: none}.hero__palco{grid-area: foto;position: relative;inset: auto;z-index: 0;height: auto;aspect-ratio: auto;margin: 18PX 0 0}.hero__foto,.hero__foto img{height: auto}.hero__foto img{max-width: 100%;object-fit: fill}.hero__palco{-webkit-mask-image: linear-gradient(180deg,transparent 0%,#000 16%,#000 84%,transparent 100%);mask-image: linear-gradient(180deg,transparent 0%,#000 16%,#000 84%,transparent 100%)}.hero__texto{grid-area: texto;margin-top: -6PX;font-size: 17PX;position: relative}.hero__botoes{grid-area: botoes;margin-top: 24PX}.hero__peneiras{grid-area: peneiras;margin-top: 30PX;gap: 16PX;font-size: 15PX}.hero__rostos picture,.hero__rostos > img{width: 44PX;height: 44PX}.hero__peneiras-texto{padding-left: 16PX}}@media (min-width: 75em){html[lang='en'] .hero__titulo{font-size: 5.375rem}}.fita{position: relative;z-index: 3;padding: 0.75rem 0 0.6875rem;background: linear-gradient(180deg,#2B66FF,#1F5BFF 60%,#1B50E6);box-shadow: inset 0 1px 0 rgb(255 255 255 / .35);color: #fff;overflow: clip}.fita__trilho{display: flex;width: max-content;animation: fita 38s linear infinite}.fita__grupo{display: flex;flex: none}.fita__grupo span{display: flex;align-items: center;font: 600 1.0625rem/1 var(--f-rotulo);letter-spacing: .01em;white-space: nowrap}.fita__grupo span::after{content: '';width: 0.375rem;height: 0.375rem;margin: 0 1.625rem;border-radius: 50%;background: rgb(255 255 255 / .7)}@keyframes fita{to{transform: translateX(-50%)}}.numeros{position: relative;z-index: 2;background: var(--neve);padding: 2.875rem 0 2.125rem}.numeros__lista{display: grid;grid-template-columns: repeat(4,1fr)}.numero{display: grid;grid-template-columns: auto 1fr;grid-template-rows: auto auto;column-gap: 1.125rem;align-items: center;padding: 0.25rem 1.75rem;border-left: 1px solid var(--linha-clara)}.numero:first-child{border-left: 0;padding-left: 0}.numero__icone{grid-row: 1 / 3;font-size: 2.75rem;color: var(--azul)}.numero__valor{font: 700 2.625rem/1 var(--f-titulo);color: var(--marinho);letter-spacing: -.035em}.numero__rotulo{margin-top: 0.375rem;font: 500 0.9375rem/1.3 var(--f-texto);color: var(--tinta-2)}.js .numero.visivel .numero__valor--pulo{display: inline-block;justify-self: start;animation: pulo .8s cubic-bezier(.34,1.56,.64,1) .6s both}@keyframes pulo{from{opacity: 0;transform: scale(.6)}}@media (max-width: 74.99em){.numero{padding: 4PX 18PX;column-gap: 12PX}.numero__icone{font-size: 36PX}.numero__valor{font-size: 38PX}.numero__rotulo{font-size: 14PX}}@media (max-width: 47.99em){.fita{padding: 10PX 0 9PX}.fita__grupo span{font-size: 15PX}.fita__grupo span::after{margin: 0 16PX}.numeros{padding: 36PX 0 26PX}.numeros__lista{grid-template-columns: 1fr 1fr;row-gap: 22PX}.numero{padding: 0 0 0 14PX;grid-template-columns: 1fr}.numero:nth-child(odd){border-left: 0;padding-left: 0}.numero__icone{grid-row: auto;font-size: 30PX;margin-bottom: 8PX}.numero__valor{font-size: 36PX}.numero__rotulo{font-size: 13.5PX}}@media (prefers-reduced-motion: reduce){.fita__trilho{animation: none}}.clube{overflow: clip;padding: 5rem 0;background: radial-gradient(60% 80% at 82% -10%,rgb(62 118 255 / .55),rgb(62 118 255 / 0) 70%),linear-gradient(120deg,#0E2664 0%,#12318C 45%,#1A49CF 100%)}.clube__foto{position: absolute;inset: 0 auto 0 0;width: 62%;-webkit-mask-image: linear-gradient(90deg,#000 52%,rgb(0 0 0 / .55) 74%,transparent 98%);mask-image: linear-gradient(90deg,#000 52%,rgb(0 0 0 / .55) 74%,transparent 98%)}.clube__foto picture,.clube__foto img{width: 100%;height: 100%;max-width: none;object-fit: cover;object-position: 30% 30%}.clube__grade{display: grid;grid-template-columns: 1fr minmax(0,38.75rem)}.clube__texto{grid-column: 2}.clube__titulo{margin-top: 1.25rem;font-size: 3.75rem}.clube__titulo em{display: block}.clube__p{margin-top: 1.5rem;color: rgb(255 255 255 / .86)}.rota{margin-top: 2.5rem}.rota__trilha{display: flex;align-items: center;gap: 0.875rem}.rota__bandeira{width: 2.5rem;height: 2.5rem;flex: none;box-shadow: 0 0 0 2px rgb(255 255 255 / .9),0 0.375rem 1rem -0.375rem rgb(0 0 0 / .5)}.rota__linha{flex: 1;height: 1.5px;border-radius: 2px;background: linear-gradient(90deg,rgb(255 255 255 / .35),#5B8BFF 50%,#8FB2FF);box-shadow: 0 0 0.625rem 1px rgb(31 91 255 / .8)}.rota__marcos{display: grid;grid-template-columns: repeat(3,1fr);gap: 0.625rem;margin: 1.625rem 3.375rem 0}.rota__marco{position: relative;display: grid;gap: 0.5rem;justify-items: center;align-content: start;text-align: center}.rota__marco::before{content: '';position: absolute;left: 50%;top: -3.1875rem;width: 0.625rem;height: 0.625rem;margin-left: -0.3125rem;border-radius: 50%;background: #fff;box-shadow: 0 0 0 0.1875rem rgb(255 255 255 / .18),0 0 0.75rem 2px rgb(120 165 255 / .9)}.rota__marco--destino::before{top: -3.3125rem;width: 0.875rem;height: 0.875rem;margin-left: -0.4375rem;box-shadow: 0 0 0 0.25rem rgb(255 255 255 / .22),0 0 1.125rem 0.3125rem rgb(150 190 255 / 1)}.rota__marco strong{font: 700 1.875rem/1 var(--f-titulo);letter-spacing: -.025em}.rota__marco span{font: 400 1rem/1.35 var(--f-texto);color: rgb(255 255 255 / .86);max-width: 12em}@media (max-width: 74.99em){.clube__foto{width: 66%}.clube__grade{grid-template-columns: 1fr minmax(0,470PX)}.clube__titulo{font-size: clamp(40PX,5.6vw,52PX)}.rota__marcos{margin-inline: 40PX;gap: 8PX}.rota__marco strong{font-size: 25PX}.rota__marco span{font-size: 14.5PX}}@media (max-width: 47.99em){.clube{padding: 0 0 var(--pad);background: linear-gradient(180deg,#0E2664 0%,#12318C 55%,#1A45BF 100%)}.clube__foto{position: relative;width: 100%;height: auto;-webkit-mask-image: linear-gradient(180deg,#000 62%,transparent 99%);mask-image: linear-gradient(180deg,#000 62%,transparent 99%)}.clube__foto img{height: auto;aspect-ratio: 1170 / 941}.clube__grade{grid-template-columns: 1fr;margin-top: -36PX}.clube__texto{grid-column: 1}.clube__titulo{font-size: clamp(32PX,9.4vw,40PX);margin-top: 16PX}.rota__trilha{gap: 10PX}.rota__bandeira{width: 34PX;height: 34PX}.rota__marcos{margin: 24PX 24PX 0;gap: 6PX}.rota__marco::before{top: -46PX}.rota__marco--destino::before{top: -48PX}.rota__marco strong{font-size: 20PX}.rota__marco span{font-size: 13PX}}.caminho__grade{display: grid;grid-template-columns: minmax(0,23.75rem) 1fr;gap: 3.5rem;align-items: center}.caminho__texto .texto{margin-top: 1.375rem}.caminho__cta{margin-top: 1.875rem}.etapas{display: grid;gap: 0.75rem}.etapa{--corte: 2.125rem;position: relative;height: 12.25rem;margin-left: calc(var(--i) * 1.625rem);margin-right: calc((2 - var(--i)) * 1.625rem);clip-path: polygon(var(--corte) 0,100% 0,calc(100% - var(--corte)) 100%,0 100%);background: var(--marinho);color: #fff;isolation: isolate}.etapa picture,.etapa img{position: absolute;inset: 0;width: 100%;height: 100%;object-fit: cover;object-position: 60% 38%;z-index: -2}.etapa:nth-child(2) img{object-position: 60% 5%}.etapa:nth-child(1) img{object-position: 60% 18%}.etapa::after{content: '';position: absolute;inset: 0;z-index: -1;background: linear-gradient(90deg,rgb(8 22 52 / .92) 0%,rgb(8 22 52 / .7) 34%,rgb(8 22 52 / 0) 62%)}.etapa--destino::after{background: linear-gradient(90deg,rgb(8 22 52 / .9) 0%,rgb(8 22 52 / .55) 34%,rgb(8 22 52 / 0) 58%)}.etapa__txt{position: absolute;left: 4rem;top: 50%;transform: translateY(-50%)}.etapa__n{font: 600 0.9375rem/1 var(--f-rotulo);letter-spacing: .01em;color: var(--celeste)}.etapa__nome{margin-top: 0.5rem;font-size: 3.625rem;font-weight: 700;letter-spacing: -.04em;line-height: .95}.etapa__leg{margin-top: 0.625rem;font-size: 1rem;color: rgb(255 255 255 / .9)}@media (max-width: 74.99em){.caminho__grade{grid-template-columns: 1fr;gap: 36PX}.caminho__texto{max-width: 34em}}@media (max-width: 47.99em){.etapas{gap: 10PX;margin-inline: -20PX}.etapa{--corte: 22PX;height: 168PX;margin-left: calc(var(--i) * 12PX);margin-right: calc((2 - var(--i)) * 12PX)}.etapa picture,.etapa img{object-position: 72% 38%}.etapa:nth-child(2) img{object-position: 72% 5%}.etapa:nth-child(1) img{object-position: 72% 18%}.etapa:nth-child(2) .etapa__nome{font-size: 37PX}.etapa::after{background: linear-gradient(90deg,rgb(8 22 52 / .92) 0%,rgb(8 22 52 / .66) 46%,rgb(8 22 52 / .1) 80%)}.etapa__txt{left: 40PX;right: 30PX}.etapa__n{font-size: 13PX}.etapa__nome{font-size: 44PX}.etapa__leg{font-size: 14.5PX;max-width: 15em}}.uniformes{overflow: clip;padding: 4rem 0 3.5rem}.uniformes__fundo{position: absolute;inset: 0;z-index: 0}.uniformes__fundo img{width: 100%;height: 100%;max-width: none;object-fit: cover;object-position: 50% 40%}.uniformes::after{content: '';position: absolute;inset: 0;z-index: 0;background: linear-gradient(180deg,rgb(8 22 52 / .45) 0%,rgb(8 22 52 / 0) 24%,rgb(14 38 100 / 0) 66%,var(--marinho) 100%);pointer-events: none}.uniformes > .caixa{z-index: 1}.uniformes__cabeca{display: grid;justify-items: center;text-align: center}.uniformes__cabeca .titulo{margin-top: 0.875rem;font-size: 4rem}.uniformes__cabeca .texto{margin-top: 0.75rem;max-width: 34em;color: rgb(255 255 255 / .86)}.vitrine{position: relative;margin-top: 1.875rem}.vitrine__palco{position: relative;height: 33.75rem}.kit{--x: 0px;--s: 1;position: absolute;left: 50%;top: 0;width: 18.75rem;margin-left: -9.375rem;transform: translate3d(var(--x),0,0) scale(var(--s));transform-origin: 50% 40%;transition: transform .75s var(--ease),opacity .5s var(--ease-hover);z-index: 2}.kit[data-pos='-1']{--x: -21.25rem;--s: .68;z-index: 1;opacity: .6}.kit[data-pos='1']{--x: 21.25rem;--s: .68;z-index: 1;opacity: .6}.kit.kit--salta{opacity: 0;transition: opacity .18s linear}.kit__fotos{position: relative}.kit__fotos::before{content: '';position: absolute;inset: -18% -30%;background: radial-gradient(closest-side,rgb(70 125 255 / .32),rgb(70 125 255 / 0));z-index: -1}.kit__fotos::after{content: '';position: absolute;left: 4%;right: 4%;bottom: -1.375rem;height: 2.125rem;border-radius: 50%;background: radial-gradient(closest-side,rgb(130 175 255 / .55),rgb(14 38 100 / 0));z-index: -1}.kit__nitida img,.kit__borrada img,.kit__nitida,.kit__borrada{width: 100%;height: auto}.kit__borrada{position: absolute;inset: 0;opacity: 0;transition: opacity .6s var(--ease-hover)}.kit:not([data-pos='0']) .kit__borrada{opacity: 1}.kit__toque{position: absolute;inset: 0;z-index: 3;border-radius: var(--raio-card);display: none}.kit:not([data-pos='0']) .kit__toque{display: block}.kit__legenda{display: grid;justify-items: center;gap: 0.875rem;margin-top: 1.875rem;text-align: center}.kit__nome{font: 700 1.5rem/1 var(--f-rotulo);letter-spacing: -.02em}.kit:not([data-pos='0']) .kit__nome{font-weight: 500}.kit__comprar{min-height: 3.125rem;padding: 0 2.125rem;font-size: 1.0625rem;transition: filter .3s var(--ease-hover),opacity .4s var(--ease-hover),transform .4s var(--ease)}.kit__comprar .i{font-size: 1rem}.kit:not([data-pos='0']) .kit__comprar{opacity: 0;pointer-events: none}.vitrine__seta{position: absolute;top: 10rem;z-index: 4;display: grid;place-items: center;width: 3.375rem;height: 3.375rem;border-radius: 50%;font-size: 1.375rem;background: linear-gradient(160deg,rgb(255 255 255 / .16),rgb(255 255 255 / .05));box-shadow: inset 0 0 0 1px rgb(255 255 255 / .22),inset 0 1px 0 rgb(255 255 255 / .3);transition: transform .3s var(--ease),background-color .3s var(--ease-hover)}.vitrine__seta:hover{transform: scale(1.06);background-color: rgb(255 255 255 / .1)}.vitrine__seta--ant{left: 6%}.vitrine__seta--prox{right: 6%}.vitrine__pontos{display: flex;justify-content: center;gap: 0.25rem;margin-top: 0.625rem}.vitrine__pontos button{display: grid;place-items: center;width: 1.75rem;height: 1.75rem}.vitrine__pontos button::before{content: '';width: 0.5625rem;height: 0.5625rem;border-radius: 50%;background: rgb(255 255 255 / .35);transition: background-color .3s var(--ease-hover),transform .3s var(--ease)}.vitrine__pontos button[aria-current='true']::before{background: var(--azul);transform: scale(1.2)}.detalhes{display: grid;grid-template-columns: repeat(4,1fr);gap: 1rem;max-width: 63.75rem;margin: 1.375rem auto 0}.detalhe{display: grid;gap: 0.625rem;justify-items: center;text-align: center}.detalhe picture{position: relative;display: block;width: 100%;aspect-ratio: 16 / 7;border-radius: 1rem;overflow: hidden;box-shadow: inset 0 0 0 1px rgb(255 255 255 / .12),0 0.875rem 1.875rem -1.125rem rgb(0 0 0 / .8)}.detalhe img{position: absolute;inset: 0;width: 100%;height: 100%;object-fit: cover;transition: transform .8s var(--ease)}.detalhe:hover img{transform: scale(1.05)}.detalhe p{font: 600 1rem/1.2 var(--f-rotulo)}@media (max-width: 74.99em){.kit[data-pos='-1']{--x: -280PX}.kit[data-pos='1']{--x: 280PX}.vitrine__seta--ant{left: 0}.vitrine__seta--prox{right: 0}.detalhes{gap: 12PX}}@media (max-width: 47.99em){.vitrine__palco{height: 400PX}.kit{width: 230PX;margin-left: -115PX}.kit[data-pos='-1']{--x: -150PX;--s: .62;opacity: .5}.kit[data-pos='1']{--x: 150PX;--s: .62;opacity: .5}.kit:not([data-pos='0']) .kit__legenda{opacity: 0}.kit__nome{font-size: 20PX}.vitrine__seta{top: 130PX;width: 44PX;height: 44PX;font-size: 18PX}.detalhes{grid-template-columns: 1fr 1fr;gap: 10PX}.detalhe picture{aspect-ratio: 16 / 9;border-radius: 12PX}.detalhe p{font-size: 14.5PX}}@media (prefers-reduced-motion: reduce){.kit,.kit__borrada{transition: none}}.loja__banner{position: relative;height: 29.375rem;border-radius: var(--raio-painel);overflow: hidden;background: #4F8DD6}.loja__banner picture,.loja__banner img{position: absolute;inset: 0;width: 100%;height: 100%;object-fit: cover;object-position: 50% 78%}.loja__titulo{position: absolute;left: 50%;top: 2.875rem;transform: translateX(-50%);width: max-content;text-align: center;color: #fff}.loja__titulo::before{content: '';position: absolute;inset: -1.875rem -3.75rem;z-index: -1;background: radial-gradient(closest-side,rgb(14 38 100 / .38),rgb(14 38 100 / 0))}.loja__titulo .titulo{font-size: 4.625rem;text-shadow: 0 2px 1.5rem rgb(14 38 100 / .3)}.loja__titulo .titulo em{color: #DDEFFF}.loja__titulo p{margin-top: 0.625rem;font-size: 1.1875rem;font-weight: 500;text-shadow: 0 1px 0.75rem rgb(14 38 100 / .5)}.produtos{position: relative;z-index: 1;display: grid;grid-template-columns: repeat(4,1fr);gap: 1.125rem;margin: -4rem 2rem 0}.produto{display: grid;padding: 0.875rem 0.875rem 1rem;border-radius: var(--raio-card);background: #fff;box-shadow: 0 1.125rem 2.5rem rgb(14 38 100 / .12),0 0 0 1px rgb(14 38 100 / .05)}.produto__foto{display: grid;place-items: center;height: 13.125rem;border-radius: 0.75rem;background: linear-gradient(180deg,#EEF2F9,#E3E9F4);overflow: hidden}.produto__foto picture{height: 92%}.produto__foto img{height: 100%;width: auto;transition: transform .7s var(--ease)}.produto__foto--bone picture{height: 74%}.produto:hover .produto__foto img{transform: scale(1.05)}.produto__nome{margin-top: 0.875rem;font: 600 1.0625rem/1.2 var(--f-rotulo);letter-spacing: -.01em}.produto__preco{margin-top: 0.25rem;font: 700 1.375rem/1.2 var(--f-texto);letter-spacing: -.01em}.produto__comprar{display: grid;place-items: center;min-height: 2.875rem;margin-top: 0.75rem;border-radius: var(--raio-botao);color: #fff;background: radial-gradient(70% 90% at 50% -20%,rgb(255 255 255 / .38),rgb(255 255 255 / 0) 60%),radial-gradient(60% 70% at 50% 125%,rgb(205 225 255 / .6),rgb(205 225 255 / 0) 70%),linear-gradient(180deg,#4A7DFF 0%,#1F5BFF 52%,#1B50E6 100%);box-shadow: inset 0 1px 0 rgb(255 255 255 / .6),inset 0 0 0 1px rgb(255 255 255 / .3),0 0.625rem 1.375rem -0.75rem rgb(31 91 255 / .9);font: 600 1rem/1 var(--f-rotulo);transition: filter .3s var(--ease-hover),transform .3s var(--ease)}.produto__comprar:hover{filter: brightness(1.08)}.produto__comprar:active{transform: scale(.98)}.loja__rodape{display: flex;justify-content: center;margin-top: 1.875rem}@media (max-width: 74.99em){.loja__banner{height: 420PX}.loja__titulo .titulo{font-size: clamp(50PX,7vw,66PX)}.produtos{margin-inline: 16PX;gap: 12PX}.produto__foto{height: 180PX}}@media (max-width: 47.99em){.loja__banner{height: 360PX;border-radius: 18PX}.loja__banner picture,.loja__banner img{object-position: 50% 30%}.loja__titulo{top: 22PX}.loja__titulo .titulo{font-size: clamp(38PX,11vw,46PX)}.loja__titulo p{font-size: 15.5PX}.produtos{grid-template-columns: 1fr 1fr;margin: -70PX 8PX 0;gap: 10PX}.produto{padding: 10PX 10PX 12PX}.produto__foto{height: 140PX}.produto__nome{font-size: 16.5PX}.produto__preco{font-size: 18PX}.produto__comprar{min-height: 44PX;font-size: 16PX}}.fundador{overflow: clip;padding: 4.75rem 0}.fundador__foto{position: absolute;right: 0;bottom: 0;width: min(44vw,35rem);pointer-events: none}.fundador__foto::before{content: '';position: absolute;left: -10%;right: -20%;top: 6%;height: 80%;background: radial-gradient(closest-side,rgb(80 130 230 / .42),rgb(14 38 100 / 0))}.fundador__foto picture,.fundador__foto img{position: relative;width: 100%;height: auto}.fundador__sobrenome{position: absolute;right: -2%;top: -6%;font: 700 14.375rem/.8 var(--f-titulo);color: rgb(255 255 255 / .045);white-space: nowrap;letter-spacing: -.05em}.fundador__texto{position: relative;z-index: 1;max-width: 38.75rem}.fundador__texto .titulo{margin-top: 1.125rem;font-size: 4.75rem}.citacao{position: relative;margin-top: 1.625rem;padding-left: 3.5rem}.citacao::before{content: '“';position: absolute;left: -0.25rem;top: -1.125rem;font: 700 6.875rem/1 var(--f-titulo);color: var(--azul)}.citacao blockquote p{font: 400 1.5625rem/1.35 var(--f-rotulo);letter-spacing: -.01em;color: #fff}.citacao figcaption{margin-top: 1.25rem}.citacao__assinatura{display: inline-block;font: 3.375rem/1 'Assinatura',cursive;color: rgb(255 255 255 / .92);transform: rotate(-4deg);transform-origin: left center}.fatos{display: grid;grid-template-columns: repeat(3,1fr);gap: 0.75rem;margin-top: 1.625rem}.fato{display: grid;gap: 0.375rem;align-content: start;padding: 1rem 1rem 0.9375rem;border-radius: 0.875rem}.fato strong{font: 700 1.5rem/1.05 var(--f-titulo);letter-spacing: -.025em}.fato span{font-size: 0.9063rem;line-height: 1.4;color: rgb(255 255 255 / .78)}.contratacoes{margin-top: 1.625rem}.contratacoes__rotulo{display: flex;align-items: center;gap: 0.875rem;font: 600 0.9375rem/1 var(--f-rotulo);color: var(--celeste)}.contratacoes__rotulo::after{content: '';flex: 1;height: 1px;background: rgb(156 203 235 / .4)}.contratacoes ul{display: flex;gap: 2rem;margin-top: 0.875rem}.contratacoes li{display: grid;gap: 0.25rem}.contratacoes li + li{padding-left: 2rem;border-left: 1px solid var(--linha-escura)}.contratacoes strong{font: 700 1.625rem/1.05 var(--f-titulo);letter-spacing: -.025em}.contratacoes span{font-size: 0.9375rem;color: rgb(255 255 255 / .78)}@media (max-width: 74.99em){.fundador__foto{width: 42vw}.fundador__texto{max-width: 54%}.fatos{grid-template-columns: 1fr}.fato{grid-template-columns: auto 1fr;align-items: baseline;gap: 12PX}}@media (max-width: 47.99em){.fundador{padding: var(--pad) 0 0}.fundador__texto{max-width: none}.fundador__texto .titulo{font-size: clamp(46PX,13vw,58PX)}.citacao{padding-left: 38PX}.citacao::before{font-size: 80PX;top: -12PX}.citacao blockquote p{font-size: 22PX}.citacao__assinatura{font-size: 44PX}.contratacoes ul{flex-direction: column;gap: 14PX}.contratacoes li + li{padding-left: 0;border-left: 0}.fundador__foto{position: relative;width: 86%;margin: 28PX 0 0 auto}.fundador__sobrenome{font-size: 120PX;top: 0}}.peneira{overflow: clip;padding: 4rem 0}.peneira__foto{position: absolute;inset: 0 auto 0 0;width: 41%;background: var(--marinho);clip-path: polygon(0 0,100% 0,84% 100%,0 100%)}.peneira__foto picture,.peneira__foto img{width: 100%;height: 100%;object-fit: cover;object-position: 40% 40%}.peneira__foto::after{content: '';position: absolute;inset: 0;background: linear-gradient(0deg,rgb(8 22 52 / .35),rgb(8 22 52 / 0) 40%)}.peneira__grade{display: grid;grid-template-columns: 1fr minmax(0,40.625rem)}.peneira__conteudo{grid-column: 2}.peneira__titulo{display: grid}.peneira__grande{font-size: 8.25rem;line-height: .86;letter-spacing: .005em;color: var(--marinho)}.peneira__sub{margin-top: 0.5rem;font-size: 2.5rem;line-height: 1;color: var(--azul);transform: skewX(-8deg);transform-origin: left bottom}.peneira__conteudo > .texto{margin-top: 1rem;max-width: 30em}.categorias{display: flex;flex-wrap: wrap;gap: 0.5rem;margin-top: 1.25rem}.categorias li{padding: 0.5rem 0.875rem 0.4375rem;border-radius: 6.1875rem;box-shadow: inset 0 0 0 1.5px var(--marinho);font: 600 0.9375rem/1 var(--f-rotulo)}.categorias__adulto{background: var(--azul);color: #fff;box-shadow: none !important}.cidades{display: grid;grid-template-columns: repeat(3,1fr);gap: 0.625rem;margin-top: 1.125rem}.cidade{display: grid;justify-items: center;gap: 0.25rem;padding: 0.875rem 0.5rem 0.8125rem;border-radius: 0.875rem;background: #fff;box-shadow: 0 0 0 1px var(--linha-clara),0 0.625rem 1.5rem rgb(14 38 100 / .06);text-align: center}.cidade__pino{font-size: 1.5rem;color: var(--azul)}.cidade strong{font: 700 1.125rem/1.1 var(--f-rotulo);letter-spacing: .02em}.cidade span{font-size: 0.875rem;color: var(--tinta-2)}.passos{margin-top: 1.125rem}.passos__titulo{padding: 0.5625rem 1rem 0.5rem;border-radius: 0.625rem 0.625rem 0 0;background: var(--marinho);color: #fff;font: 600 1.0625rem/1 var(--f-rotulo);text-align: center}.passos ol{display: grid;grid-template-columns: repeat(3,1fr);border-radius: 0 0 0.625rem 0.625rem;box-shadow: inset 0 0 0 1px var(--linha-clara);background: #fff}.passos li{display: flex;align-items: center;gap: 0.625rem;padding: 0.8125rem 0.875rem;font: 700 1.0313rem/1.15 var(--f-rotulo);letter-spacing: .02em}.passos li + li{border-left: 1px solid var(--linha-clara)}.passos__n{display: grid;place-items: center;width: 1.875rem;height: 1.875rem;flex: none;border-radius: 50%;background: var(--azul);color: #fff;font: 400 1rem/1 var(--f-titulo)}.peneira__cta{margin-top: 1.375rem;min-height: 3.75rem;padding: 0 2.125rem;font-size: 1.375rem}.peneira__cta .i{font-size: 1.5rem}@media (max-width: 74.99em){.peneira__foto{width: 36%}.peneira__grade{grid-template-columns: 1fr minmax(0,580PX)}.peneira__grande{font-size: 104PX}.peneira__sub{font-size: 34PX}.passos li{padding: 12PX 10PX;font-size: 15PX}}@media (max-width: 47.99em){.peneira{padding: 0 0 var(--pad)}.peneira__foto{position: relative;width: 100%;height: 300PX;clip-path: polygon(0 0,100% 0,100% 86%,0 100%)}.peneira__foto img{object-position: 45% 30%}.peneira__grade{grid-template-columns: 1fr;margin-top: 24PX}.peneira__conteudo{grid-column: 1}.peneira__grande{font-size: clamp(76PX,23vw,96PX)}.peneira__sub{font-size: clamp(24PX,7vw,30PX)}.categorias li{font-size: 13.5PX;padding: 7PX 11PX 6PX}.cidades{grid-template-columns: 1fr}.cidade{grid-template-columns: auto 1fr auto;justify-items: start;align-items: center;gap: 10PX;padding: 12PX 14PX;text-align: left}.passos ol{grid-template-columns: 1fr}.passos li + li{border-left: 0;border-top: 1px solid var(--linha-clara)}.peneira__cta{width: 100%;font-size: 19PX}}.franquias{overflow: clip}.franquias__marca{position: absolute;left: -6.875rem;top: 50%;width: 26.25rem;height: auto;transform: translateY(-50%);opacity: .05;pointer-events: none}.franquias__grade{display: grid;grid-template-columns: minmax(0,36.875rem) 1fr;gap: 2.5rem;align-items: center}.franquias__texto .titulo{margin-top: 1.125rem}.franquias__texto .texto{margin-top: 1.125rem}.beneficios{display: grid;gap: 0.625rem;margin-top: 1.625rem}.beneficio{display: flex;align-items: center;gap: 1rem;padding: 0.75rem 1.125rem 0.75rem 0.75rem;border-radius: 0.875rem;background: rgb(255 255 255 / .04);box-shadow: inset 0 0 0 1px rgb(255 255 255 / .1)}.beneficio__icone{display: grid;place-items: center;width: 3.125rem;height: 3.125rem;flex: none;border-radius: 0.75rem;font-size: 1.625rem;color: var(--celeste)}.beneficio p{display: grid;gap: 0.1875rem}.beneficio strong{font: 700 1.25rem/1.1 var(--f-rotulo);letter-spacing: .02em}.beneficio span{font-size: 0.9375rem;color: rgb(255 255 255 / .74)}.franquias__botoes{margin-top: 1.625rem}.mapa{position: relative}.mapa__svg{width: 100%;height: auto;overflow: visible}.mapa__estados path{fill: rgb(255 255 255 / .02);stroke: rgb(255 255 255 / .3);stroke-width: 1;stroke-dasharray: 1.5 3.5;stroke-linecap: round}.mapa__rotas path{fill: none;stroke: rgb(120 165 255 / .75);stroke-width: 1.4}.mapa__pontos circle{fill: var(--celeste);stroke: var(--azul);stroke-width: 3}.mapa__rotulo,.mapa__sua-rotulo,.mapa__orlando{font: 600 0.875rem/1 var(--f-rotulo);white-space: nowrap}.mapa__rotulo{position: absolute;left: var(--x);top: var(--y);transform: translate(1rem,calc(-50% + var(--dy) * 0.625rem));padding: 0.375rem 0.625rem 0.3125rem;border-radius: 0.5rem;background: rgb(8 22 52 / .82);box-shadow: inset 0 0 0 1px rgb(255 255 255 / .3)}.mapa__sua{position: absolute;left: var(--x);top: var(--y)}.mapa__anel{position: absolute;left: -0.6875rem;top: -0.6875rem;width: 1.375rem;height: 1.375rem;border-radius: 50%;box-shadow: inset 0 0 0 2px #fff}.mapa__anel::after{content: '';position: absolute;inset: 0;border-radius: 50%;box-shadow: 0 0 0 2px var(--celeste);animation: pulsa 2.4s var(--ease) infinite}@keyframes pulsa{from{transform: scale(1);opacity: .9}to{transform: scale(2.6);opacity: 0}}.mapa__sua-rotulo{position: absolute;left: 1.25rem;top: -0.875rem;padding: 0.4375rem 0.75rem 0.375rem;border-radius: 0.5rem;background: var(--celeste);color: var(--marinho)}.mapa__orlando{position: absolute;left: var(--x);top: var(--y);transform: translate(-50%,-50%);display: flex;align-items: center;gap: 0.625rem;font-size: 1.125rem}.mapa__orlando img{width: 2.5rem;height: 2.5rem;border-radius: 50%;box-shadow: 0 0 0 2px #fff,0 0 1.25rem 0.25rem rgb(80 130 230 / .5)}@media (max-width: 74.99em){.franquias__grade{grid-template-columns: 1fr}.franquias__mapa{max-width: 560PX;width: 100%;justify-self: center}}@media (max-width: 47.99em){.beneficio{padding: 10PX 12PX 10PX 10PX;gap: 12PX}.beneficio__icone{width: 44PX;height: 44PX;font-size: 22PX}.beneficio strong{font-size: 18PX}.mapa__rotulo,.mapa__sua-rotulo{font-size: 11.5PX}.mapa__orlando{font-size: 14PX}.mapa__orlando img{width: 30PX;height: 30PX}}@media (prefers-reduced-motion: reduce){.mapa__anel::after{animation: none}}.mapa__rotulo--esq{transform: translate(calc(-100% - 1rem),calc(-50% + var(--dy) * 0.625rem))}.mapa__orlando{flex-direction: row-reverse;transform: translate(calc(-100% + 1.25rem),-50%)}.perguntas__grade{display: grid;grid-template-columns: minmax(0,25rem) 1fr;gap: 4rem;align-items: start}.perguntas__cabeca .texto{margin-top: 1.125rem}.perguntas__wa{margin-top: 1.5rem;color: var(--azul)}.perguntas__wa .i:first-child{font-size: 1.375rem}.perguntas__lista{display: grid;gap: 0.625rem}.pergunta{border-radius: 0.875rem;background: #fff;box-shadow: 0 0 0 1px var(--linha-clara);transition: box-shadow .3s var(--ease-hover)}.pergunta[open]{box-shadow: 0 0 0 1.5px var(--azul),0 0.875rem 1.875rem rgb(14 38 100 / .08)}.pergunta__q{display: flex;align-items: center;justify-content: space-between;gap: 1rem;padding: 1.125rem 1.375rem;cursor: pointer;list-style: none;font: 700 1.25rem/1.2 var(--f-rotulo);letter-spacing: .015em}.pergunta__q::-webkit-details-marker{display: none}.pergunta__q .i{font-size: 1.125rem;color: var(--azul);transition: transform .4s var(--ease)}.pergunta[open] .pergunta__q .i{transform: rotate(45deg)}.pergunta__r{padding: 0 1.375rem 1.25rem}.pergunta__r p{font-size: 1.0313rem;line-height: 1.6;color: var(--tinta-2);max-width: 46em}@media (max-width: 74.99em){.perguntas__grade{grid-template-columns: 1fr;gap: 32PX}}@media (max-width: 47.99em){.pergunta__q{padding: 16PX 16PX;font-size: 18PX}.pergunta__r{padding: 0 16PX 16PX}.pergunta__r p{font-size: 15.5PX}}.cta{position: relative;padding: 3.25rem 0;background: var(--azul);color: #fff;overflow: clip}.cta::before{content: '';position: absolute;right: -6%;top: -60%;width: 46%;aspect-ratio: 1;border-radius: 50%;background: radial-gradient(closest-side,rgb(255 255 255 / .18),rgb(255 255 255 / 0));pointer-events: none}.cta__grade{display: flex;align-items: center;justify-content: space-between;gap: 2rem}.cta .titulo{font-size: 3.625rem;line-height: 1.04}.cta .titulo em{display: block}.botao--branco{background: linear-gradient(180deg,#fff,#E9F0FF);color: var(--marinho);box-shadow: inset 0 1px 0 #fff,inset 0 -1px 0 rgb(14 38 100 / .12),0 0.75rem 1.75rem -0.875rem rgb(8 22 52 / .6)}.botao--branco:hover{filter: brightness(1.03)}.cta .botao--contorno:hover{background: rgb(255 255 255 / .12)}@media (max-width: 74.99em){.cta__grade{flex-direction: column;align-items: flex-start}.cta .titulo{font-size: clamp(40PX,6vw,52PX)}}@media (max-width: 47.99em){.cta{padding: 44PX 0}.cta .titulo{font-size: clamp(34PX,10vw,42PX)}.cta__botoes{width: 100%}}.rodape{background: var(--marinho-profundo);color: #fff;padding: 3.5rem 0 1.625rem}.rodape__grade{display: grid;grid-template-columns: minmax(0,1fr) minmax(0,1.3fr);gap: 3rem}.rodape__marca{display: flex;gap: 1.375rem;align-items: flex-start}.rodape__marca img{width: 4.875rem;height: auto;flex: none}.rodape__frase{font: 300 1.625rem/1.1 var(--f-titulo);letter-spacing: -.02em;max-width: 12em}.rodape__local{margin-top: 0.5rem;font-size: 0.9375rem;color: rgb(255 255 255 / .66)}.rodape__redes{display: flex;gap: 0.5rem;margin-top: 1rem}.rodape__redes a{display: grid;place-items: center;width: 2.625rem;height: 2.625rem;border-radius: 50%;font-size: 1.25rem;box-shadow: inset 0 0 0 1px rgb(255 255 255 / .2);transition: background-color .3s var(--ease-hover),color .3s var(--ease-hover)}.rodape__redes a:hover{background: var(--celeste);color: var(--marinho)}.rodape__menu{display: grid;grid-template-columns: repeat(3,1fr);gap: 1.5rem}.rodape__titulo{font: 600 0.875rem/1 var(--f-rotulo);color: var(--celeste)}.rodape__menu ul{display: grid;gap: 0.625rem;margin-top: 1rem}.rodape__menu a{font: 600 1.125rem/1.2 var(--f-rotulo);letter-spacing: .03em;color: rgb(255 255 255 / .86);transition: color .3s var(--ease-hover)}.rodape__menu a:hover{color: #fff;text-decoration: underline;text-underline-offset: 0.25rem}.rodape__base{display: flex;justify-content: space-between;gap: 1rem;margin-top: 2.75rem;padding-top: 1.25rem;border-top: 1px solid var(--linha-escura);font-size: 0.875rem;color: rgb(255 255 255 / .6)}.rodape__base a{color: rgb(255 255 255 / .86);text-decoration: underline;text-underline-offset: 0.1875rem}.flutuante{position: fixed;right: 1.375rem;bottom: 1.375rem;z-index: 40;display: grid;place-items: center;width: 3.75rem;height: 3.75rem;border-radius: 50%;background: #25D366;color: #0A2A16;font-size: 2rem;box-shadow: 0 0.75rem 1.75rem rgb(8 22 52 / .35);opacity: 0;transform: translateY(1rem) scale(.9);pointer-events: none;transition: opacity .4s var(--ease-hover),transform .5s var(--ease)}.rolou .flutuante{opacity: 1;transform: none;pointer-events: auto}.flutuante:hover{transform: scale(1.06)}@media (max-width: 74.99em){.rodape__grade{grid-template-columns: 1fr;gap: 36PX}}@media (max-width: 47.99em){.rodape{padding: 44PX 0 90PX}.rodape__menu{grid-template-columns: 1fr 1fr;row-gap: 28PX}.rodape__base{flex-direction: column;gap: 6PX;margin-top: 32PX}.flutuante{right: 16PX;bottom: 16PX;width: 54PX;height: 54PX;font-size: 28PX}}:is(.clube,.caminho,.uniformes,.loja,.fundador,.peneira,.franquias,.perguntas,.cta,.rodape){content-visibility: auto}.cv-pronto :is(.clube,.caminho,.uniformes,.loja,.fundador,.peneira,.franquias,.perguntas,.cta,.rodape){content-visibility: visible}.clube{contain-intrinsic-size: auto 33.4rem}.caminho{contain-intrinsic-size: auto 38.3rem}.uniformes{contain-intrinsic-size: auto 58.5rem}.loja{contain-intrinsic-size: auto 53.3rem}.fundador{contain-intrinsic-size: auto 35.4rem}.peneira{contain-intrinsic-size: auto 37.7rem}.franquias{contain-intrinsic-size: auto 39.0rem}.perguntas{contain-intrinsic-size: auto 31.8rem}.cta{contain-intrinsic-size: auto 7.5rem}.rodape{contain-intrinsic-size: auto 14.7rem}@media (max-width: 74.99em){.clube{contain-intrinsic-size: auto 34.3rem}.caminho{contain-intrinsic-size: auto 57.8rem}.uniformes{contain-intrinsic-size: auto 58.3rem}.loja{contain-intrinsic-size: auto 48.3rem}.fundador{contain-intrinsic-size: auto 45.0rem}.peneira{contain-intrinsic-size: auto 35.5rem}.franquias{contain-intrinsic-size: auto 66.1rem}.perguntas{contain-intrinsic-size: auto 45.5rem}.cta{contain-intrinsic-size: auto 12.1rem}.rodape{contain-intrinsic-size: auto 25.1rem}}@media (max-width: 47.99em){.clube{contain-intrinsic-size: auto 48.2rem}.caminho{contain-intrinsic-size: auto 51.4rem}.uniformes{contain-intrinsic-size: auto 62.4rem}.loja{contain-intrinsic-size: auto 61.0rem}.fundador{contain-intrinsic-size: auto 75.2rem}.peneira{contain-intrinsic-size: auto 68.3rem}.franquias{contain-intrinsic-size: auto 61.5rem}.perguntas{contain-intrinsic-size: auto 53.9rem}.cta{contain-intrinsic-size: auto 16.7rem}.rodape{contain-intrinsic-size: auto 36.9rem}}.js-abrindo .clube__foto picture{display: none}</style>
+</head>
+<body>
+  <!--
+    LEITURA: site oficial de clube para atleta brasileiro, pai de atleta da base e franqueado,
+    em linguagem de lançamento de uniforme (editorial esportivo), CSS próprio.
+    MUNDO: marinho #0E2664 do escudo e da camisa, branco neve #F8F8FA, celeste #9CCBEB (kit 3)
+    como destaque de palavra no escuro e azul vibrante #1F5BFF só em ação e destaque no claro.
+    Inter Tight nos títulos, rótulos e botões (redesenho de 2026-11-02), Inter no texto. Assinatura: o selo
+    "EST. 2027" desenhado como o patch lateral da camisa.
+    HISTÓRIA: o atleta vê o clube, entende o caminho até a MLS, vê a camisa e a compra, conhece o
+    fundador e se inscreve na peneira; o empresário vê a franquia. Tudo fecha no WhatsApp.
+    FORMA: mockups aprovados seção por seção pelo Felipe (0101 - United Florida FC/mockup/).
+    Seções baixas de propósito (pedido do Felipe em 2026-11-02): pouca rolagem entre uma e outra.
+  -->
+  <a class="pular" href="#conteudo">Skip to content</a>
+
+    <header class="topo" id="topo">
+    <div class="topo__barra">
+      <a class="topo__marca" href="#inicio" aria-label="United Florida FC, home">
+        <picture><source type="image/avif" srcset="/assets/img/escudo-120.avif 120w, /assets/img/escudo-240.avif 240w, /assets/img/escudo-480.avif 480w" sizes="44px"><img src="/assets/img/escudo-120.webp" srcset="/assets/img/escudo-120.webp 120w, /assets/img/escudo-240.webp 240w, /assets/img/escudo-480.webp 480w" sizes="44px" width="120" height="139" alt="" decoding="async"></picture>
+      </a>
+
+      <nav class="topo__menu" id="menu" aria-label="Main">
+        <ul>
+          <li><a href="#clube">The club</a></li>
+          <li><a href="#uniformes">Kits</a></li>
+          <li><a href="/loja/">Store</a></li>
+          <li><a href="#peneira">Tryouts</a></li>
+          <li><a href="#franquias">Franchises</a></li>
+        </ul>
+        <a class="botao botao--azul topo__cta-menu" href="#peneira"><span>I want to play</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+      </nav>
+
+      <div class="idiomas" role="group" aria-label="Site language">
+        <a class="idiomas__op" data-idioma="pt" lang="pt-BR" aria-label="Português" href="/" hreflang="pt-BR"><img class="bandeira" src="/assets/img/bandeiras/brasil.svg" alt="" width="26" height="26"></a>
+        <a class="idiomas__op ativo" data-idioma="en" lang="en" aria-label="English" href="/en/" hreflang="en" aria-current="true"><img class="bandeira" src="/assets/img/bandeiras/eua.svg" alt="" width="26" height="26"></a>
+      </div>
+
+      <a class="botao botao--azul topo__cta" href="#peneira"><span>I want to play</span></a>
+
+      <button class="topo__abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="topo__traco"></span><span class="topo__traco"></span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+        <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <span class="topo-sentinela" aria-hidden="true"></span>
+      <picture class="hero__fundo"><source media="(max-width: 47.99em)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><source type="image/avif" media="(min-width: 48em)" srcset="/assets/img/hero-fundo-1280.avif 1280w, /assets/img/hero-fundo-1672.avif 1672w" sizes="100vw"><img src="/assets/img/hero-fundo-1672.webp" srcset="/assets/img/hero-fundo-1280.webp 1280w, /assets/img/hero-fundo-1672.webp 1672w" sizes="100vw" width="1672" height="941" decoding="async" alt=""></picture>
+
+      <div class="hero__palco">
+        <picture class="hero__foto"><source type="image/avif" media="(max-width: 47.99em)" srcset="/assets/img/hero-celular-480.avif 480w, /assets/img/hero-celular-840.avif 840w" sizes="100vw" width="840" height="900"><source type="image/webp" media="(max-width: 47.99em)" srcset="/assets/img/hero-celular-480.webp 480w, /assets/img/hero-celular-840.webp 840w" sizes="100vw" width="840" height="900"><source type="image/avif" media="(min-width: 48em)" srcset="/assets/img/hero-jogadores-640.avif 640w, /assets/img/hero-jogadores-884.avif 884w" sizes="(max-width: 74.99em) 64vw, 56vw"><img src="/assets/img/hero-jogadores-884.webp" srcset="/assets/img/hero-jogadores-640.webp 640w, /assets/img/hero-jogadores-884.webp 884w" sizes="(max-width: 74.99em) 64vw, 56vw" width="884" height="897" fetchpriority="high" decoding="async" alt="Three United Florida FC players in the navy Reebok kit, two sitting on a stool and a box and one standing with the ball, in a stadium lit in blue"></picture>
+        <a class="ponto ponto--esq" href="#uniformes" style="--x:21%;--y:32.5%"><span class="ponto__rotulo">Official<br>kit</span></a>
+        <a class="ponto" href="#uniformes" style="--x:76.2%;--y:20.6%"><span class="ponto__rotulo">Embroidered<br>crest</span></a>
+        <a class="ponto" href="#peneira" style="--x:82.4%;--y:33.4%;--linha:40px"><span class="ponto__rotulo">Tryouts<br>in Brazil</span></a>
+      </div>
+
+      <div class="hero__conteudo caixa">
+        <p class="selo hero__selo anim-hero-texto" style="--atraso:.1s">EST. 2027 · Orlando, FL</p>
+        <h1 class="titulo hero__titulo anim-hero" id="hero-titulo" data-palavras="" aria-label="The Brazilian club in Florida"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">T</span><span class="pc" style="--c:1">h</span><span class="pc" style="--c:2">e</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:3">B</span><span class="pc" style="--c:4">r</span><span class="pc" style="--c:5">a</span><span class="pc" style="--c:6">z</span><span class="pc" style="--c:7">i</span><span class="pc" style="--c:8">l</span><span class="pc" style="--c:9">i</span><span class="pc" style="--c:10">a</span><span class="pc" style="--c:11">n</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:12">c</span><span class="pc" style="--c:13">l</span><span class="pc" style="--c:14">u</span><span class="pc" style="--c:15">b</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:16">i</span><span class="pc" style="--c:17">n</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:18">F</span><span class="pc" style="--c:19">l</span><span class="pc" style="--c:20">o</span><span class="pc" style="--c:21">r</span><span class="pc" style="--c:22">i</span><span class="pc" style="--c:23">d</span><span class="pc" style="--c:24">a</span></span></span></em></h1>
+        <p class="hero__texto anim-hero-texto" style="--atraso:.6s">Based in Orlando, debuting in the UPSL in 2027, with an open road to the US Open Cup. Dressed by Reebok.</p>
+        <div class="botoes hero__botoes anim-hero-texto" style="--atraso:.75s">
+          <a class="botao botao--azul" href="#peneira" data-brilho=""><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span><span>Sign up for tryouts</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+          <a class="botao botao--contorno" href="/loja/"><span>Visit the store</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+        </div>
+        <a class="hero__peneiras anim-hero-texto" href="#peneira" style="--atraso:.9s">
+          <span class="hero__rostos" aria-hidden="true">
+            <picture><source type="image/avif" srcset="/assets/img/avatar-1-96.avif 96w" sizes="48px"><img src="/assets/img/avatar-1-96.webp" srcset="/assets/img/avatar-1-96.webp 96w" sizes="48px" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+            <picture><source type="image/avif" srcset="/assets/img/avatar-2-96.avif 96w" sizes="48px"><img src="/assets/img/avatar-2-96.webp" srcset="/assets/img/avatar-2-96.webp 96w" sizes="48px" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+            <picture><source type="image/avif" srcset="/assets/img/avatar-3-96.avif 96w" sizes="48px"><img src="/assets/img/avatar-3-96.webp" srcset="/assets/img/avatar-3-96.webp 96w" sizes="48px" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+          </span>
+          <span class="hero__peneiras-texto">Tryouts open in<br>Niterói, Rio and São Paulo</span>
+        </a>
+      </div>
+    </section>
+
+        <div class="fita" aria-hidden="true">
+      <div class="fita__trilho">
+        <p class="fita__grupo"><span>United Florida FC</span><span>Reebok</span><span>UPSL 2027</span><span>Orlando, Florida</span><span>United Florida FC</span><span>Reebok</span><span>UPSL 2027</span><span>Orlando, Florida</span></p>
+        <p class="fita__grupo"><span>United Florida FC</span><span>Reebok</span><span>UPSL 2027</span><span>Orlando, Florida</span><span>United Florida FC</span><span>Reebok</span><span>UPSL 2027</span><span>Orlando, Florida</span></p>
+      </div>
+    </div>
+
+    <section class="numeros" aria-label="The club in numbers">
+      <ul class="numeros__lista caixa" data-conta-grupo="" data-conta-atraso="250">
+        <li class="numero" data-revela="grade" style="--i:0">
+          <svg class="i numero__icone" aria-hidden="true" focusable="false"><use href="#i-calendar-check-light"/></svg>
+          <p class="numero__valor">2027</p>
+          <p class="numero__rotulo">Official debut<br>in the UPSL</p>
+        </li>
+        <li class="numero" data-revela="grade" style="--i:1">
+          <svg class="i numero__icone" aria-hidden="true" focusable="false"><use href="#i-user-plus-light"/></svg>
+          <p class="numero__valor"><span data-conta="">35</span>+</p>
+          <p class="numero__rotulo">No age limit<br>in UPSL adult play</p>
+        </li>
+        <li class="numero" data-revela="grade" style="--i:2">
+          <svg class="i numero__icone" aria-hidden="true" focusable="false"><use href="#i-microphone-stage-light"/></svg>
+          <p class="numero__valor"><span data-conta="">10</span>+</p>
+          <p class="numero__rotulo">Years of the founder<br>in Rio soccer</p>
+        </li>
+        <li class="numero" data-revela="grade" style="--i:3">
+          <svg class="i numero__icone" aria-hidden="true" focusable="false"><use href="#i-t-shirt-light"/></svg>
+          <p class="numero__valor numero__valor--pulo">3</p>
+          <p class="numero__rotulo">Official Reebok<br>kits</p>
+        </li>
+      </ul>
+    </section>
+
+        <section class="clube secao escuro" id="clube" aria-labelledby="clube-titulo">
+      <div class="clube__foto">
+        <picture><source type="image/avif" srcset="/assets/img/clube-480.avif 480w, /assets/img/clube-760.avif 760w, /assets/img/clube-1170.avif 1170w" sizes="(max-width: 47.99em) 100vw, 62vw"><img src="/assets/img/clube-1170.webp" srcset="/assets/img/clube-480.webp 480w, /assets/img/clube-760.webp 760w, /assets/img/clube-1170.webp 1170w" sizes="(max-width: 47.99em) 100vw, 62vw" width="1170" height="941" loading="lazy" decoding="async" alt="Three United Florida FC players in the navy kit on a stadium pitch at sunset, one with a ball under his arm and a Brazilian flag in the background"></picture>
+      </div>
+
+      <div class="caixa clube__grade">
+        <div class="clube__texto">
+          <p class="selo" data-revela="">From Brazil to Orlando</p>
+          <h2 class="titulo clube__titulo" id="clube-titulo" data-palavras="" data-revela="palavras" aria-label="Born in Orlando. Played with Brazilian blood."><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">B</span><span class="pc" style="--c:1">o</span><span class="pc" style="--c:2">r</span><span class="pc" style="--c:3">n</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:4">i</span><span class="pc" style="--c:5">n</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:6">O</span><span class="pc" style="--c:7">r</span><span class="pc" style="--c:8">l</span><span class="pc" style="--c:9">a</span><span class="pc" style="--c:10">n</span><span class="pc" style="--c:11">d</span><span class="pc" style="--c:12">o</span><span class="pc" style="--c:13">.</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:14">P</span><span class="pc" style="--c:15">l</span><span class="pc" style="--c:16">a</span><span class="pc" style="--c:17">y</span><span class="pc" style="--c:18">e</span><span class="pc" style="--c:19">d</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:20">w</span><span class="pc" style="--c:21">i</span><span class="pc" style="--c:22">t</span><span class="pc" style="--c:23">h</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:24">B</span><span class="pc" style="--c:25">r</span><span class="pc" style="--c:26">a</span><span class="pc" style="--c:27">z</span><span class="pc" style="--c:28">i</span><span class="pc" style="--c:29">l</span><span class="pc" style="--c:30">i</span><span class="pc" style="--c:31">a</span><span class="pc" style="--c:32">n</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:33">b</span><span class="pc" style="--c:34">l</span><span class="pc" style="--c:35">o</span><span class="pc" style="--c:36">o</span><span class="pc" style="--c:37">d</span><span class="pc" style="--c:38">.</span></span></span></em></h2>
+          <p class="texto clube__p" data-revela="">United Florida FC is born to be home for every Brazilian who plays soccer in the United States. Based in Orlando, fully registered, with one clear goal: reaching the US Open Cup.</p>
+
+          <div class="rota" data-revela="" style="--atraso:.15s">
+            <div class="rota__trilha">
+              <img class="bandeira rota__bandeira" src="/assets/img/bandeiras/brasil.svg" alt="Brazil" width="40" height="40" loading="lazy">
+              <span class="rota__linha" aria-hidden="true"></span>
+              <img class="bandeira rota__bandeira" src="/assets/img/bandeiras/eua.svg" alt="United States" width="40" height="40" loading="lazy">
+            </div>
+            <ol class="rota__marcos">
+              <li class="rota__marco"><strong>2026</strong><span>Club founded and Reebok deal</span></li>
+              <li class="rota__marco"><strong>Jan 2027</strong><span>All companies fully registered</span></li>
+              <li class="rota__marco rota__marco--destino"><strong>2027</strong><span>Official UPSL debut</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section class="caminho secao claro" id="caminho" aria-labelledby="caminho-titulo">
+      <div class="caixa caminho__grade">
+        <div class="caminho__texto">
+          <h2 class="titulo" id="caminho-titulo" data-palavras="" data-revela="palavras" aria-label="The road to the big leagues"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">T</span><span class="pc" style="--c:1">h</span><span class="pc" style="--c:2">e</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:3">r</span><span class="pc" style="--c:4">o</span><span class="pc" style="--c:5">a</span><span class="pc" style="--c:6">d</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:7">t</span><span class="pc" style="--c:8">o</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:9">t</span><span class="pc" style="--c:10">h</span><span class="pc" style="--c:11">e</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:12">b</span><span class="pc" style="--c:13">i</span><span class="pc" style="--c:14">g</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:15">l</span><span class="pc" style="--c:16">e</span><span class="pc" style="--c:17">a</span><span class="pc" style="--c:18">g</span><span class="pc" style="--c:19">u</span><span class="pc" style="--c:20">e</span><span class="pc" style="--c:21">s</span></span></span></em></h2>
+          <p class="texto" data-revela="">The UPSL is the way in. The US Open Cup, played since 1914, opens a real chance to face MLS clubs.</p>
+          <a class="botao botao--azul caminho__cta" href="#peneira" data-revela="" style="--atraso:.15s"><span>I want in</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+        </div>
+
+        <ol class="etapas">
+          <li class="etapa" data-revela="direita" style="--i:0">
+            <picture><source type="image/avif" srcset="/assets/img/etapa-upsl-760.avif 760w, /assets/img/etapa-upsl-1280.avif 1280w" sizes="(max-width: 47.99em) 100vw, 780px"><img src="/assets/img/etapa-upsl-1280.webp" srcset="/assets/img/etapa-upsl-760.webp 760w, /assets/img/etapa-upsl-1280.webp 1280w" sizes="(max-width: 47.99em) 100vw, 780px" width="1280" height="720" loading="lazy" decoding="async" alt="United Florida FC player dribbling in a night game on a small pitch under floodlights"></picture>
+            <div class="etapa__txt">
+              <p class="etapa__n">Stage 01</p>
+              <h3 class="etapa__nome">UPSL</h3>
+              <p class="etapa__leg">The league to start in, with no age limit.</p>
+            </div>
+          </li>
+          <li class="etapa" data-revela="direita" style="--i:1">
+            <picture><source type="image/avif" srcset="/assets/img/etapa-opencup-760.avif 760w, /assets/img/etapa-opencup-1280.avif 1280w" sizes="(max-width: 47.99em) 100vw, 780px"><img src="/assets/img/etapa-opencup-1280.webp" srcset="/assets/img/etapa-opencup-760.webp 760w, /assets/img/etapa-opencup-1280.webp 1280w" sizes="(max-width: 47.99em) 100vw, 780px" width="1280" height="721" loading="lazy" decoding="async" alt="United Florida FC player celebrating a goal with a clenched fist under the floodlights"></picture>
+            <div class="etapa__txt">
+              <p class="etapa__n">Stage 02</p>
+              <h3 class="etapa__nome">US Open Cup</h3>
+              <p class="etapa__leg">Amateurs and pros in the same tournament.</p>
+            </div>
+          </li>
+          <li class="etapa etapa--destino" data-revela="direita" style="--i:2">
+            <picture><source type="image/avif" srcset="/assets/img/etapa-mls-760.avif 760w, /assets/img/etapa-mls-1280.avif 1280w" sizes="(max-width: 47.99em) 100vw, 780px"><img src="/assets/img/etapa-mls-1280.webp" srcset="/assets/img/etapa-mls-760.webp 760w, /assets/img/etapa-mls-1280.webp 1280w" sizes="(max-width: 47.99em) 100vw, 780px" width="1280" height="720" loading="lazy" decoding="async" alt="United Florida FC player facing an opponent in a pink kit in a packed stadium at night"></picture>
+            <div class="etapa__txt">
+              <p class="etapa__n">Stage 03</p>
+              <h3 class="etapa__nome">MLS</h3>
+              <p class="etapa__leg">Face to face with the big clubs, like Inter Miami.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+        <section class="uniformes secao escuro" id="uniformes" aria-labelledby="uniformes-titulo">
+      <picture class="uniformes__fundo"><source type="image/avif" srcset="/assets/img/vestiario-960.avif 960w, /assets/img/vestiario-1672.avif 1672w" sizes="100vw"><img src="/assets/img/vestiario-1672.webp" srcset="/assets/img/vestiario-960.webp 960w, /assets/img/vestiario-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" loading="lazy" decoding="async"></picture>
+      <div class="caixa">
+        <header class="uniformes__cabeca">
+          <p class="selo" data-revela="">2027 season</p>
+          <h2 class="titulo" id="uniformes-titulo" data-palavras="" data-revela="palavras" aria-label="Our kits"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">O</span><span class="pc" style="--c:1">u</span><span class="pc" style="--c:2">r</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:3">k</span><span class="pc" style="--c:4">i</span><span class="pc" style="--c:5">t</span><span class="pc" style="--c:6">s</span></span></span></em></h2>
+          <p class="texto" data-revela="">The debut collection, dressed by Reebok. Three shirts for the first team, the youth teams in the US and the franchises in Brazil.</p>
+        </header>
+
+        <div class="vitrine" data-vitrine="" data-revela="zoom" role="group" aria-roledescription="carrossel" aria-label="Club kits">
+          <ul class="vitrine__palco">
+            <li class="kit" data-pos="-1" data-kit="1">
+              <button class="kit__toque" type="button" tabindex="-1" aria-label="Show kit 2, away"></button>
+              <div class="kit__fotos">
+                <picture class="kit__nitida"><source type="image/avif" srcset="/assets/img/camisa-branca-280.avif 280w, /assets/img/camisa-branca-420.avif 420w, /assets/img/camisa-branca-560.avif 560w, /assets/img/camisa-branca-840.avif 840w" sizes="(max-width: 47.99em) 230px, 300px"><img src="/assets/img/camisa-branca-840.webp" srcset="/assets/img/camisa-branca-280.webp 280w, /assets/img/camisa-branca-420.webp 420w, /assets/img/camisa-branca-560.webp 560w, /assets/img/camisa-branca-840.webp 840w" sizes="(max-width: 47.99em) 230px, 300px" width="840" height="1094" loading="lazy" decoding="async" alt="United Florida FC white shirt, kit 2 away, with navy collar and cuffs, crest and Reebok logo"></picture>
+                <picture class="kit__borrada"><source type="image/avif" srcset="/assets/img/camisa-branca-borrada-420.avif 420w" sizes="300px"><img src="/assets/img/camisa-branca-borrada-420.webp" srcset="/assets/img/camisa-branca-borrada-420.webp 420w" sizes="300px" width="420" height="547" alt="" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="kit__legenda">
+                <p class="kit__nome">Kit 2 · Away</p>
+                <a class="botao botao--azul kit__comprar" href="/loja/produto/?p=branca"><span>Buy</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+              </div>
+            </li>
+            <li class="kit" data-pos="0" data-kit="0">
+              <button class="kit__toque" type="button" tabindex="-1" aria-label="Show kit 1, home"></button>
+              <div class="kit__fotos">
+                <picture class="kit__nitida"><source type="image/avif" srcset="/assets/img/camisa-marinho-280.avif 280w, /assets/img/camisa-marinho-420.avif 420w, /assets/img/camisa-marinho-560.avif 560w, /assets/img/camisa-marinho-840.avif 840w" sizes="(max-width: 47.99em) 230px, 300px"><img src="/assets/img/camisa-marinho-840.webp" srcset="/assets/img/camisa-marinho-280.webp 280w, /assets/img/camisa-marinho-420.webp 420w, /assets/img/camisa-marinho-560.webp 560w, /assets/img/camisa-marinho-840.webp 840w" sizes="(max-width: 47.99em) 230px, 300px" width="840" height="1094" loading="lazy" decoding="async" alt="United Florida FC navy shirt, kit 1 home, with a white-trimmed polo V collar, embroidered crest and Reebok logo"></picture>
+                <picture class="kit__borrada"><source type="image/avif" srcset="/assets/img/camisa-marinho-borrada-420.avif 420w" sizes="300px"><img src="/assets/img/camisa-marinho-borrada-420.webp" srcset="/assets/img/camisa-marinho-borrada-420.webp 420w" sizes="300px" width="420" height="547" alt="" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="kit__legenda">
+                <p class="kit__nome">Kit 1 · Home</p>
+                <a class="botao botao--azul kit__comprar" href="/loja/produto/?p=marinho"><span>Buy</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+              </div>
+            </li>
+            <li class="kit" data-pos="1" data-kit="2">
+              <button class="kit__toque" type="button" tabindex="-1" aria-label="Show kit 3, third"></button>
+              <div class="kit__fotos">
+                <picture class="kit__nitida"><source type="image/avif" srcset="/assets/img/camisa-celeste-280.avif 280w, /assets/img/camisa-celeste-420.avif 420w, /assets/img/camisa-celeste-560.avif 560w, /assets/img/camisa-celeste-840.avif 840w" sizes="(max-width: 47.99em) 230px, 300px"><img src="/assets/img/camisa-celeste-840.webp" srcset="/assets/img/camisa-celeste-280.webp 280w, /assets/img/camisa-celeste-420.webp 420w, /assets/img/camisa-celeste-560.webp 560w, /assets/img/camisa-celeste-840.webp 840w" sizes="(max-width: 47.99em) 230px, 300px" width="840" height="1094" loading="lazy" decoding="async" alt="United Florida FC sky blue shirt, kit 3 third, with navy collar and cuffs, crest and Reebok logo"></picture>
+                <picture class="kit__borrada"><source type="image/avif" srcset="/assets/img/camisa-celeste-borrada-420.avif 420w" sizes="300px"><img src="/assets/img/camisa-celeste-borrada-420.webp" srcset="/assets/img/camisa-celeste-borrada-420.webp 420w" sizes="300px" width="420" height="547" alt="" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="kit__legenda">
+                <p class="kit__nome">Kit 3 · Third</p>
+                <a class="botao botao--azul kit__comprar" href="/loja/produto/?p=celeste"><span>Buy</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+              </div>
+            </li>
+          </ul>
+          <button class="vitrine__seta vitrine__seta--ant" type="button" aria-label="Previous shirt"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-caret-left-bold"/></svg></button>
+          <button class="vitrine__seta vitrine__seta--prox" type="button" aria-label="Next shirt"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-caret-right-bold"/></svg></button>
+          <div class="vitrine__pontos">
+            <button type="button" data-ir="0" aria-label="Kit 1, home" aria-current="true"></button>
+            <button type="button" data-ir="1" aria-label="Kit 2, away"></button>
+            <button type="button" data-ir="2" aria-label="Kit 3, third"></button>
+          </div>
+          <p class="sr-only" aria-live="polite" data-vitrine-aviso=""></p>
+        </div>
+
+        <ul class="detalhes">
+          <li class="detalhe" data-revela="grade" style="--i:0">
+            <picture><source type="image/avif" srcset="/assets/img/detalhe-escudo-420.avif 420w, /assets/img/detalhe-escudo-640.avif 640w" sizes="(max-width: 47.99em) 50vw, 300px"><img src="/assets/img/detalhe-escudo-640.webp" srcset="/assets/img/detalhe-escudo-420.webp 420w, /assets/img/detalhe-escudo-640.webp 640w" sizes="(max-width: 47.99em) 50vw, 300px" width="640" height="701" alt="United Florida FC crest embroidered in white on navy fabric" loading="lazy" decoding="async"></picture>
+            <p>Embroidered crest</p>
+          </li>
+          <li class="detalhe" data-revela="grade" style="--i:1">
+            <picture><source type="image/avif" srcset="/assets/img/detalhe-reebok-420.avif 420w, /assets/img/detalhe-reebok-640.avif 640w" sizes="(max-width: 47.99em) 50vw, 300px"><img src="/assets/img/detalhe-reebok-640.webp" srcset="/assets/img/detalhe-reebok-420.webp 420w, /assets/img/detalhe-reebok-640.webp 640w" sizes="(max-width: 47.99em) 50vw, 300px" width="640" height="701" alt="Reebok logo embroidered in white on the fabric weave" loading="lazy" decoding="async"></picture>
+            <p>Reebok fabric</p>
+          </li>
+          <li class="detalhe" data-revela="grade" style="--i:2">
+            <picture><source type="image/avif" srcset="/assets/img/detalhe-gola-420.avif 420w, /assets/img/detalhe-gola-640.avif 640w" sizes="(max-width: 47.99em) 50vw, 300px"><img src="/assets/img/detalhe-gola-640.webp" srcset="/assets/img/detalhe-gola-420.webp 420w, /assets/img/detalhe-gola-640.webp 640w" sizes="(max-width: 47.99em) 50vw, 300px" width="640" height="701" alt="Polo V collar of the navy shirt with white trim" loading="lazy" decoding="async"></picture>
+            <p>Classic collar</p>
+          </li>
+          <li class="detalhe" data-revela="grade" style="--i:3">
+            <picture><source type="image/avif" srcset="/assets/img/detalhe-patch-420.avif 420w, /assets/img/detalhe-patch-640.avif 640w" sizes="(max-width: 47.99em) 50vw, 300px"><img src="/assets/img/detalhe-patch-640.webp" srcset="/assets/img/detalhe-patch-420.webp 420w, /assets/img/detalhe-patch-640.webp 640w" sizes="(max-width: 47.99em) 50vw, 300px" width="640" height="701" alt="Embroidered side patch reading EST. 2027 United Florida" loading="lazy" decoding="async"></picture>
+            <p>Founding patch</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+        <section class="loja secao claro" id="loja" aria-labelledby="loja-titulo">
+      <div class="caixa">
+        <div class="loja__banner">
+          <picture><source type="image/avif" srcset="/assets/img/loja-800.avif 800w, /assets/img/loja-1280.avif 1280w, /assets/img/loja-1672.avif 1672w" sizes="(max-width: 47.99em) 100vw, 1240px"><img src="/assets/img/loja-1672.webp" srcset="/assets/img/loja-800.webp 800w, /assets/img/loja-1280.webp 1280w, /assets/img/loja-1672.webp 1672w" sizes="(max-width: 47.99em) 100vw, 1240px" width="1672" height="941" loading="lazy" decoding="async" alt="Five Brazilian fans in the navy, white and sky blue United Florida FC shirts, arm in arm and laughing, seen from below against the blue Orlando sky"></picture>
+          <div class="loja__titulo">
+            <h2 class="titulo" id="loja-titulo" data-palavras="" data-revela="palavras" aria-label="Our official store"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">O</span><span class="pc" style="--c:1">u</span><span class="pc" style="--c:2">r</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:3">o</span><span class="pc" style="--c:4">f</span><span class="pc" style="--c:5">f</span><span class="pc" style="--c:6">i</span><span class="pc" style="--c:7">c</span><span class="pc" style="--c:8">i</span><span class="pc" style="--c:9">a</span><span class="pc" style="--c:10">l</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:11">s</span><span class="pc" style="--c:12">t</span><span class="pc" style="--c:13">o</span><span class="pc" style="--c:14">r</span><span class="pc" style="--c:15">e</span></span></span></em></h2>
+            <p data-revela="">Wear the Brazilian club in Florida.</p>
+          </div>
+        </div>
+
+        <ul class="produtos">
+          <li class="produto" data-revela="grade" style="--i:0">
+            <div class="produto__foto"><picture><source type="image/avif" srcset="/assets/img/camisa-marinho-280.avif 280w, /assets/img/camisa-marinho-420.avif 420w, /assets/img/camisa-marinho-560.avif 560w, /assets/img/camisa-marinho-840.avif 840w" sizes="(max-width: 47.99em) 44vw, 240px"><img src="/assets/img/camisa-marinho-840.webp" srcset="/assets/img/camisa-marinho-280.webp 280w, /assets/img/camisa-marinho-420.webp 420w, /assets/img/camisa-marinho-560.webp 560w, /assets/img/camisa-marinho-840.webp 840w" sizes="(max-width: 47.99em) 44vw, 240px" width="840" height="1094" alt="2027 Navy Shirt I" loading="lazy" decoding="async"></picture></div>
+            <h3 class="produto__nome">2027 Navy Shirt I</h3>
+            <p class="produto__preco">R$ 299,90</p>
+            <a class="produto__comprar" href="/loja/produto/?p=marinho">Buy</a>
+          </li>
+          <li class="produto" data-revela="grade" style="--i:1">
+            <div class="produto__foto"><picture><source type="image/avif" srcset="/assets/img/camisa-branca-280.avif 280w, /assets/img/camisa-branca-420.avif 420w, /assets/img/camisa-branca-560.avif 560w, /assets/img/camisa-branca-840.avif 840w" sizes="(max-width: 47.99em) 44vw, 240px"><img src="/assets/img/camisa-branca-840.webp" srcset="/assets/img/camisa-branca-280.webp 280w, /assets/img/camisa-branca-420.webp 420w, /assets/img/camisa-branca-560.webp 560w, /assets/img/camisa-branca-840.webp 840w" sizes="(max-width: 47.99em) 44vw, 240px" width="840" height="1094" alt="2027 White Shirt II" loading="lazy" decoding="async"></picture></div>
+            <h3 class="produto__nome">2027 White Shirt II</h3>
+            <p class="produto__preco">R$ 299,90</p>
+            <a class="produto__comprar" href="/loja/produto/?p=branca">Buy</a>
+          </li>
+          <li class="produto" data-revela="grade" style="--i:2">
+            <div class="produto__foto"><picture><source type="image/avif" srcset="/assets/img/camisa-celeste-280.avif 280w, /assets/img/camisa-celeste-420.avif 420w, /assets/img/camisa-celeste-560.avif 560w, /assets/img/camisa-celeste-840.avif 840w" sizes="(max-width: 47.99em) 44vw, 240px"><img src="/assets/img/camisa-celeste-840.webp" srcset="/assets/img/camisa-celeste-280.webp 280w, /assets/img/camisa-celeste-420.webp 420w, /assets/img/camisa-celeste-560.webp 560w, /assets/img/camisa-celeste-840.webp 840w" sizes="(max-width: 47.99em) 44vw, 240px" width="840" height="1094" alt="2027 Sky Blue Shirt III" loading="lazy" decoding="async"></picture></div>
+            <h3 class="produto__nome">2027 Sky Blue Shirt III</h3>
+            <p class="produto__preco">R$ 299,90</p>
+            <a class="produto__comprar" href="/loja/produto/?p=celeste">Buy</a>
+          </li>
+          <li class="produto" data-revela="grade" style="--i:3">
+            <div class="produto__foto produto__foto--bone"><picture><source type="image/avif" srcset="/assets/img/bone-360.avif 360w, /assets/img/bone-560.avif 560w" sizes="(max-width: 47.99em) 44vw, 240px"><img src="/assets/img/bone-560.webp" srcset="/assets/img/bone-360.webp 360w, /assets/img/bone-560.webp 560w" sizes="(max-width: 47.99em) 44vw, 240px" width="560" height="435" alt="Official navy United Florida FC cap with the crest embroidered on the front" loading="lazy" decoding="async"></picture></div>
+            <h3 class="produto__nome">Official United Florida Cap</h3>
+            <p class="produto__preco">R$ 129,90</p>
+            <a class="produto__comprar" href="/loja/produto/?p=bone">Buy</a>
+          </li>
+        </ul>
+
+        <div class="loja__rodape">
+          <a class="botao botao--contorno" href="/loja/"><span>See the full store</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+        <section class="fundador secao escuro" id="fundador" aria-labelledby="fundador-titulo">
+      <div class="fundador__foto">
+        <span class="fundador__sobrenome" aria-hidden="true">Vilela</span>
+        <picture><source type="image/avif" srcset="/assets/img/maicon-480.avif 480w, /assets/img/maicon-720.avif 720w, /assets/img/maicon-963.avif 963w" sizes="(max-width: 47.99em) 86vw, 520px"><img src="/assets/img/maicon-963.webp" srcset="/assets/img/maicon-480.webp 480w, /assets/img/maicon-720.webp 720w, /assets/img/maicon-963.webp 963w" sizes="(max-width: 47.99em) 86vw, 520px" width="963" height="1200" loading="lazy" decoding="async" alt="Maicon Vilela, president and founder of United Florida FC, sitting, wearing the club's sky blue shirt and a navy cap"></picture>
+      </div>
+
+      <div class="caixa">
+        <div class="fundador__texto">
+          <p class="selo" data-revela="">President and founder</p>
+          <h2 class="titulo" id="fundador-titulo" data-palavras="" data-revela="palavras" aria-label="Maicon Vilela"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">M</span><span class="pc" style="--c:1">a</span><span class="pc" style="--c:2">i</span><span class="pc" style="--c:3">c</span><span class="pc" style="--c:4">o</span><span class="pc" style="--c:5">n</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:6">V</span><span class="pc" style="--c:7">i</span><span class="pc" style="--c:8">l</span><span class="pc" style="--c:9">e</span><span class="pc" style="--c:10">l</span><span class="pc" style="--c:11">a</span></span></span></em></h2>
+          <figure class="citacao" data-revela="" style="--atraso:.1s">
+            <blockquote>
+              <p>I sold Atlético this year and now my full focus is Orlando. That dream of playing the US Open Cup against the MLS giants is what we are going to offer.</p>
+            </blockquote>
+            <figcaption><span class="citacao__assinatura">Maicon Vilela</span><span class="sr-only">, president of United Florida FC</span></figcaption>
+          </figure>
+
+          <ul class="fatos">
+            <li class="fato vidro" data-revela="grade" style="--i:0"><strong>10+ years</strong><span>in Rio soccer, from radio to clubs</span></li>
+            <li class="fato vidro" data-revela="grade" style="--i:1"><strong>Founder</strong><span>of Clube Atlético Carioca</span></li>
+            <li class="fato vidro" data-revela="grade" style="--i:2"><strong>Refounded</strong><span>the traditional Niteroiense FC</span></li>
+          </ul>
+
+          <div class="contratacoes" data-revela="" style="--atraso:.2s">
+            <p class="contratacoes__rotulo">Signings that stopped the press</p>
+            <ul>
+              <li><strong>Túlio Maravilha</strong><span>Botafogo legend</span></li>
+              <li><strong>Acosta</strong><span>Uruguayan striker, ex-Corinthians and Náutico</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section class="peneira secao claro" id="peneira" aria-labelledby="peneira-titulo">
+      <div class="peneira__foto">
+        <picture><source type="image/avif" srcset="/assets/img/peneira-560.avif 560w, /assets/img/peneira-900.avif 900w" sizes="(max-width: 47.99em) 100vw, 40vw"><img src="/assets/img/peneira-900.webp" srcset="/assets/img/peneira-560.webp 560w, /assets/img/peneira-900.webp 900w" sizes="(max-width: 47.99em) 100vw, 40vw" width="900" height="1215" loading="lazy" decoding="async" alt="Young players in the United Florida FC shirt and blue training bibs at a tryout on an artificial turf pitch, one of them dribbling the ball"></picture>
+      </div>
+
+      <div class="caixa peneira__grade">
+        <div class="peneira__conteudo">
+          <h2 class="peneira__titulo" id="peneira-titulo">
+            <span class="peneira__grande" data-revela="zoom">Tryouts</span>
+            <span class="peneira__sub" data-revela="">United Florida FC in Brazil</span>
+          </h2>
+          <p class="texto" data-revela="">From youth to adult. If you dream of wearing this shirt and playing in the United States, the door is open.</p>
+
+          <ul class="categorias" aria-label="Age groups" data-revela="" style="--atraso:.1s">
+            <li>U-11</li><li>U-13</li><li>U-15</li><li>U-17</li>
+            <li class="categorias__adulto">Adult · no age limit</li>
+          </ul>
+
+          <ul class="cidades">
+            <li class="cidade" data-revela="grade" style="--i:0"><svg class="i cidade__pino" aria-hidden="true" focusable="false"><use href="#i-map-pin-fill"/></svg><strong>Rio de Janeiro · RJ</strong><span>Date coming soon</span></li>
+            <li class="cidade" data-revela="grade" style="--i:1"><svg class="i cidade__pino" aria-hidden="true" focusable="false"><use href="#i-map-pin-fill"/></svg><strong>Niterói · RJ</strong><span>Date coming soon</span></li>
+            <li class="cidade" data-revela="grade" style="--i:2"><svg class="i cidade__pino" aria-hidden="true" focusable="false"><use href="#i-map-pin-fill"/></svg><strong>São Paulo · SP</strong><span>Date coming soon</span></li>
+          </ul>
+
+          <div class="passos" data-revela="" style="--atraso:.1s">
+            <p class="passos__titulo">How it works</p>
+            <ol>
+              <li><span class="passos__n">1</span><span>Sign up on WhatsApp</span></li>
+              <li><span class="passos__n">2</span><span>On-field evaluation</span></li>
+              <li><span class="passos__n">3</span><span>Call-up to Orlando</span></li>
+            </ol>
+          </div>
+
+          <a class="botao botao--azul peneira__cta" href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20want%20to%20sign%20up%20for%20the%20tryouts.%20My%20age%20and%20city%20are%3A" target="_blank" rel="noopener" data-brilho=""><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-bold"/></svg><span>Sign me up</span></a>
+        </div>
+      </div>
+    </section>
+
+        <section class="franquias secao escuro" id="franquias" aria-labelledby="franquias-titulo">
+      <img class="franquias__marca" src="/assets/img/escudo-480.webp" alt="" width="480" height="556" loading="lazy" decoding="async">
+      <div class="caixa franquias__grade">
+        <div class="franquias__texto">
+          <p class="selo" data-revela="">Opportunity</p>
+          <h2 class="titulo" id="franquias-titulo" data-palavras="" data-revela="palavras" aria-label="Bring United Florida to your city"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">B</span><span class="pc" style="--c:1">r</span><span class="pc" style="--c:2">i</span><span class="pc" style="--c:3">n</span><span class="pc" style="--c:4">g</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:5">U</span><span class="pc" style="--c:6">n</span><span class="pc" style="--c:7">i</span><span class="pc" style="--c:8">t</span><span class="pc" style="--c:9">e</span><span class="pc" style="--c:10">d</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:11">F</span><span class="pc" style="--c:12">l</span><span class="pc" style="--c:13">o</span><span class="pc" style="--c:14">r</span><span class="pc" style="--c:15">i</span><span class="pc" style="--c:16">d</span><span class="pc" style="--c:17">a</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:18">t</span><span class="pc" style="--c:19">o</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:20">y</span><span class="pc" style="--c:21">o</span><span class="pc" style="--c:22">u</span><span class="pc" style="--c:23">r</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:24">c</span><span class="pc" style="--c:25">i</span><span class="pc" style="--c:26">t</span><span class="pc" style="--c:27">y</span></span></span></em></h2>
+          <p class="texto" data-revela="">Official franchises all over Brazil. You represent a club based in Orlando, with Reebok kits and a real road to professional soccer in the United States.</p>
+
+          <ul class="beneficios">
+            <li class="beneficio" data-revela="grade" style="--i:0">
+              <span class="beneficio__icone vidro"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-map-pin-light"/></svg></span>
+              <p><strong>Exclusive rights in your city</strong><span>Only one franchisee per city.</span></p>
+            </li>
+            <li class="beneficio" data-revela="grade" style="--i:1">
+              <span class="beneficio__icone vidro"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-t-shirt-light"/></svg></span>
+              <p><strong>International brand and Reebok kits</strong><span>The same shirt as the Orlando team.</span></p>
+            </li>
+            <li class="beneficio" data-revela="grade" style="--i:2">
+              <span class="beneficio__icone vidro"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-globe-hemisphere-west-light"/></svg></span>
+              <p><strong>Your franchise on the official US website</strong><span>A place on the club's page.</span></p>
+            </li>
+          </ul>
+
+          <div class="botoes franquias__botoes" data-revela="" style="--atraso:.15s">
+            <a class="botao botao--azul" href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20want%20to%20know%20how%20to%20become%20a%20franchisee%20in%20my%20city." target="_blank" rel="noopener" data-brilho=""><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span><span>Become a franchisee</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+          </div>
+        </div>
+
+        <div class="franquias__mapa" data-revela="zoom" style="--atraso:.1s">
+          <div class="mapa" aria-hidden="true">
+  <svg class="mapa__svg" viewBox="0 -12 653 539" preserveAspectRatio="xMidYMid meet" focusable="false">
+    <g class="mapa__estados"><path d="M7.5 166.3L19.7 171.9L48.8 178.7L96.6 202.4L91.2 206.9L86.6 208.2L82.8 212.6L78.4 212.1L76 215.9L72.1 217.9L69.9 218.4L69.4 216.5L60.9 215.5L54.4 215.4L49.6 217.4L46.8 215.6L45.6 216.5L45.6 200.9L47.3 195.7L38.1 202.8L25.8 203.3L26.1 200.6L24.6 200L23.5 196.6L12.6 195.5L16.1 189.9L11.6 185L11.7 183.1L8.5 181.4L7.3 177.2L5.5 175.6L6.6 173.9L2.7 171L3 168.2L6.4 167.7L5.1 165.1L7.5 166.3Z"></path><path d="M493.9 187.8L497.6 188.6L497.5 189.8L482.1 209.9L474.4 203L458.5 194.4L464.6 188.2L465.4 190L468.1 189.6L474.9 195.1L476 193.6L479.4 194.6L484.2 192.3L483.7 191.4L486.2 189L493.9 187.8Z"></path><path d="M87.7 44.5L90.6 48.4L90.7 55.9L93.6 55L100.5 61.3L103.4 61.3L109.8 58L111 59.6L110.4 62.7L113.1 59L115 59.1L116 56L117 56.6L119.7 53.9L120.5 55.1L125 51.1L125.8 53.3L128.8 49.9L130.1 45.1L134.3 44.7L138.1 42.1L141 42.6L142.5 44.7L146.6 45.7L145.3 50.3L149.9 58.4L148.8 64.6L153.2 75.6L151.9 79.8L149.1 81.3L155.1 86L156.9 89.7L160.2 90.2L162.3 92.1L160.4 89.7L160.8 83.6L162.4 80.1L165.5 77.9L169.3 78.6L172.5 83.1L177.1 80.8L176 78L180.6 67.8L195.1 67.8L195.4 75.8L202.4 86.4L204.5 87.5L206.3 85.9L207.1 89.8L214.3 94L217.2 94L218.8 96.5L222.7 98L222.3 99.9L223.4 100.5L230.8 98L226.1 103.3L226.9 103.7L203.2 156.7L200.5 159.7L204.8 168.4L201.7 174.8L202.9 178.6L201.5 187.2L160.9 187.4L159.2 186L155.7 188.5L144.8 176.7L134.9 176.5L132.9 181.1L130.8 181.2L131 184.5L128.4 186.4L128.2 189.5L119.4 190L116.1 195.8L114.2 193.5L111.6 194.3L111.8 196.2L109.7 195.5L107.2 197.8L104.9 195.5L99.3 195.4L98.2 198.4L94.3 200.8L69.8 190.1L48.8 178.7L19.7 171.9L5.1 165.1L7.1 160.5L13.6 157L12.3 150.9L15.8 145.9L17.7 138.7L29.5 130.9L41.5 129.2L45.2 125.8L49.4 126L51 128.9L52.2 127.6L53 128.7L54 128L61.3 86.2L58.3 81.2L58.5 78L52.8 73.7L53 63.9L60.2 61.6L61.7 63.2L64.8 62.7L62.9 57.2L55.5 56.9L55.6 48.6L59.3 47.6L77.1 48.4L75.7 47.2L76.4 45.4L79.8 47.1L86.6 41.6L87.7 44.5Z"></path><path d="M293.5 18.4L294.8 19.9L295.6 31.1L299.6 43L302.9 42.2L305.5 47.5L309.6 48.8L309.9 55.5L307.4 62L303.3 63L300 68.8L293.1 72.8L287.2 81.6L286.8 85.4L282.2 87.6L277.6 85.1L276.4 79.1L274.9 79L274.3 75.3L271.2 73.1L268.1 66.2L269 62.2L265.1 59L264.9 54.9L263.5 55.3L262 52.7L256.5 51.6L253.6 48.3L248.1 47.8L246.4 39.2L248.8 39L249.1 40.6L252 42.1L257.9 41.8L260.5 39.9L263.4 41.5L266 40.2L266.9 42.6L271 42.6L276 38.1L278.8 29.4L287.6 17.9L288.8 12.9L293.5 18.4Z"></path><path d="M445.1 184.3L445.8 186.2L451.4 187.3L453 189.7L454.5 187.7L455.4 190.1L457.8 190.4L459 195.6L461.6 196.6L461.6 202.2L463.7 203.3L464.9 207.7L463.4 208.9L463.9 212.4L458.9 212.6L458.6 215.4L463.9 223.3L467.7 223.7L469.9 222.3L460.9 238.1L457.1 242.2L455.3 243.1L453.7 242L449.3 246.6L450.2 251.4L448.8 252.7L449.7 255.3L448 265.4L450.6 280.6L446.1 297.9L447.1 304.8L441.6 310.1L440.3 313.5L433.2 308.6L433.2 305.4L428.1 301L429.8 294.1L432.5 294.4L432.5 290.1L434 290.1L437.9 284L433.1 279.9L428.9 279.9L425.7 277.8L419.1 279.1L418.8 275.9L413.1 270.6L409.4 271.7L395.6 264.7L391 266.8L386.5 264.7L387.8 260.6L382.3 259.2L377.9 260.6L371.2 266L358.6 272.8L360 268.8L358.9 267L359.3 261.6L360.7 260.7L356.2 257.4L356.2 251.9L357.5 250.7L356.5 248.5L359 246.6L355.5 246.9L355.4 244.2L358.1 241.8L355.7 242.2L356 237.4L357.6 236.1L355.1 234.1L354.5 230.2L357.4 228.4L354.8 227.9L355.5 224.8L358.5 224.9L353.5 223.3L351.7 220.3L355.9 215.2L356.9 211.9L361.8 209L363.1 205.3L364.6 204.7L367.3 209.2L366.8 211.5L369.1 214.1L373.2 215.5L377.7 211.5L380.8 210.5L383.3 211.7L389.4 203.3L389.5 201.2L387 197.3L391.6 193.6L394.3 195.7L398.2 195.5L400.8 198.2L407.5 193.9L412.6 193.3L418.4 186.2L421.9 186.2L427.6 192.2L426.2 196.1L428.1 196.4L431.8 194.7L432.9 190.9L436.6 190.7L437.4 187.9L440.2 187.3L440 185.6L445.1 184.3Z"></path><path d="M435.8 108.7L455.5 120.2L461.4 127.3L471.1 135.1L466.1 136.3L459.5 149.8L455.9 151.6L454.2 154.2L453.7 160.8L451.8 163.6L454.7 167.6L453.2 171.1L449.2 174.8L447.6 175L444.8 170.8L440.4 167.8L432.9 169.4L429.1 168.9L431.3 161.1L426.7 159.1L424.5 151L424.3 139.7L420.1 135.5L422.2 126.3L421.9 124.6L420.1 124.5L420.3 120.3L419 119.9L419.5 117.4L417.9 115.7L420 112L419.2 109.8L429.7 108L435.8 108.7Z"></path><path d="M426.8 346.4L423.9 352.5L414.2 350.1L414.2 346.8L412.1 345.3L412.4 340.2L413.7 338L418.4 337.8L421.2 330.9L424 328.3L423.1 321.7L420.2 320.2L424.4 319.6L422.6 317.2L423 314.9L421 314.7L421.3 312.9L422.6 311.1L426.2 310.9L424.8 308.5L427.1 309.2L429.3 307.4L440.3 313.3L439.2 320L440 326.1L438.5 330.6L434.3 334.6L430.7 343.7L426.8 346.4Z"></path><path d="M306.5 235.1L304.8 240.8L316.6 246.5L319.8 240.1L321.6 242.3L323.3 240.4L326.4 243.7L326.6 247.1L327.6 244.6L328.4 246.7L331.8 244.8L332 246.9L333.3 246L336.3 247L338.2 249L338.7 244.3L341.4 246.7L350 242.5L353.8 242.5L354.2 240.5L354.9 242.8L358.1 241.8L355.4 244.2L356 247.5L359 246.6L356.5 248.5L357.5 250.7L356.2 251.9L356.2 257.4L360.7 260.7L359.3 261.6L358.4 268.4L355.9 268.3L353.1 265.4L353.2 270L347.8 270L348.9 273.5L347.5 276.6L349.2 281L342.7 283L342.8 277.1L341.5 275.9L331.5 275.9L330.5 283.2L342.9 283.3L341 289.1L343.6 291.3L345.2 295.4L339.9 301.7L343.4 303.7L342.1 306.6L343.2 309.6L334.6 315.5L330.7 313.3L323.7 313.9L322.1 312.9L318.7 314.3L316.5 317.4L314.5 315.4L311.3 317.3L304.6 318.1L301.7 323.4L298.1 325.9L297.8 328.7L294.7 326.1L278.8 319.8L277.3 318L271.4 317.3L270.8 316L273.4 313.5L269 313L269.4 308.7L267.2 302.7L270.2 293.8L275.1 289.5L274.4 286.5L278.9 283.4L279.8 281.1L284.6 280.2L289 270.2L294.7 268.2L296.1 259.9L297.9 257.3L297.4 252.6L300.8 247L302.5 239L306.5 235.1Z"></path><path d="M346.4 189.9L349.3 182.1L352.6 181.1L353.6 177.7L351.9 175.5L346.3 177.6L339.3 169.5L340.4 167.6L337.3 166.3L340.1 163.4L342 154.1L340.4 144.2L336.1 142.2L335.5 140.7L329.4 139.5L324.4 141.9L336.7 131.8L339 131.4L342.7 124.7L345.7 122.2L346.3 118.3L352.2 108.8L351.1 106.8L354.3 104.7L354 100.8L356 99.7L356.9 95.5L355.4 94.6L357.6 93.4L357.6 87.4L360 85.1L360.2 87.6L361.5 85.1L361.3 88.2L363.6 86.3L363.1 89.8L364.9 87.9L365.7 89.9L367.1 88.3L366.7 91.6L368.3 88.7L367.8 94.2L368.4 92.4L370.7 91.5L371 89.2L371.3 91.3L374.7 90L373.6 92.6L374.9 93.2L376.2 91.8L376.9 92.7L375.1 93.3L376.2 94.2L374.7 95.2L377.5 94.3L376.9 95.8L378.3 95.5L377.4 96.3L378.8 97L380.9 104.3L384.8 102.9L383.8 103.8L385.6 104L385.3 105.2L390 100.6L391.5 102.6L395.5 102.6L404.5 107.1L412.8 107.2L413.2 110.4L411.3 113.3L408 116.6L404.2 116.8L397.9 127.2L399.7 130.4L398.5 134.5L400.4 139.7L396.5 145.6L396.9 151.2L400 154.9L398.8 159.3L392.5 161.6L388.7 159.7L384.6 160.5L376.3 168.9L374.6 168.4L366.5 172.5L362.5 184.9L359.6 189.1L362.3 196.4L360.2 206.7L354.9 205.5L353.3 201L351.3 199.7L352.4 196.5L349.8 195.5L347.8 191L345.9 190.9L346.4 189.9Z"></path><path d="M382.4 259.3L387.8 260.6L386.5 264.7L391 266.8L395.6 264.7L409.4 271.7L413.1 270.6L418.8 275.9L419.1 279.1L427 278.1L428.9 279.9L433.1 279.9L437.1 282.5L437.1 286.2L434 290.1L432.5 290.1L432.5 294.4L429.8 294.1L428.1 301L433.8 306.9L433.2 308.6L429.3 307.4L427.1 309.2L424.8 308.5L426.2 310.9L422.6 311.1L421.3 312.9L421 314.7L423 314.9L422.6 317.2L424.4 319.6L420.2 320.2L423.1 321.7L424 328.1L421.2 330.9L418.4 337.8L413.7 338L412.5 339.6L413 343.8L410.9 347.6L408.6 348.1L409.5 348.9L405.9 356.7L407.1 357.9L396.9 362.9L394.7 361.8L388 362.5L367.3 370.3L363.2 369.3L362.2 373L355.2 373.6L355.3 371.7L353.5 370.9L354.4 368.8L350.3 365.7L351.9 363.5L350.3 362.7L351.7 361.8L350.8 359.5L353.1 354.7L351.1 353.2L346.7 354L343.8 347L345.6 343.8L343.1 341.2L343.5 337.5L340.9 334.8L338.7 335.9L335.8 335.2L335.4 336.9L334.4 335.7L332.6 337.2L331 335.7L330.9 337.1L323.6 337.4L322.6 341.1L321.4 337.5L318.5 339.3L318.1 334.9L314.3 334L309.9 334.5L302.5 332.4L295.8 336.4L295.3 331.1L304.6 318.1L311.3 317.3L314.5 315.4L316.5 317.4L318.7 314.3L322.1 312.9L323.7 313.9L330.7 313.3L334.6 315.5L343.2 309.6L342.1 306.6L343.4 303.7L340.5 302.6L339.9 300.8L345.2 295.4L341 288.7L343 282.7L349.2 281L347.5 276.6L348.9 273.5L347.8 270L353.2 270L353.1 265.4L355.9 268.3L359.5 268L358.6 272.8L371.2 266L377.9 260.6L382.4 259.3Z"></path><path d="M259.2 307.8L269.4 309.4L268.5 310L269.4 313.4L273.4 313.5L270.8 316L271.4 317.3L276.3 317.6L282.9 321.8L295.1 326.4L296.8 329.4L295.2 331.7L295.8 336.5L288.3 343.7L287.9 347.6L284.6 350.3L284.7 353.1L282.1 355.3L282.1 357.9L277.9 363.5L262.6 374.2L261 379.1L257.8 380.9L255.9 387.8L253.9 389L249 385.6L245.6 387.6L240.4 388L238 383.1L237 370.3L234 365.4L229.4 365.3L227.1 362.7L221.3 365.7L206.7 362.9L208.9 347.7L207.5 347.1L208.4 346.2L207.1 345.7L208.3 345.1L206.8 344.5L206.6 341L204.4 337.5L208.4 334.9L204.9 332.1L210.5 322.2L209.5 320.7L212.2 312L213.5 311.9L209.2 303.1L210.2 302.9L210.6 305.1L213.5 307.6L218.7 305.3L222.7 299.8L226.4 300L230.6 297.9L243.2 304.3L250.1 301.9L253.7 304.4L256.6 303.8L261.3 298.7L261.3 304.4L259 305.6L258.1 307.3L259.2 307.8Z"></path><path d="M176.5 246.8L180 241.5L180.2 237.8L183.9 234.2L179.7 227.6L179.6 224.3L182.1 221.7L181.4 218.1L176.6 217.9L175.2 216.3L161.3 216.3L162.4 208.8L160.7 205.3L161.8 201.4L161 199.5L162.2 198.4L160.2 193.6L161.6 193.3L162.3 189L160.9 187.4L201.3 187.3L202.4 186.4L201 186.2L202.9 178.6L201.7 174.8L204.8 168.3L211.1 179.7L211.8 186.9L216.9 189.2L218.6 192.5L221.6 193.3L222.4 195.4L305.7 201.2L300.9 212L299.1 222.2L300.7 235.3L299.6 237.7L302.2 241.3L300.8 247L297.4 252.6L297.9 257.3L296.1 259.9L294.7 268.2L289 270.2L284.6 280.2L279.8 281.1L278.9 283.4L274.4 286.5L275 289.8L270.2 293.8L267.5 299.6L267.2 304.8L269.4 309.4L258.2 307.9L259.4 304.9L261.3 304.4L261.3 298.7L256.5 303.8L253.3 304.4L250.1 301.9L243.2 304.3L230.6 297.9L226.4 300L222.7 299.8L218.7 305.3L213.5 307.6L210.6 305.1L210 302.7L206 302.2L201.5 298.1L200.6 291.8L202.5 286L178.9 286L178 275.5L173.9 270.7L177.9 270.6L177.6 264.3L174.8 258.6L176.2 255.9L175.1 253.4L171.9 251.9L176.1 248.9L176.5 246.8Z"></path><path d="M347.4 81L347.4 82.6L348.8 81L350 83.4L351.4 81.7L351 84.2L354.1 82.6L353.2 84.1L354.1 85.3L354.6 84.3L355.7 85.6L357.1 83.1L356.1 86.7L357.4 84.4L357.4 86.5L358.6 84.7L357.6 93.4L355.4 94.6L356.9 95.5L356 99.7L354 100.8L354.3 104.7L351.1 106.8L352.2 108.8L346.3 118.3L345.7 122.2L342.7 124.7L339.4 130.9L324.4 141.9L329.2 142.5L332.3 145.2L330.3 147.3L331.1 149.8L328.6 152.8L329.2 155.5L326.2 156.5L325.6 159.2L318.6 162.7L318.9 166.8L316.4 170.8L319.4 174.3L318.6 179.4L313.8 188L308.1 193.9L305.7 201.2L222.4 195.4L221.6 193.3L218.6 192.5L216.9 189.2L211.8 186.9L211.1 179.7L200.5 159.7L203.2 156.7L226.9 103.7L226.1 103.3L230.8 98L223.4 100.5L222.3 99.9L222.7 98L218.8 96.5L217.2 94L214.3 94L207.1 89.8L206.3 85.9L204.5 87.5L201.1 84.8L201 82.9L197.6 80.2L197.3 77.1L195.4 75.8L195.1 55.1L200.2 54.5L200.1 52L202.4 50.2L206.5 51.4L206.7 49.4L212.5 48.8L215.4 44.9L216.4 45.7L218.2 44.5L222 46.8L226.3 45.5L232.6 46.9L233.3 44.3L230.3 41.4L232.3 37.9L235.7 39.6L239.9 39.4L245.4 37.2L247.8 42.2L248.1 47.8L253.6 48.3L256.5 51.6L262 52.7L263.5 55.3L264.9 54.9L265.1 59L269 62.2L268.1 66.2L271.2 73.1L274.3 75.3L274.9 79L276.4 79.1L277.6 85.1L281.8 87.5L286.8 85.4L287.2 81.6L293.1 72.8L300 68.8L303 63.4L306.6 62L308 63.7L307.8 66.8L312.7 66.4L316.2 71.1L322.2 74.3L328.8 74.7L328 77.9L334.2 80.6L335.4 78.6L336.1 80.3L337.8 78.3L338.8 80.5L339.9 79.3L340.6 81.4L341.1 79.1L344.8 80.1L344.6 81.5L345.7 80L346.1 81.9L347.4 81Z"></path><path d="M471.4 150.9L472.3 152.5L469.5 155L468.1 159.8L470.7 159.6L471.3 161.4L476.4 160.1L477.9 163.4L480.6 161.2L480.4 158.4L481.5 158.7L480.3 156.4L482 154.4L487.3 156.9L491.4 156.4L497.6 157.8L500.2 156.9L502.4 165.7L502 170.9L498.8 168.9L493.7 169.5L493 172.3L487.1 174.4L481.7 174.4L481.4 175.8L479.3 176.2L479 178.3L474.4 180.9L472.2 179.1L471.9 176.4L469.8 176.5L472.4 174L472.2 171.4L474.5 170L471.3 167.3L460.6 174.6L457.9 174.6L457 172.6L454 173.6L452.4 171.7L454.7 167.6L451.8 163.6L453.7 160.8L453 159.7L455 155.9L453.9 155.6L455.7 154.8L455.4 155.7L460.1 157.4L464.8 153L471.4 150.9Z"></path><path d="M472.1 167.8L474.5 170L472.2 171.4L472.4 174L469.8 176.5L471.9 176.4L472.2 179.1L474.4 180.9L479 178.3L479.3 176.2L481.4 175.8L481.7 174.4L487.1 174.4L493 172.3L493.7 169.5L498.8 168.9L501.9 170.9L501.9 177L497.9 188.9L493.9 187.6L490.3 189L488.4 188.2L485.4 189.5L484.2 192.3L479.4 194.6L476 193.6L474.9 195.1L468.1 189.6L465.4 190L464.6 188.2L458.5 194.4L457.8 190.4L455.4 190.1L455.4 188.1L454.3 187.9L453.4 189.9L451.4 187.3L446 186.3L443.9 183.9L440 185.6L440 187.4L437.4 187.9L436.6 190.7L432.9 190.9L431.8 194.7L428.1 196.4L426.2 196.1L427.6 192.2L425.6 191.1L424.3 187.9L421.9 186.2L418.7 186.2L428.5 178.7L429.1 174.7L427.5 173.7L427 169.9L429.1 168.9L432.9 169.4L440.4 167.8L444.8 170.8L447.6 175L452.4 171.9L454 173.6L457 172.6L457.9 174.6L460.6 174.6L464.9 172.4L468 168.5L472.1 167.8Z"></path><path d="M413.9 108.3L420 110.9L417.9 115.7L419.5 117.4L419 119.9L420.3 120.3L420.1 124.5L421.9 124.6L422.2 126.3L420.1 135.5L424.3 139.7L424.5 151L426.7 159.1L431.3 161.1L429.1 168.9L427 169.9L427.5 173.7L429.1 174.7L428.5 178.7L418.4 186.2L412.6 193.3L407.5 193.9L400.8 198.2L398.2 195.5L394.3 195.7L391.6 193.6L387 197.3L389.5 201.2L389.4 203.3L383.4 211.6L380.8 210.5L377.7 211.5L373.2 215.5L369.1 214.1L366.8 211.5L367.3 209.2L364.9 204.9L362.2 206.8L360.1 206.2L362.3 196.4L359.6 189.1L362.5 184.9L366 173.6L368 171.3L376.3 168.9L381.2 165.2L384.4 160.6L388.7 159.7L392.5 161.6L398.8 159.3L400 154.9L396.9 151.2L396.5 145.6L400.4 139.7L398.5 134.5L399.7 130.4L397.9 127.2L404.2 116.8L408 116.6L412.8 111.2L412.5 107.9L413.9 108.3Z"></path><path d="M282.2 368.7L288.7 370.9L292.4 370.5L297.2 372.2L299.1 374.4L308.7 373.5L309.7 375.5L312 376.3L314.1 380.5L313.5 386.1L318.8 392.6L317.4 397L326.6 396.9L327.7 397.8L327 402.4L330.9 401L331.7 403.9L333.8 404.3L328.5 409.9L326.5 414.2L319.1 414.5L314.2 417.6L309.3 414.6L305.4 414.9L304.4 416.3L301.3 414.5L299.4 417.7L294.8 417.5L292.7 418.8L292.9 422.6L290.6 423.9L289.3 422.2L284.7 422.4L280.7 420.4L273.7 419L269.2 419.6L266.7 417.7L263.3 418.3L259.7 414.1L258.9 409.5L256.3 409.4L256.3 407.8L252.1 410.5L250 409.1L254.3 392.9L253.2 389.8L256.3 387.4L257.8 380.9L261 379.1L262.6 374.2L270.7 369.2L280.2 370.6L282.2 368.7Z"></path><path d="M378.5 378.7L375.8 379.7L373.9 378.2L374.8 374.9L381.6 372.6L383 370.6L380.2 369.2L377 369.7L374.9 366.8L388 362.5L394.7 361.8L396.9 362.9L407.1 357.9L405.9 356.7L409.5 348.9L408.6 348.1L410.9 347.6L412.2 345.4L414.2 346.8L414.2 350.1L423.9 352.5L422.4 355.3L423.5 361.7L414.5 365.6L411.1 368.7L410.8 371.1L412.3 371.6L410.4 374.8L397.2 374.6L396.1 374.1L396.7 370.6L394.1 372.2L395.5 374.7L390.8 375.9L387.1 373.6L382.6 375.6L379.8 374.1L376.3 376L376 378L378.5 378.7ZM382.1 376.1L383.8 377.2L380.6 377.9L382.1 376.1Z"></path><path d="M472.4 136.4L474.8 136.2L478.3 138.5L487.4 137.8L493.6 139.4L496.5 143.6L500.2 156.9L497.6 157.8L491.4 156.4L487.3 156.9L482 154.4L480.3 156.4L481.5 158.7L480.4 158.4L480.6 161.2L477.9 163.4L476.4 160.1L471.3 161.4L470.7 159.6L468.1 159.8L472.1 151.1L464.8 153L460.1 157.4L454.2 155.1L455.9 151.6L458 151.4L460 149L466.1 136.3L471.1 135.1L472.4 136.4Z"></path><path d="M98.7 201.6L94.3 200.8L98.2 198.4L99.3 195.4L104.9 195.5L107.2 197.8L109.7 195.5L111.8 196.2L111.6 194.3L114.2 193.5L116.1 195.8L119.4 190L128.2 189.5L128.2 186.7L131 184.5L130.8 181.2L132.9 181.1L134.9 176.5L144.5 176.6L148.9 181.9L150.9 182L151.2 184.8L153.2 184.7L154 187.5L156.8 188.4L159.2 186L162.3 189L161.6 193.3L160.2 193.6L162.2 198.4L161 199.5L161.8 201.4L160.7 205.3L162.4 208.8L161.3 216.3L175.2 216.3L176.6 217.9L181.2 218L182.1 221.7L179.6 224.3L179.7 227.6L183.9 234.2L180.2 237.8L180.1 241.3L177.5 243.9L176.1 248.9L172 252L168.1 249.3L157.6 250.1L153.4 244.4L145.6 243L140.8 237.8L139 238.7L132.8 235.3L130.6 236.7L126.3 236.3L121 230.8L120.4 231.7L119.4 229.8L116.9 229.6L116.2 225.9L114 225.8L114.6 223.5L112.7 219.8L114.1 216.3L111.8 209.6L113.6 206.2L112.5 199.3L110.2 201.2L107.4 199.8L98.7 201.6Z"></path><path d="M182.1 29.8L181.2 35.8L182.4 40.1L184.6 41.2L184.2 46.7L190.6 53L195.3 54.6L195.1 67.8L180.6 67.8L176 78L177.2 80.7L174.3 82.8L171.5 82.6L169.3 78.6L167.2 77.9L162.8 79.6L160.3 88.5L162.2 92.1L160.2 90.2L156.9 89.7L155.1 86L149.1 81.3L151.9 79.8L153.2 75.6L148.8 64.6L149.5 56.9L145.3 50.3L146.6 45.7L138.2 42.3L137.6 39.1L133.8 39.9L129.3 38.3L130.1 34.7L127.1 30.2L127.7 24.3L119.6 15.1L122.9 17.1L128 16.8L130.5 20.2L134.1 19.7L134.1 18.3L136.5 20.6L137.3 18.8L140.2 19.1L139.9 20.6L143.3 23.7L144.9 21.9L146.2 22.6L146 18L148.5 18.2L150 16.1L156.4 17.1L158.4 15.2L161.2 15.1L161.8 13.1L164.6 12.4L164.2 11.4L168.4 11.6L169.6 9L173.5 6.2L171.8 2.4L178.4 1.7L181.2 5.5L179 11.8L185.2 13.6L184.6 16.1L187.2 19.2L182.8 24.1L183.5 27L182.1 29.8Z"></path><path d="M282.5 488.1L279.8 491.7L282.2 494.1L281.8 495.8L279.1 498.4L275 508.4L265 516.8L263.5 515L264.6 514.4L264.8 508.9L267 508.2L268.7 504.1L270.5 503.4L271.7 505.5L273.5 505.1L275.6 500.6L274.2 497.9L275.1 495.6L272.9 497.3L273.8 498.8L269.3 502.3L265.4 501.4L262.1 498.7L260.8 494.7L256.3 492.7L250.1 486.5L241.8 483.9L237.5 478.3L231.9 481.5L231.8 477.7L221.8 468.6L218.4 468.4L216.5 471.1L211.1 469.8L219.7 462.5L224.5 455.7L226.8 455L233.7 445.6L235.9 446.5L234.9 444.1L242.3 439L244.4 439L243.8 438L245.6 437.9L247.2 434.7L254 433.6L255.4 431L256.6 431.6L259.2 429.4L262.1 430.6L265.6 428.9L266.4 430.5L269.9 428.7L270.6 430.6L280.9 431.3L284.5 434.5L287.8 434.1L294.8 438.7L300.6 446L306.6 447.4L311.6 446.9L312.5 449L309.4 450.5L309.1 455.2L306.4 457.3L308.1 458.7L307.1 457.5L309.2 456.7L312.2 458.4L298.8 481.9L282 495.8L282.9 492.9L281.8 491.5L284.9 491.9L289.5 488L290.2 488.7L290.3 486.8L292.8 486.5L293.7 481.4L296.1 481L296.2 479.1L299.6 477.1L299.3 472.1L300.6 471.6L301.2 473.6L300.9 469.8L296.8 471.7L296.7 473L292.6 469.7L292 467.3L292.1 471.3L294.6 472.3L292.5 473.4L292 477.2L290.9 475.9L291.1 478.8L289.5 479.4L290.2 481.6L287.9 482.3L287.9 484L284.1 484.6L282.5 488.1Z"></path><path d="M261.1 421.9L262.1 417.8L266.7 417.7L269.2 419.6L273.7 419L284.7 422.4L289.3 422.2L290.6 423.9L292.9 422.6L292.7 418.8L294.8 417.5L299.4 417.7L301.3 414.5L304.4 416.3L305.4 414.9L309.3 414.6L314.2 417.6L319.1 414.5L325.9 413.9L327.8 417.4L325.4 424.1L326.6 424.8L326.4 429.3L328.1 429.6L326.2 431L327.4 432.1L325.8 434L326.7 439.4L324.6 447.6L312.2 458.4L309 456.7L307.1 457.5L307.7 458.6L306.6 456.8L309 455.6L309.4 450.5L312.5 449.1L311.6 446.9L306.6 447.4L300.6 446L294.8 438.7L287.8 434.1L284.5 434.5L280.9 431.3L270.6 430.6L269.9 428.7L266.4 430.5L265.6 428.9L264 430.3L259.7 429.9L261.8 426.9L261.1 421.9ZM328.8 432.8L326.8 438.7L327.1 433.7L328.8 432.8Z"></path><path d="M462.1 197.1L474.4 203L482 209.9L476.2 213.1L470.1 222.3L467.7 223.7L465.4 223.9L461.8 221.7L461.9 219.1L458.5 214.8L458.9 212.6L463.9 212.4L463.4 208.9L464.9 207.7L463.7 203.3L461.6 202.2L461 197.6L462.1 197.1Z"></path><path d="M357.8 386.2L357.2 387.9L354.7 387.7L347.6 391.8L336.1 400.9L332.8 405.4L333.8 404.3L331.7 403.9L330.9 401L329.8 402.2L328.8 401L326.6 402L327.7 397.8L326.6 396.9L317.4 397L318.8 392.6L313.5 386.1L314.1 380.5L312.7 377.1L308.7 373.5L299.1 374.4L297.2 372.2L292.4 370.5L286.7 370.5L281.7 368.5L280.2 370.6L275.6 369.2L268.9 369.6L277.9 363.5L282.1 357.9L282.1 355.3L284.7 353.1L284.6 350.3L287.9 347.6L288.3 343.7L291.4 340L294.9 338.6L296.2 335.7L301.2 332.8L317.9 334.8L318.3 339.1L321.4 337.5L322.6 341.1L323.6 337.4L330.9 337.1L331 335.7L332.6 337.2L334.4 335.7L335.4 336.9L335.8 335.2L338.7 335.9L340.8 334.8L343.9 338.2L343.1 341.2L345.6 344L343.8 347L346.7 354L351.1 353.2L353.1 354.7L350.8 359.5L351.7 361.8L350.3 362.7L351.9 363.5L350.3 365.7L354.4 368.8L353.5 370.9L355.3 371.7L355 373.5L362.2 373L363.2 369.3L367.2 370.3L374.7 367L377 369.7L380.2 369.2L383 370.6L381.6 372.6L375 374.6L373.7 377.8L375.8 379.7L373.5 379.3L371.3 381.8L367.1 383.1L367.1 385.7L361.5 384.9L357.8 386.2ZM368.2 387L366.4 386.6L368.1 384.4L369.4 386.8L368.2 387Z"></path><path d="M346.4 189.8L345.9 190.9L347.8 191L349.8 195.5L352.4 196.5L351.3 199.7L353.3 201L354.9 205.5L362.2 206.8L363.4 205.5L361.8 209L356.9 211.9L355.9 215.2L351.7 220.3L353.5 223.3L358.5 224.7L355.5 224.8L354.8 227.9L357.4 228.4L354.5 230.2L355.1 234.1L357.6 236.1L356 237.4L355.7 242.2L358 241.9L354.9 242.8L354.2 240.5L353.8 242.5L350 242.5L341.4 246.7L338.7 244.3L338.2 249L336.3 247L333.3 246L332 246.9L331.8 244.8L328.4 246.7L327.6 244.6L326.6 247.1L326.4 243.7L323.1 240.3L321.6 242.3L319.8 240.1L318.3 241.3L316.6 246.5L304.8 240.8L306.7 234.9L303.9 236.9L302 241L300.6 240.5L299.6 237.7L300.7 235.3L299.4 226.2L300.2 224.4L299.1 222.5L300.9 212L308.1 193.9L317.7 181.9L319.4 174.3L316.4 170.8L318.9 166.8L318.6 162.7L325.6 159.2L327.6 155.2L329.2 155.5L328.6 152.8L331.1 149.8L330.3 147.3L332.3 145.7L329.2 142.5L324.4 141.9L329.4 139.5L335.5 140.7L336.1 142.2L340.4 144.2L342 154.1L340.1 163.4L337.3 166.3L340.4 167.6L339.3 169.5L346.3 177.6L351.9 175.5L353.6 177.7L352.6 181.1L349.3 182.1L346.4 189.8Z"></path><path d="M342.9 282.9L330.5 283.2L331.5 275.9L341.5 275.9L342.8 277.1L342.9 282.9Z"></path></g>
+    <g class="mapa__rotas"><path d="M396.5 373.3C489 202.6 603 126.8 613 -6"></path><path d="M395.6 373.6C488.2 202.8 603 126.9 613 -6"></path><path d="M351.5 382.1C450.7 207.5 603 129.9 613 -6"></path><path d="M441.2 184.8C526.9 98.9 603 60.8 613 -6"></path></g>
+    <g class="mapa__pontos"><circle cx="396.5" cy="373.3" r="4.5"></circle><circle cx="395.6" cy="373.6" r="4.5"></circle><circle cx="351.5" cy="382.1" r="4.5"></circle></g>
+  </svg>
+  <span class="mapa__rotulo" style="--x:60.7%;--y:70.8%;--dy:-2.2">Niterói</span>
+  <span class="mapa__rotulo" style="--x:60.6%;--y:70.9%;--dy:0.9">Rio de Janeiro</span>
+  <span class="mapa__rotulo mapa__rotulo--esq" style="--x:53.8%;--y:72.5%;--dy:2.2">São Paulo</span>
+  <span class="mapa__sua" style="--x:67.6%;--y:35.1%"><span class="mapa__anel"></span><span class="mapa__sua-rotulo">Your city?</span></span>
+  <span class="mapa__orlando" style="--x:93.9%;--y:1.1%"><img src="/assets/img/bandeiras/eua.svg" alt="" width="40" height="40" loading="lazy" decoding="async">Orlando</span>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+        <section class="perguntas secao claro" id="perguntas" aria-labelledby="perguntas-titulo">
+      <div class="caixa perguntas__grade">
+        <div class="perguntas__cabeca">
+          <h2 class="titulo" id="perguntas-titulo" data-palavras="" data-revela="palavras" aria-label="Frequently asked questions"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">F</span><span class="pc" style="--c:1">r</span><span class="pc" style="--c:2">e</span><span class="pc" style="--c:3">q</span><span class="pc" style="--c:4">u</span><span class="pc" style="--c:5">e</span><span class="pc" style="--c:6">n</span><span class="pc" style="--c:7">t</span><span class="pc" style="--c:8">l</span><span class="pc" style="--c:9">y</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:10">a</span><span class="pc" style="--c:11">s</span><span class="pc" style="--c:12">k</span><span class="pc" style="--c:13">e</span><span class="pc" style="--c:14">d</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:15">q</span><span class="pc" style="--c:16">u</span><span class="pc" style="--c:17">e</span><span class="pc" style="--c:18">s</span><span class="pc" style="--c:19">t</span><span class="pc" style="--c:20">i</span><span class="pc" style="--c:21">o</span><span class="pc" style="--c:22">n</span><span class="pc" style="--c:23">s</span></span></span></em></h2>
+          <p class="texto" data-revela="">What players, families and future franchisees ask most about the club.</p>
+          <a class="link-seta perguntas__wa" href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20have%20a%20question." target="_blank" rel="noopener" data-revela="" style="--atraso:.1s"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-regular"/></svg><span>Another question? Talk to the club</span></a>
+        </div>
+
+        <div class="perguntas__lista">
+          <details class="pergunta" data-revela="grade" style="--i:0" open="">
+            <summary class="pergunta__q"><span>What is the UPSL?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>The United Premier Soccer League is one of the main national soccer leagues in the United States, with clubs in many states. For United Florida FC, it is the way into the Lamar Hunt US Open Cup.</p></div>
+          </details>
+          <details class="pergunta" data-revela="grade" style="--i:1">
+            <summary class="pergunta__q"><span>Is there an age limit to play?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>Not in the UPSL adult category. Players aged 20, 30, 35 or older can compete. In the youth teams, tryouts are split by age group.</p></div>
+          </details>
+          <details class="pergunta" data-revela="grade" style="--i:2">
+            <summary class="pergunta__q"><span>How do the tryouts in Brazil work?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>You sign up on WhatsApp, get evaluated on the field by the club's coaching staff, and the approved players are called up to Orlando. The dates for each city are posted here and on Instagram @unitedfloridafc.</p></div>
+          </details>
+          <details class="pergunta" data-revela="grade" style="--i:3">
+            <summary class="pergunta__q"><span>When does the club debut?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>The official UPSL debut is set for the 2027 season, with all of the club's companies fully registered in Orlando by January 2027.</p></div>
+          </details>
+          <details class="pergunta" data-revela="grade" style="--i:4">
+            <summary class="pergunta__q"><span>How do I buy the official shirt?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>Pick the model in the store and tap Buy. The order is placed directly with the club on WhatsApp.</p></div>
+          </details>
+          <details class="pergunta" data-revela="grade" style="--i:5">
+            <summary class="pergunta__q"><span>How does the franchise in Brazil work?</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus-bold"/></svg></summary>
+            <div class="pergunta__r"><p>The franchisee gets exclusive rights in the city, uses the international brand and the Reebok kit, and is featured on the club's official US website. To learn about the model, talk to the club on WhatsApp.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+        <section class="cta" aria-labelledby="cta-titulo">
+      <div class="caixa cta__grade">
+        <h2 class="titulo" id="cta-titulo" data-palavras="" data-revela="palavras" aria-label="Your next game is in Orlando"><span class="pw"><span class="pw__i"><span class="pc" style="--c:0">Y</span><span class="pc" style="--c:1">o</span><span class="pc" style="--c:2">u</span><span class="pc" style="--c:3">r</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:4">n</span><span class="pc" style="--c:5">e</span><span class="pc" style="--c:6">x</span><span class="pc" style="--c:7">t</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:8">g</span><span class="pc" style="--c:9">a</span><span class="pc" style="--c:10">m</span><span class="pc" style="--c:11">e</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:12">i</span><span class="pc" style="--c:13">s</span></span></span> <span class="pw"><span class="pw__i"><span class="pc" style="--c:14">i</span><span class="pc" style="--c:15">n</span></span></span> <em><span class="pw"><span class="pw__i"><span class="pc" style="--c:16">O</span><span class="pc" style="--c:17">r</span><span class="pc" style="--c:18">l</span><span class="pc" style="--c:19">a</span><span class="pc" style="--c:20">n</span><span class="pc" style="--c:21">d</span><span class="pc" style="--c:22">o</span></span></span></em></h2>
+        <div class="botoes cta__botoes" data-revela="" style="--atraso:.15s">
+          <a class="botao botao--branco" href="#peneira"><span>Sign up for tryouts</span><svg class="i i--seta" aria-hidden="true" focusable="false"><use href="#i-arrow-right-bold"/></svg></a>
+          <a class="botao botao--contorno" href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20want%20to%20talk%20to%20the%20club." target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-regular"/></svg><span>Talk on WhatsApp</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="rodape">
+    <div class="caixa rodape__grade">
+      <div class="rodape__marca">
+        <img src="/assets/img/escudo-240.webp" alt="United Florida FC" width="240" height="278" loading="lazy" decoding="async">
+        <div>
+          <p class="rodape__frase">The Brazilian club in Florida.</p>
+          <p class="rodape__local">Orlando, Florida, USA</p>
+          <ul class="rodape__redes">
+            <li><a href="https://www.instagram.com/unitedfloridafc" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-instagram-logo-regular"/></svg></a></li>
+            <li><a href="https://www.tiktok.com/@unitedfloridafc" target="_blank" rel="noopener" aria-label="TikTok"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-tiktok-logo-regular"/></svg></a></li>
+            <li><a href="https://www.facebook.com/unitedfloridafc" target="_blank" rel="noopener" aria-label="Facebook"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-facebook-logo-regular"/></svg></a></li>
+            <li><a href="https://x.com/unitedfloridafc" target="_blank" rel="noopener" aria-label="X"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-x-logo-regular"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <nav class="rodape__menu" aria-label="Footer">
+        <div>
+          <p class="rodape__titulo">Club</p>
+          <ul>
+            <li><a href="#clube">The club</a></li>
+            <li><a href="#caminho">The road</a></li>
+            <li><a href="#fundador">Founder</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="rodape__titulo">Fans</p>
+          <ul>
+            <li><a href="#uniformes">Kits</a></li>
+            <li><a href="/loja/">Store</a></li>
+            <li><a href="#perguntas">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="rodape__titulo">Players and business</p>
+          <ul>
+            <li><a href="#peneira">Tryouts</a></li>
+            <li><a href="#franquias">Franchises</a></li>
+            <li><a href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20want%20to%20talk%20to%20the%20club." target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="caixa rodape__base">
+      <p>© 2026 United Florida FC. <span>All rights reserved.</span></p>
+      <p><span>Website by</span> <a href="https://www.instagram.com/feliperodrigues.sites/" target="_blank" rel="noopener">Felipe Rodrigues Sites</a></p>
+    </div>
+  </footer>
+
+  <a class="flutuante" href="https://wa.me/5521972061009?text=Hi!%20I%20found%20the%20United%20Florida%20FC%20website%20and%20I%20want%20to%20talk%20to%20the%20club." target="_blank" rel="noopener" aria-label="Talk to the club on WhatsApp"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-fill"/></svg></a>
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden"><symbol id="i-arrow-right-bold" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol><symbol id="i-calendar-check-light" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Zm-39.76-86.24a6,6,0,0,1,0,8.48l-48,48a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L116,167.51l43.76-43.75A6,6,0,0,1,168.24,123.76Z"/></symbol><symbol id="i-user-plus-light" viewBox="0 0 256 256"><path d="M254,136a6,6,0,0,1-6,6H230v18a6,6,0,0,1-12,0V142H200a6,6,0,0,1,0-12h18V112a6,6,0,0,1,12,0v18h18A6,6,0,0,1,254,136Zm-57.41,60.14a6,6,0,1,1-9.18,7.72C166.9,179.45,138.69,166,108,166s-58.89,13.45-79.41,37.86a6,6,0,0,1-9.18-7.72C35.14,177.41,55,164.48,77,158.25a66,66,0,1,1,62,0C161,164.48,180.86,177.41,196.59,196.14ZM108,154a54,54,0,1,0-54-54A54.06,54.06,0,0,0,108,154Z"/></symbol><symbol id="i-microphone-stage-light" viewBox="0 0 256 256"><path d="M168,18A69.94,69.94,0,0,0,98.74,98l-70,95.46a13.92,13.92,0,0,0,1.39,18.17l14.3,14.3a13.93,13.93,0,0,0,18.17,1.39l95.46-70A70,70,0,1,0,168,18Zm58,70a57.65,57.65,0,0,1-13,36.52L131.49,43A57.95,57.95,0,0,1,226,88ZM55.5,217.59a2,2,0,0,1-2.6-.2L38.61,203.1a2,2,0,0,1-.2-2.6l64.22-87.56a70.32,70.32,0,0,0,40.44,40.43ZM110,88a57.73,57.73,0,0,1,13-36.52L204.53,133A58,58,0,0,1,110,88Zm-1.75,59.75a6,6,0,0,1,0,8.49l-8,8a6,6,0,1,1-8.49-8.49l8-8A6,6,0,0,1,108.26,147.74Z"/></symbol><symbol id="i-t-shirt-light" viewBox="0 0 256 256"><path d="M246.64,63,194.87,34.74A5.93,5.93,0,0,0,192,34H160a6,6,0,0,0-6,6,26,26,0,0,1-52,0,6,6,0,0,0-6-6H64a5.93,5.93,0,0,0-2.88.74L9.36,63A13.77,13.77,0,0,0,3.58,81.55l19.28,36.81A14.38,14.38,0,0,0,35.67,126H58v82a14,14,0,0,0,14,14H184a14,14,0,0,0,14-14V126h22.34a14.38,14.38,0,0,0,12.81-7.64l19.28-36.81A13.77,13.77,0,0,0,246.64,63Zm-211,51a2.42,2.42,0,0,1-2.18-1.21L14.21,76a1.82,1.82,0,0,1,.9-2.47L58,50.11V114ZM186,208a2,2,0,0,1-2,2H72a2,2,0,0,1-2-2V46H90.48a38,38,0,0,0,75,0H186Zm55.8-132-19.28,36.8a2.42,2.42,0,0,1-2.18,1.21H198V50.11l42.9,23.4A1.83,1.83,0,0,1,241.79,76Z"/></symbol><symbol id="i-caret-left-bold" viewBox="0 0 256 256"><path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"/></symbol><symbol id="i-caret-right-bold" viewBox="0 0 256 256"><path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"/></symbol><symbol id="i-map-pin-fill" viewBox="0 0 256 256"><path d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"/></symbol><symbol id="i-whatsapp-logo-bold" viewBox="0 0 256 256"><path d="M187.3,159.06A36.09,36.09,0,0,1,152,188a84.09,84.09,0,0,1-84-84A36.09,36.09,0,0,1,96.94,68.7,12,12,0,0,1,110,75.1l11.48,23a12,12,0,0,1-.75,12l-8.52,12.78a44.56,44.56,0,0,0,20.91,20.91l12.78-8.52a12,12,0,0,1,12-.75l23,11.48A12,12,0,0,1,187.3,159.06ZM236,128A108,108,0,0,1,78.77,224.15L46.34,235A20,20,0,0,1,21,209.66l10.81-32.43A108,108,0,1,1,236,128Zm-24,0A84,84,0,1,0,55.27,170.06a12,12,0,0,1,1,9.81l-9.93,29.79,29.79-9.93a12.1,12.1,0,0,1,3.8-.62,12,12,0,0,1,6,1.62A84,84,0,0,0,212,128Z"/></symbol><symbol id="i-map-pin-light" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol><symbol id="i-globe-hemisphere-west-light" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm90,102a89.55,89.55,0,0,1-7.46,35.86l-46.69-28.71a13.94,13.94,0,0,0-5.46-2l-22.82-3.07A14.06,14.06,0,0,0,121.06,138h-9.92a2,2,0,0,1-1.8-1.13l-3.8-7.86a13.94,13.94,0,0,0-9.66-7.59l-10.71-2.3L94.4,103a2,2,0,0,1,1.74-1h16.71a13.9,13.9,0,0,0,6.76-1.75l12.25-6.75a14.73,14.73,0,0,0,2.62-1.88l26.91-24.33a13.93,13.93,0,0,0,2.83-17.21L161,44.25A90.16,90.16,0,0,1,218,128ZM144.6,39.54l9.15,16.39a2,2,0,0,1-.41,2.46L126.43,82.72a1.84,1.84,0,0,1-.37.27l-12.25,6.76a2,2,0,0,1-1,.25H96.14A14,14,0,0,0,84,97L73.18,115.91a2,2,0,0,1-.19-.35L61.5,84.89a2,2,0,0,1,0-1.48L72.68,57.06A89.9,89.9,0,0,1,144.6,39.54ZM38,128A89.52,89.52,0,0,1,49.38,84.23a13.85,13.85,0,0,0,.89,4.87l11.49,30.67a13.94,13.94,0,0,0,10.16,8.78l21.44,4.6a2,2,0,0,1,1.38,1.09l3.8,7.86a14.07,14.07,0,0,0,12.6,7.9h4.56l-8.49,19a14,14,0,0,0,2.51,15.2l.1.11,19.68,20.26a2,2,0,0,1,.46,1.7L127.7,218A90.1,90.1,0,0,1,38,128Zm102.08,89.19,1.67-8.6a14.07,14.07,0,0,0-3.47-12.16l-.1-.11L118.5,176.06a2,2,0,0,1-.33-2.14l13.7-30.73A2,2,0,0,1,134,142l22.82,3.08a2,2,0,0,1,.78.27L205,174.55A90.18,90.18,0,0,1,140.08,217.19Z"/></symbol><symbol id="i-whatsapp-logo-regular" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-plus-bold" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/></symbol><symbol id="i-instagram-logo-regular" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></symbol><symbol id="i-tiktok-logo-regular" viewBox="0 0 256 256"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></symbol><symbol id="i-facebook-logo-regular" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"/></symbol><symbol id="i-x-logo-regular" viewBox="0 0 256 256"><path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"/></symbol><symbol id="i-whatsapp-logo-fill" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></symbol></svg>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SportsTeam","@id":"/#clube","name":"United Florida FC","sport":"Soccer","description":"United Florida FC, the Brazilian club in Florida. Based in Orlando, debuting in the UPSL in 2027, with Reebok kits, tryouts and official franchises in Brazil.","foundingDate":"2026","logo":"/assets/img/escudo-480.webp","image":"/assets/img/og.jpg","location":{"@type":"Place","name":"Orlando, Florida","address":{"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"}},"founder":{"@type":"Person","name":"Maicon Vilela","jobTitle":"President and founder"},"memberOf":{"@type":"SportsOrganization","name":"United Premier Soccer League (UPSL)"},"sameAs":["https://www.instagram.com/unitedfloridafc","https://www.tiktok.com/@unitedfloridafc","https://www.facebook.com/unitedfloridafc","https://x.com/unitedfloridafc"]},{"@type":"FAQPage","@id":"/en/#perguntas","mainEntity":[{"@type":"Question","name":"What is the UPSL?","acceptedAnswer":{"@type":"Answer","text":"The United Premier Soccer League is one of the main national soccer leagues in the United States, with clubs in many states. For United Florida FC, it is the way into the Lamar Hunt US Open Cup."}},{"@type":"Question","name":"Is there an age limit to play?","acceptedAnswer":{"@type":"Answer","text":"Not in the UPSL adult category. Players aged 20, 30, 35 or older can compete. In the youth teams, tryouts are split by age group."}},{"@type":"Question","name":"How do the tryouts in Brazil work?","acceptedAnswer":{"@type":"Answer","text":"You sign up on WhatsApp, get evaluated on the field by the club's coaching staff, and the approved players are called up to Orlando. The dates for each city are posted here and on Instagram @unitedfloridafc."}},{"@type":"Question","name":"When does the club debut?","acceptedAnswer":{"@type":"Answer","text":"The official UPSL debut is set for the 2027 season, with all of the club's companies fully registered in Orlando by January 2027."}},{"@type":"Question","name":"How do I buy the official shirt?","acceptedAnswer":{"@type":"Answer","text":"Pick the model in the store and tap Buy. The order is placed directly with the club on WhatsApp."}},{"@type":"Question","name":"How does the franchise in Brazil work?","acceptedAnswer":{"@type":"Answer","text":"The franchisee gets exclusive rights in the city, uses the international brand and the Reebok kit, and is featured on the club's official US website. To learn about the model, talk to the club on WhatsApp."}}]}]}</script>
+  <script>;(() => {
+const temIO = 'IntersectionObserver' in window
+const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches
+const mouse = matchMedia('(hover: hover) and (pointer: fine)').matches
+const alvos = document.querySelectorAll('[data-revela]')
+if (!temIO) alvos.forEach((el) => el.classList.add('visivel'))
+else {
+const io = new IntersectionObserver(
+(entradas) => {
+for (const e of entradas) {
+if (!e.isIntersecting) continue
+e.target.classList.add('visivel')
+io.unobserve(e.target)
+}
+},
+{ rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+)
+alvos.forEach((el) => io.observe(el))
+}
+const contar = (el, largura, partida) => {
+const final = el.textContent
+const m = final.match(/^(\D*?)(\d[\d.]*)(.*)$/)
+if (!m) return
+const alvo = Number(m[2].replace(/\./g, ''))
+const suave = (t) => 1 - Math.pow(1 - t, 3)
+el.style.display = 'inline-block'
+el.style.minWidth = `${Math.ceil(largura)}px` // a largura final fica reservada
+if (el.tagName === 'SPAN') el.style.textAlign = 'left' // "+<span>100</span>": sem buraco
+el.textContent = m[1] + '0' + m[3]
+const quadro = (agora) => {
+if (agora < partida.em) return requestAnimationFrame(quadro)
+partida.inicio ||= agora
+const t = Math.min(1, (agora - partida.inicio) / 1600)
+el.textContent = t < 1 ? m[1] + Math.floor(alvo * suave(t)) + m[3] : final
+if (t < 1) requestAnimationFrame(quadro)
+}
+requestAnimationFrame(quadro)
+}
+const contadores = document.querySelectorAll('[data-conta]')
+if (temIO && !reduzir && contadores.length) {
+const io = new IntersectionObserver(
+(entradas) => {
+for (const e of entradas) {
+if (!e.isIntersecting) continue
+io.unobserve(e.target)
+const partida = { em: performance.now() + Number(e.target.dataset.contaAtraso || 0), inicio: 0 }
+if (e.target.hasAttribute('data-conta-grupo')) {
+for (const el of e.target.querySelectorAll('[data-conta]')) contar(el, el.getBoundingClientRect().width, partida)
+} else contar(e.target, e.boundingClientRect.width, partida)
+}
+},
+{ rootMargin: '0px 0px -8% 0px' },
+)
+contadores.forEach((el) => el.closest('[data-conta-grupo]') || io.observe(el))
+document.querySelectorAll('[data-conta-grupo]').forEach((g) => io.observe(g))
+}
+const brilhos = document.querySelectorAll('[data-brilho]')
+if (temIO && !reduzir) {
+const io = new IntersectionObserver((entradas) => entradas.forEach((e) => e.target.classList.toggle('brilho-vivo', e.isIntersecting)))
+brilhos.forEach((el) => io.observe(el))
+}
+if (mouse) {
+for (const el of brilhos) {
+let raf = 0
+let px = 0
+let py = 0
+const aplicar = () => {
+raf = 0
+const caixa = el.getBoundingClientRect() // lida a cada quadro: o botão pode se mexer
+el.style.setProperty('--bx', `${(px - caixa.left).toFixed(1)}px`)
+el.style.setProperty('--by', `${(py - caixa.top).toFixed(1)}px`)
+}
+el.addEventListener('pointerenter', (e) => {
+px = e.clientX
+py = e.clientY
+aplicar()
+el.classList.add('brilho-mouse')
+})
+el.addEventListener('pointermove', (e) => {
+px = e.clientX
+py = e.clientY
+if (!raf) raf = requestAnimationFrame(aplicar)
+})
+el.addEventListener('pointerleave', () => {
+cancelAnimationFrame(raf)
+raf = 0
+el.classList.remove('brilho-mouse')
+})
+}
+}
+})()
+;
+;(() => {
+const topo = document.getElementById('topo')
+if (!topo) return
+const sentinela = document.querySelector('.topo-sentinela')
+if (sentinela && 'IntersectionObserver' in window) {
+new IntersectionObserver(([e]) => {
+topo.classList.toggle('topo--solido', !e.isIntersecting)
+document.documentElement.classList.toggle('rolou', !e.isIntersecting) // botão flutuante do WhatsApp
+}).observe(sentinela)
+} else {
+topo.classList.add('topo--solido')
+document.documentElement.classList.add('rolou')
+}
+const links = [...topo.querySelectorAll('.topo__menu a[href^="#"]:not(.botao)')]
+const secoes = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean)
+if (secoes.length && 'IntersectionObserver' in window) {
+const io = new IntersectionObserver((entradas) => {
+for (const e of entradas) {
+const link = links.find((a) => a.getAttribute('href') === `#${e.target.id}`)
+if (link) link.classList.toggle('ativo', e.isIntersecting)
+}
+}, { rootMargin: '-45% 0px -54% 0px' })
+secoes.forEach((s) => io.observe(s))
+}
+const botao = topo.querySelector('.topo__abrir')
+const menu = document.getElementById('menu')
+const rotulos = { abrir: botao.getAttribute('aria-label'), fechar: document.documentElement.lang === 'en' ? 'Close menu' : 'Fechar menu' }
+const alternar = (abrir) => {
+topo.classList.toggle('topo--aberto', abrir)
+botao.setAttribute('aria-expanded', String(abrir))
+botao.setAttribute('aria-label', abrir ? rotulos.fechar : rotulos.abrir)
+}
+botao.addEventListener('click', () => alternar(!topo.classList.contains('topo--aberto')))
+menu.addEventListener('click', (e) => e.target.closest('a') && alternar(false))
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape' && topo.classList.contains('topo--aberto')) {
+alternar(false)
+botao.focus()
+}
+})
+})()
+;
+;(() => {
+const vitrine = document.querySelector('[data-vitrine]')
+if (!vitrine) return
+const kits = [...vitrine.querySelectorAll('.kit')]
+const pontos = [...vitrine.querySelectorAll('[data-ir]')]
+const aviso = vitrine.querySelector('[data-vitrine-aviso]')
+const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches
+const pos = (k) => Number(k.dataset.pos)
+const nome = (k) => k.querySelector('.kit__nome').textContent
+const atualizar = () => {
+const centro = kits.find((k) => pos(k) === 0)
+pontos.forEach((p) => p.setAttribute('aria-current', String(Number(p.dataset.ir) === Number(centro.dataset.kit))))
+kits.forEach((k) => {
+const lateral = pos(k) !== 0
+k.querySelector('.kit__comprar').tabIndex = lateral ? -1 : 0
+k.setAttribute('aria-hidden', String(lateral))
+})
+if (aviso) aviso.textContent = nome(centro)
+}
+const girar = (passo) => {
+for (const k of kits) {
+let novo = pos(k) - passo
+if (novo < -1 || novo > 1) {
+novo = novo < -1 ? 1 : -1
+if (reduzir) k.dataset.pos = novo
+else {
+k.classList.add('kit--salta')
+setTimeout(() => {
+k.dataset.pos = novo
+requestAnimationFrame(() => k.classList.remove('kit--salta'))
+}, 190)
+}
+} else k.dataset.pos = novo
+}
+atualizar()
+}
+const irPara = (indice) => {
+const alvo = kits.find((k) => Number(k.dataset.kit) === indice)
+if (alvo && pos(alvo) !== 0) girar(pos(alvo))
+}
+vitrine.querySelector('.vitrine__seta--ant').addEventListener('click', () => girar(-1))
+vitrine.querySelector('.vitrine__seta--prox').addEventListener('click', () => girar(1))
+kits.forEach((k) => k.querySelector('.kit__toque').addEventListener('click', () => girar(pos(k))))
+pontos.forEach((p) => p.addEventListener('click', () => irPara(Number(p.dataset.ir))))
+vitrine.addEventListener('keydown', (e) => {
+if (e.key === 'ArrowLeft') girar(-1)
+else if (e.key === 'ArrowRight') girar(1)
+})
+const palco = vitrine.querySelector('.vitrine__palco')
+let x0 = null
+palco.addEventListener('pointerdown', (e) => {
+if (e.pointerType !== 'mouse') x0 = e.clientX
+})
+palco.addEventListener('pointerup', (e) => {
+if (x0 === null) return
+const dx = e.clientX - x0
+x0 = null
+if (Math.abs(dx) > 40) girar(dx < 0 ? 1 : -1)
+})
+palco.addEventListener('pointercancel', () => (x0 = null))
+atualizar()
+})()
+;
+;(() => {
+const html = document.documentElement
+const reduzir = matchMedia('(prefers-reduced-motion: reduce)')
+const desenharTudo = () => html.classList.add('cv-pronto')
+if (location.hash.length > 1) desenharTudo()
+document.addEventListener('click', (e) => {
+const a = e.target.closest('a[href^="#"]')
+if (!a || e.defaultPrevented) return
+const id = a.getAttribute('href').slice(1)
+const alvo = id && document.getElementById(id)
+if (!alvo) return
+e.preventDefault()
+desenharTudo()
+const fontes = document.fonts
+? Promise.race([Promise.all([document.fonts.load('300 20px "Inter Tight"'), document.fonts.load('40px Assinatura')]), new Promise((r) => setTimeout(r, 700))])
+: Promise.resolve()
+fontes.catch(() => {}).then(() => requestAnimationFrame(() => {
+alvo.scrollIntoView({ behavior: reduzir.matches ? 'auto' : 'smooth', block: 'start' })
+history.pushState(null, '', '#' + id)
+if (!alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1')
+alvo.focus({ preventScroll: true })
+}))
+})
+})()</script>
+
+
+</body></html>

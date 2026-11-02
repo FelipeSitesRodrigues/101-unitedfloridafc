@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- @preload -->
+  <link rel="preload" href="/assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // js: liga as animações de entrada (sem JS tudo aparece no lugar). js-abrindo: até a primeira
+    // pintura a foto do clube (seção vizinha do hero) fica fora, pra não disputar a banda com a
+    // foto do hero no celular (memória cv-secao-vizinha-hero-lcp). Sai na 1ª pintura ou em 2,5 s.
+    (function () {
+      var h = document.documentElement
+      h.classList.add('js', 'js-abrindo')
+      var pronto = function () { h.classList.remove('js-abrindo') }
+      try {
+        new PerformanceObserver(function (l) { if (l.getEntriesByName('first-contentful-paint').length) pronto() }).observe({ type: 'paint', buffered: true })
+      } catch (e) { pronto() }
+      setTimeout(pronto, 2500)
+    })()
+  </script>
+  <title>United Florida FC | O clube dos brasileiros em Orlando, Flórida</title>
+  <meta name="description" content="Clube de futebol brasileiro com sede em Orlando, Flórida. Estreia na UPSL em 2027, uniformes Reebok, peneiras no Brasil sem limite de idade no adulto e franquias oficiais.">
+  <!-- @robots -->
+  <meta name="theme-color" content="#0E2664">
+  <meta name="format-detection" content="telephone=no">
+  <!-- @meta-idioma -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="United Florida FC">
+  <meta property="og:title" content="United Florida FC | O clube dos brasileiros na Flórida">
+  <meta property="og:description" content="Sede em Orlando, estreia na UPSL em 2027 e o caminho aberto até a US Open Cup. Vestido pela Reebok.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Três jogadores do United Florida FC com o uniforme marinho da Reebok num estúdio azul">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- @css -->
+</head>
+<body>
+  <!--
+    LEITURA: site oficial de clube para atleta brasileiro, pai de atleta da base e franqueado,
+    em linguagem de lançamento de uniforme (editorial esportivo), CSS próprio.
+    MUNDO: marinho #0E2664 do escudo e da camisa, branco neve #F8F8FA, celeste #9CCBEB (kit 3)
+    como destaque de palavra no escuro e azul vibrante #1F5BFF só em ação e destaque no claro.
+    Inter Tight nos títulos, rótulos e botões (redesenho de 2026-11-02), Inter no texto. Assinatura: o selo
+    "EST. 2027" desenhado como o patch lateral da camisa.
+    HISTÓRIA: o atleta vê o clube, entende o caminho até a MLS, vê a camisa e a compra, conhece o
+    fundador e se inscreve na peneira; o empresário vê a franquia. Tudo fecha no WhatsApp.
+    FORMA: mockups aprovados seção por seção pelo Felipe (0101 - United Florida FC/mockup/).
+    Seções baixas de propósito (pedido do Felipe em 2026-11-02): pouca rolagem entre uma e outra.
+  -->
+  <a class="pular" href="#conteudo" data-i18n="geral.pular">Pular para o conteúdo</a>
+
+  <!-- @parcial 00-header -->
+
+  <main id="conteudo">
+    <!-- @parcial 01-hero -->
+    <!-- @parcial 02-faixa -->
+    <!-- @parcial 03-clube -->
+    <!-- @parcial 04-caminho -->
+    <!-- @parcial 05-uniformes -->
+    <!-- @parcial 06-loja -->
+    <!-- @parcial 07-fundador -->
+    <!-- @parcial 08-peneira -->
+    <!-- @parcial 09-franquias -->
+    <!-- @parcial 10-perguntas -->
+    <!-- @parcial 11-cta -->
+  </main>
+
+  <!-- @parcial 13-rodape -->
+
+  <!-- @sprite -->
+  <!-- @schema -->
+  <!-- @js -->
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* ---------------------------------------------------------------- peneira
+   Cartaz de seletiva (referência do walk-on tryout): foto dos garotos à esquerda num painel
+   marinho cortado na diagonal, título gigante e a informação em blocos à direita.            */
+.peneira { overflow: clip; padding: 64px 0; }
+.peneira__foto {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 41%;
+  background: var(--marinho);
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+}
+.peneira__foto picture, .peneira__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 40%; }
+.peneira__foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(8 22 52 / .35), rgb(8 22 52 / 0) 40%); }
+.peneira__grade { display: grid; grid-template-columns: 1fr minmax(0, 650px); }
+.peneira__conteudo { grid-column: 2; }
+
+.peneira__titulo { display: grid; }
+.peneira__grande { font-size: 132px; line-height: .86; letter-spacing: .005em; color: var(--marinho); }
+.peneira__sub { margin-top: 8px; font-size: 40px; line-height: 1; color: var(--azul); transform: skewX(-8deg); transform-origin: left bottom; }
+.peneira__conteudo > .texto { margin-top: 16px; max-width: 30em; }
+
+.categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.categorias li {
+  padding: 8px 14px 7px;
+  border-radius: 99px;
+  box-shadow: inset 0 0 0 1.5px var(--marinho);
+  font: 600 15px/1 var(--f-rotulo);
+}
+.categorias__adulto { background: var(--azul); color: #fff; box-shadow: none !important; }
+
+.cidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.cidade {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 14px 8px 13px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--linha-clara), 0 10px 24px rgb(14 38 100 / .06);
+  text-align: center;
+}
+.cidade__pino { font-size: 24px; color: var(--azul); }
+.cidade strong { font: 700 18px/1.1 var(--f-rotulo); letter-spacing: .02em; }
+.cidade span { font-size: 14px; color: var(--tinta-2); }
+
+.passos { margin-top: 18px; }
+.passos__titulo {
+  padding: 9px 16px 8px;
+  border-radius: 10px 10px 0 0;
+  background: var(--marinho);
+  color: #fff;
+  font: 600 17px/1 var(--f-rotulo);
+  text-align: center;
+}
+.passos ol { display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 0 0 10px 10px; box-shadow: inset 0 0 0 1px var(--linha-clara); background: #fff; }
+.passos li { display: flex; align-items: center; gap: 10px; padding: 13px 14px; font: 700 16.5px/1.15 var(--f-rotulo); letter-spacing: .02em; }
+.passos li + li { border-left: 1px solid var(--linha-clara); }
+.passos__n { display: grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--azul); color: #fff; font: 400 16px/1 var(--f-titulo); }
+.peneira__cta { margin-top: 22px; min-height: 60px; padding: 0 34px; font-size: 22px; }
+.peneira__cta .i { font-size: 24px; }
+
+@media (max-width: 74.99em) {
+  .peneira__foto { width: 36%; }
+  .peneira__grade { grid-template-columns: 1fr minmax(0, 580PX); }
+  .peneira__grande { font-size: 104PX; }
+  .peneira__sub { font-size: 34PX; }
+  .passos li { padding: 12PX 10PX; font-size: 15PX; }
+}
+@media (max-width: 47.99em) {
+  .peneira { padding: 0 0 var(--pad); }
+  .peneira__foto { position: relative; width: 100%; height: 300PX; clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); }
+  .peneira__foto img { object-position: 45% 30%; }
+  .peneira__grade { grid-template-columns: 1fr; margin-top: 24PX; }
+  .peneira__conteudo { grid-column: 1; }
+  .peneira__grande { font-size: clamp(76PX, 23vw, 96PX); }
+  .peneira__sub { font-size: clamp(24PX, 7vw, 30PX); }
+  .categorias li { font-size: 13.5PX; padding: 7PX 11PX 6PX; }
+  .cidades { grid-template-columns: 1fr; }
+  .cidade { grid-template-columns: auto 1fr auto; justify-items: start; align-items: center; gap: 10PX; padding: 12PX 14PX; text-align: left; }
+  .passos ol { grid-template-columns: 1fr; }
+  .passos li + li { border-left: 0; border-top: 1px solid var(--linha-clara); }
+  .peneira__cta { width: 100%; font-size: 19PX; }
+}

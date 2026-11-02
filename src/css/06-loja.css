@@ -1,0 +1,99 @@
+/* ---------------------------------------------------------------- loja
+   A roda de amigos vista de baixo, com o título no céu; os cartões dos produtos sobem por cima
+   da base da foto (economiza altura e amarra a foto à vitrine). A compra fecha no WhatsApp.  */
+.loja__banner {
+  position: relative;
+  height: 470px;
+  border-radius: var(--raio-painel);
+  overflow: hidden;
+  background: #4F8DD6;
+}
+.loja__banner picture, .loja__banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; }
+.loja__titulo {
+  position: absolute;
+  left: 50%;
+  top: 46px;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  color: #fff;
+}
+/* sombra atrás do título, pra o branco segurar no céu claro */
+.loja__titulo::before {
+  content: '';
+  position: absolute;
+  inset: -30px -60px;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(14 38 100 / .38), rgb(14 38 100 / 0));
+}
+.loja__titulo .titulo { font-size: 74px; text-shadow: 0 2px 24px rgb(14 38 100 / .3); }
+.loja__titulo .titulo em { color: #DDEFFF; }
+.loja__titulo p { margin-top: 10px; font-size: 19px; font-weight: 500; text-shadow: 0 1px 12px rgb(14 38 100 / .5); }
+
+.produtos {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: -64px 32px 0;
+}
+.produto {
+  display: grid;
+  padding: 14px 14px 16px;
+  border-radius: var(--raio-card);
+  background: #fff;
+  box-shadow: 0 18px 40px rgb(14 38 100 / .12), 0 0 0 1px rgb(14 38 100 / .05);
+}
+.produto__foto {
+  display: grid;
+  place-items: center;
+  height: 210px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #EEF2F9, #E3E9F4);
+  overflow: hidden;
+}
+.produto__foto picture { height: 92%; }
+.produto__foto img { height: 100%; width: auto; transition: transform .7s var(--ease); }
+.produto__foto--bone picture { height: 74%; }
+.produto:hover .produto__foto img { transform: scale(1.05); }
+.produto__nome { margin-top: 14px; font: 600 17px/1.2 var(--f-rotulo); letter-spacing: -.01em; }
+.produto__preco { margin-top: 4px; font: 700 22px/1.2 var(--f-texto); letter-spacing: -.01em; }
+.produto__comprar {
+  display: grid;
+  place-items: center;
+  min-height: 46px;
+  margin-top: 12px;
+  border-radius: var(--raio-botao);
+  color: #fff;
+  background:
+    radial-gradient(70% 90% at 50% -20%, rgb(255 255 255 / .38), rgb(255 255 255 / 0) 60%),
+    radial-gradient(60% 70% at 50% 125%, rgb(205 225 255 / .6), rgb(205 225 255 / 0) 70%),
+    linear-gradient(180deg, #4A7DFF 0%, #1F5BFF 52%, #1B50E6 100%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .6), inset 0 0 0 1px rgb(255 255 255 / .3), 0 10px 22px -12px rgb(31 91 255 / .9);
+  font: 600 16px/1 var(--f-rotulo);
+  transition: filter .3s var(--ease-hover), transform .3s var(--ease);
+}
+.produto__comprar:hover { filter: brightness(1.08); }
+.produto__comprar:active { transform: scale(.98); }
+.loja__rodape { display: flex; justify-content: center; margin-top: 30px; }
+
+@media (max-width: 74.99em) {
+  .loja__banner { height: 420PX; }
+  .loja__titulo .titulo { font-size: clamp(50PX, 7vw, 66PX); }
+  .produtos { margin-inline: 16PX; gap: 12PX; }
+  .produto__foto { height: 180PX; }
+}
+@media (max-width: 47.99em) {
+  .loja__banner { height: 360PX; border-radius: 18PX; }
+  .loja__banner picture, .loja__banner img { object-position: 50% 30%; }
+  .loja__titulo { top: 22PX; }
+  .loja__titulo .titulo { font-size: clamp(38PX, 11vw, 46PX); }
+  .loja__titulo p { font-size: 15.5PX; }
+  .produtos { grid-template-columns: 1fr 1fr; margin: -70PX 8PX 0; gap: 10PX; }
+  .produto { padding: 10PX 10PX 12PX; }
+  .produto__foto { height: 140PX; }
+  .produto__nome { font-size: 16.5PX; }
+  .produto__preco { font-size: 18PX; }
+  .produto__comprar { min-height: 44PX; font-size: 16PX; }
+}

@@ -1,0 +1,196 @@
+/* ---------------------------------------------------------------- fontes (self-hosted) */
+/* Inter Tight: a grotesca do redesenho de 2026-11-02 (referência do Felipe: o "Social Media
+   Rebrand" do Chelsea). Títulos com uma parte leve (300) e a outra em negrito (700, o <em>). */
+@font-face { font-family: 'Inter Tight'; src: url(/assets/fonts/inter-tight.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Inter'; src: url(/assets/fonts/inter-400-700.woff2) format('woff2'); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: 'Assinatura'; src: url(/assets/fonts/assinatura.woff2) format('woff2'); font-display: swap; }
+/* reserva com a métrica da Inter Tight, pra a troca de fonte não empurrar o título */
+@font-face { font-family: 'Inter Tight fallback'; src: local('Arial'); size-adjust: 97%; ascent-override: 100%; descent-override: 25%; line-gap-override: 0%; }
+
+/* ---------------------------------------------------------------- tokens
+   Cores do manual do Maicon (Pantone 282 C) e dos mockups aprovados. Dois destaques com papéis
+   fixos, pedido do Felipe: o celeste do kit 3 é a palavra de destaque no fundo marinho; o azul
+   vibrante é ação (botão principal) e destaque no fundo claro. Raios: botão 10, cartão 18,
+   painel 24, pílula inteira.                                                                 */
+:root {
+  color-scheme: light;
+  --marinho: #0E2664;
+  --marinho-escudo: #122A64;
+  --marinho-profundo: #081634;
+  --neve: #F8F8FA;
+  --branco: #FFFFFF;
+  --celeste: #9CCBEB;
+  --azul: #1F5BFF;
+  --azul-hover: #3B70FF;
+  --cinza-azulado: #8A97B5;
+  --tinta: #0E2664;
+  --tinta-2: #4A5878;
+  --linha-clara: #DCE1EC;
+  --texto-escuro: rgb(255 255 255 / .76);
+  --linha-escura: rgb(255 255 255 / .14);
+  --vidro: rgb(255 255 255 / .06);
+
+  --f-titulo: 'Inter Tight', 'Inter Tight fallback', Arial, sans-serif;
+  --f-rotulo: 'Inter Tight', 'Inter Tight fallback', Arial, sans-serif;
+  --f-texto: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --largura: 1240px;
+  --margem: max(24PX, calc((100% - var(--largura)) / 2));
+  --raio-botao: 999px;
+  --raio-card: 18px;
+  --raio-painel: 24px;
+  --pad: 72px;
+
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease-hover: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------------------------------------------------------------- escala
+   1 rem = 16 px em 1440x900. Acima de 1200 o rem acompanha a largura e a altura da janela, o que
+   for menor: a composição de 1440x900 vale em qualquer tela (o zoom-out não deixa a página no
+   meio) e numa 1920x1080 a página não estica pra baixo (memória tela-larga-zoom-out).          */
+html { font-size: 100%; }
+@media (min-width: 75em) {
+  html { font-size: max(14.5PX, min(100vw / 90, 100vh / 56.25)); }
+}
+
+/* ---------------------------------------------------------------- reset */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+  background: var(--marinho-profundo);
+}
+body {
+  min-height: 100vh;
+  background: var(--neve);
+  color: var(--tinta);
+  font: 400 17px/1.6 var(--f-texto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+img, picture, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+h1, h2, h3 { font-family: var(--f-titulo); font-weight: 600; letter-spacing: -.03em; line-height: 1.02; text-wrap: balance; }
+p { text-wrap: pretty; }
+em { font-style: normal; }
+::selection { background: var(--azul); color: #fff; }
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 3px; border-radius: 6px; }
+.escuro :focus-visible, .hero :focus-visible, .topo :focus-visible { outline-color: var(--celeste); }
+.i { width: 1em; height: 1em; fill: currentColor; flex: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.pular { position: fixed; left: 16px; top: -60px; z-index: 100; padding: 10px 18px; border-radius: 99px; background: var(--azul); color: #fff; font: 600 16px var(--f-rotulo); transition: top .3s var(--ease); }
+.pular:focus { top: 16px; }
+
+/* ---------------------------------------------------------------- seções
+   Baixas de propósito: 72 px em cima e embaixo no computador (pedido do Felipe, 2026-11-02). */
+.secao { position: relative; padding: var(--pad) 0; }
+.escuro { background: var(--marinho); color: #fff; }
+.claro { background: var(--neve); color: var(--tinta); }
+.caixa { width: min(100% - 48PX, var(--largura)); margin-inline: auto; position: relative; }
+
+/* ---------------------------------------------------------------- selo
+   Sobretítulo do redesenho: um traço curto e o texto, sem caixa (antes era o patch da camisa). */
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font: 500 17px/1.2 var(--f-rotulo);
+  letter-spacing: -.005em;
+}
+.selo::before { content: ''; width: 40px; height: 1.5px; background: currentColor; opacity: .85; flex: none; }
+
+/* ---------------------------------------------------------------- títulos e texto
+   Título em duas vozes: o texto em peso leve e o <em> em negrito, na mesma cor (sem palavra em
+   outra cor, pedido do Felipe no redesenho).                                                  */
+.titulo { font-size: 60px; font-weight: 300; letter-spacing: -.025em; line-height: 1.04; }
+.titulo em { font-weight: 700; letter-spacing: -.03em; }
+.texto { font-size: 18px; line-height: 1.62; color: var(--tinta-2); max-width: 34em; }
+.escuro .texto { color: var(--texto-escuro); }
+.rotulo { font: 600 15px/1.2 var(--f-rotulo); letter-spacing: -.005em; }
+
+/* ---------------------------------------------------------------- botões
+   Pílulas de vidro (mockup header-botoes-vidro-v1): o azul tem um miolo de luz, brilho em cima,
+   reflexo embaixo e borda clara; o contorno é vidro transparente. Tudo em fundo e sombra, sem
+   backdrop-filter (que pesa na rolagem quando se repete pela página).                         */
+.botoes { display: flex; flex-wrap: wrap; gap: 14px; }
+.botao {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: var(--raio-botao);
+  font: 600 18px/1 var(--f-rotulo);
+  letter-spacing: 0;
+  white-space: nowrap;
+  transition: filter .3s var(--ease-hover), box-shadow .3s var(--ease-hover), background-color .3s var(--ease-hover), transform .4s var(--ease);
+}
+.botao .i { font-size: 18px; transition: transform .4s var(--ease); }
+.botao:hover .i--seta { transform: translateX(4px); }
+.botao:active { transform: scale(.98); }
+.botao--azul, .botao--celeste {
+  color: #fff;
+  background:
+    radial-gradient(70% 90% at 50% -20%, rgb(255 255 255 / .38), rgb(255 255 255 / 0) 60%),
+    radial-gradient(60% 70% at 50% 125%, rgb(205 225 255 / .6), rgb(205 225 255 / 0) 70%),
+    linear-gradient(180deg, #4A7DFF 0%, #1F5BFF 52%, #1B50E6 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / .6),
+    inset 0 0 0 1px rgb(255 255 255 / .3),
+    inset 0 -1px 0 rgb(255 255 255 / .35),
+    0 12px 28px -12px rgb(31 91 255 / .9);
+  text-shadow: 0 1px 1px rgb(10 30 90 / .35);
+}
+.botao--azul:hover, .botao--celeste:hover { filter: brightness(1.08) saturate(1.05); }
+.botao--marinho { background: var(--marinho); color: #fff; box-shadow: inset 0 1px 0 rgb(255 255 255 / .2), inset 0 0 0 1px rgb(255 255 255 / .12); }
+.botao--marinho:hover { background: #17357F; }
+.botao--contorno {
+  background: linear-gradient(180deg, rgb(255 255 255 / .14), rgb(255 255 255 / .04));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .38), inset 0 1px 0 rgb(255 255 255 / .45);
+}
+.botao--contorno:hover { background-color: rgb(255 255 255 / .08); }
+.claro .botao--contorno { background: linear-gradient(180deg, rgb(14 38 100 / .02), rgb(14 38 100 / .06)); box-shadow: inset 0 0 0 1px rgb(14 38 100 / .35), inset 0 1px 0 rgb(255 255 255 / .9); }
+.claro .botao--contorno:hover { background-color: rgb(14 38 100 / .05); }
+
+.link-seta { display: inline-flex; align-items: center; gap: 10px; font: 600 17px/1 var(--f-rotulo); letter-spacing: 0; }
+.link-seta .i { font-size: 17px; transition: transform .4s var(--ease); }
+.link-seta:hover .i { transform: translateX(4px); }
+
+/* vidro fosco escuro (aproximação web do vidro; sem desfoque, o fundo é liso: memória vidro-liso) */
+.vidro {
+  background: linear-gradient(160deg, rgb(255 255 255 / .1), rgb(255 255 255 / .03));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .14), inset 0 1px 0 rgb(255 255 255 / .18);
+}
+
+/* bandeira redonda */
+.bandeira { width: 1em; height: 1em; border-radius: 50%; object-fit: cover; }
+
+/* ---------------------------------------------------------------- tablet e celular */
+@media (max-width: 74.99em) {
+  :root { --pad: 64PX; }
+  .titulo { font-size: clamp(40PX, 6vw, 54PX); }
+}
+@media (max-width: 47.99em) {
+  :root { --pad: 56PX; }
+  body { font-size: 16PX; }
+  .titulo { font-size: clamp(34PX, 9.6vw, 42PX); }
+  .texto { font-size: 16.5PX; }
+  .selo { font-size: 15PX; gap: 12PX; }
+  .selo::before { width: 28PX; }
+  .botoes { gap: 10PX; }
+  .botoes > .botao { flex: 1 1 auto; }
+  .botao { min-height: 52PX; padding: 0 22PX; font-size: 16.5PX; }
+}
+
+/* a fita azul é mais larga que a tela (inclinada): o main corta, sem criar rolagem lateral */
+main { overflow-x: clip; }

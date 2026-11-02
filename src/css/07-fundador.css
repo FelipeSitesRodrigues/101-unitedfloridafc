@@ -1,0 +1,86 @@
+/* ---------------------------------------------------------------- fundador
+   Texto à esquerda; o Maicon à direita, recortado, encostado na borda direita e na base da
+   seção (a foto do Instagram termina reta nesses dois lados), com o sobrenome gigante quase
+   invisível atrás e um halo de luz.                                                         */
+.fundador { overflow: clip; padding: 76px 0; }
+.fundador__foto {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(44vw, 560px);
+  pointer-events: none;
+}
+.fundador__foto::before {
+  content: '';
+  position: absolute;
+  left: -10%;
+  right: -20%;
+  top: 6%;
+  height: 80%;
+  background: radial-gradient(closest-side, rgb(80 130 230 / .42), rgb(14 38 100 / 0));
+}
+.fundador__foto picture, .fundador__foto img { position: relative; width: 100%; height: auto; }
+.fundador__sobrenome {
+  position: absolute;
+  right: -2%;
+  top: -6%;
+  font: 700 230px/.8 var(--f-titulo);
+  color: rgb(255 255 255 / .045);
+  white-space: nowrap;
+  letter-spacing: -.05em;
+}
+.fundador__texto { position: relative; z-index: 1; max-width: 620px; }
+.fundador__texto .titulo { margin-top: 18px; font-size: 76px; }
+
+.citacao { position: relative; margin-top: 26px; padding-left: 56px; }
+.citacao::before {
+  content: '“';
+  position: absolute;
+  left: -4px;
+  top: -18px;
+  font: 700 110px/1 var(--f-titulo);
+  color: var(--azul);
+}
+.citacao blockquote p { font: 400 25px/1.35 var(--f-rotulo); letter-spacing: -.01em; color: #fff; }
+.citacao figcaption { margin-top: 20px; }
+.citacao__assinatura { display: inline-block; font: 54px/1 'Assinatura', cursive; color: rgb(255 255 255 / .92); transform: rotate(-4deg); transform-origin: left center; }
+
+.fatos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+.fato { display: grid; gap: 6px; align-content: start; padding: 16px 16px 15px; border-radius: 14px; }
+.fato strong { font: 700 24px/1.05 var(--f-titulo); letter-spacing: -.025em; }
+.fato span { font-size: 14.5px; line-height: 1.4; color: rgb(255 255 255 / .78); }
+
+.contratacoes { margin-top: 26px; }
+.contratacoes__rotulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font: 600 15px/1 var(--f-rotulo);
+  color: var(--celeste);
+}
+.contratacoes__rotulo::after { content: ''; flex: 1; height: 1px; background: rgb(156 203 235 / .4); }
+.contratacoes ul { display: flex; gap: 32px; margin-top: 14px; }
+.contratacoes li { display: grid; gap: 4px; }
+.contratacoes li + li { padding-left: 32px; border-left: 1px solid var(--linha-escura); }
+.contratacoes strong { font: 700 26px/1.05 var(--f-titulo); letter-spacing: -.025em; }
+.contratacoes span { font-size: 15px; color: rgb(255 255 255 / .78); }
+
+@media (max-width: 74.99em) {
+  .fundador__foto { width: 42vw; }
+  .fundador__texto { max-width: 54%; }
+  .fatos { grid-template-columns: 1fr; }
+  .fato { grid-template-columns: auto 1fr; align-items: baseline; gap: 12PX; }
+}
+@media (max-width: 47.99em) {
+  .fundador { padding: var(--pad) 0 0; }
+  .fundador__texto { max-width: none; }
+  .fundador__texto .titulo { font-size: clamp(46PX, 13vw, 58PX); }
+  .citacao { padding-left: 38PX; }
+  .citacao::before { font-size: 80PX; top: -12PX; }
+  .citacao blockquote p { font-size: 22PX; }
+  .citacao__assinatura { font-size: 44PX; }
+  .contratacoes ul { flex-direction: column; gap: 14PX; }
+  .contratacoes li + li { padding-left: 0; border-left: 0; }
+  .fundador__foto { position: relative; width: 86%; margin: 28PX 0 0 auto; }
+  .fundador__sobrenome { font-size: 120PX; top: 0; }
+}

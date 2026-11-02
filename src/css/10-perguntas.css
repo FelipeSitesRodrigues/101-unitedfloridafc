@@ -1,0 +1,39 @@
+/* ---------------------------------------------------------------- perguntas (FAQPage no schema) */
+.perguntas__grade { display: grid; grid-template-columns: minmax(0, 400px) 1fr; gap: 64px; align-items: start; }
+.perguntas__cabeca .texto { margin-top: 18px; }
+.perguntas__wa { margin-top: 24px; color: var(--azul); }
+.perguntas__wa .i:first-child { font-size: 22px; }
+
+.perguntas__lista { display: grid; gap: 10px; }
+.pergunta {
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--linha-clara);
+  transition: box-shadow .3s var(--ease-hover);
+}
+.pergunta[open] { box-shadow: 0 0 0 1.5px var(--azul), 0 14px 30px rgb(14 38 100 / .08); }
+.pergunta__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  list-style: none;
+  font: 700 20px/1.2 var(--f-rotulo);
+  letter-spacing: .015em;
+}
+.pergunta__q::-webkit-details-marker { display: none; }
+.pergunta__q .i { font-size: 18px; color: var(--azul); transition: transform .4s var(--ease); }
+.pergunta[open] .pergunta__q .i { transform: rotate(45deg); }
+.pergunta__r { padding: 0 22px 20px; }
+.pergunta__r p { font-size: 16.5px; line-height: 1.6; color: var(--tinta-2); max-width: 46em; }
+
+@media (max-width: 74.99em) {
+  .perguntas__grade { grid-template-columns: 1fr; gap: 32PX; }
+}
+@media (max-width: 47.99em) {
+  .pergunta__q { padding: 16PX 16PX; font-size: 18PX; }
+  .pergunta__r { padding: 0 16PX 16PX; }
+  .pergunta__r p { font-size: 15.5PX; }
+}

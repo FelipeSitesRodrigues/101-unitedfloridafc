@@ -1,0 +1,131 @@
+/* =====================================================================================
+   Kit de animações de entrada (skill /animacoes-site). Nasceu no 000 (portfólio do Felipe).
+   - [data-palavras]            título letra por letra (Split Text, React Bits). O HTML vem
+                                quebrado do build (letras.mjs) ou do letras.js no navegador.
+   - [data-revela]              bloco que entra quando aparece. Em texto (p, h3, ul, .rotulo)
+                                vira Blur Fade (21st.dev): sobe pouco e sai do desfoque.
+   - [data-revela="grade"]      cartões em onda (Stagger Reveal Grid, 21st.dev), --i = coluna
+                                (+ linha, se a grade entrar de uma vez).
+   - [data-revela="esquerda" | "direita" | "zoom"]  variações simples.
+   - [data-brilho]              botão importante com luz correndo na borda (Border Glow,
+                                React Bits). Precisa do markup do bloco Border Glow
+                                como 1º filho e position: relative no botão.
+   - [data-conta]               número que conta (só o JS).
+   Só transform, opacity e filter de desfoque em texto. A classe .js no <html> liga tudo:
+   sem JS, tudo aparece no lugar.
+   Trocar as cores em :root pelas da marca (--anim-luz é o tom do brilho).
+   ===================================================================================== */
+:root {
+  --anim-ease: cubic-bezier(.22, 1, .36, 1);
+  --anim-mola: cubic-bezier(.34, 1.4, .64, 1);
+  --anim-mola-suave: cubic-bezier(.3, 1.22, .5, 1);
+  --anim-passo: 85ms;
+  --anim-luz: #9CCBEB;
+  --anim-luz-forte: #E4F2FF;
+}
+
+/* ---------------------------------------------------------------- revelação no scroll */
+.js [data-revela] {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  --d: calc(var(--i, 0) * var(--anim-passo) + var(--atraso, 0ms));
+  transition: opacity .8s var(--anim-ease) var(--d), transform 1s var(--anim-ease) var(--d), filter .9s var(--anim-ease) var(--d);
+}
+/* Blur Fade em texto. O :not(.visivel) é obrigatório: sem ele esta regra (mais específica)
+   vence o .visivel e o texto fica desfocado pra sempre */
+.js :is(p, h3, ul, .rotulo)[data-revela]:not([data-revela='grade'], .visivel) { transform: translate3d(0, 14px, 0); filter: blur(10px); }
+.js [data-revela='esquerda'] { transform: translate3d(-56px, 0, 0); }
+.js [data-revela='direita'] { transform: translate3d(56px, 0, 0); }
+.js [data-revela='zoom'] { transform: scale(.94); }
+.js [data-revela='grade'] {
+  transform: translate3d(0, 70px, 0) scale(.9);
+  --d: calc(var(--i, 0) * 110ms + var(--atraso, 0ms));
+  transition: opacity .7s var(--anim-ease) var(--d), transform 1.1s var(--anim-mola-suave) var(--d);
+}
+/* o título com letras não some inteiro: quem entra são as letras */
+.js [data-revela='palavras'] { opacity: 1; transform: none; }
+.js [data-revela].visivel { opacity: 1; transform: none; filter: none; }
+
+/* ---------------------------------------------------------------- Split Text (letras) */
+.pw { display: inline-block; vertical-align: top; } /* a palavra não quebra no meio */
+.pw__i, .pc { display: inline-block; }
+.js [data-palavras] .pc {
+  opacity: 0;
+  transform: translate3d(0, .55em, 0);
+  transition: opacity .7s var(--anim-ease), transform 1.1s var(--anim-ease);
+  transition-delay: calc(var(--c, 0) * 24ms + var(--atraso, 0ms));
+}
+.js .visivel[data-palavras] .pc, .js .visivel [data-palavras] .pc { opacity: 1; transform: none; }
+
+/* Título do hero (candidato a LCP): letra transparente atrasa o LCP. Ali as letras sobem de
+   dentro da máscara da palavra, sem opacidade, por animação de CSS que começa na 1ª pintura
+   (não espera o JS). Pôr a classe .anim-hero no h1. */
+.anim-hero .pw { overflow: clip; padding: .16em .04em .08em; margin: -.16em -.04em -.08em; }
+.js .anim-hero[data-palavras] .pc { opacity: 1; transform: none; transition: none; animation: anim-letra-mascara .9s var(--anim-ease) both; animation-delay: calc(var(--c, 0) * 18ms + var(--atraso, .2s)); }
+@keyframes anim-letra-mascara { from { transform: translate3d(0, 112%, 0); } }
+/* resto do texto do hero: Blur Fade na 1ª pintura, em sequência pelo --atraso */
+.js .anim-hero-texto { animation: anim-desfoque .9s var(--anim-ease) var(--atraso, .45s) both; }
+@keyframes anim-desfoque { from { opacity: 0; transform: translate3d(0, 14px, 0); filter: blur(10px); } }
+
+/* ---------------------------------------------------------------- Border Glow (botões)
+   Um ponto de luz (radial) acende a borda: segue o cursor no computador e dá uma volta a cada
+   5 s quando ninguém passa o mouse. Ponto e não cone a partir do centro: no botão comprido o
+   cone acendia a borda inteira e o halo vazava como mancha. Usar em 2 a 4 botões, não mais.
+   A volta roda só em transform e opacity: a máscara do aro fica parada e, dentro dela, uma
+   caixa do tamanho do botão anda com translate em %, levando o ponto no canto. Animar as
+   variáveis (--bx/--by) recalculava o estilo a cada quadro, pra sempre: o Lighthouse do
+   celular nunca achava a página ociosa (TBT sem valor, nota 0 no 000). As variáveis ficam só
+   pro mouse, que roda enquanto o cursor está em cima.
+   Markup (1º filho do botão):
+   <span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span> */
+@property --bx { syntax: '<length-percentage>'; inherits: true; initial-value: 50%; }
+@property --by { syntax: '<length-percentage>'; inherits: true; initial-value: 0%; }
+@property --brilho-f { syntax: '<number>'; inherits: true; initial-value: 0; }
+[data-brilho] {
+  position: relative;
+  isolation: isolate;
+  --brilho-cor: #fff, var(--anim-luz-forte) 22%, color-mix(in srgb, var(--anim-luz) 45%, transparent) 50%, transparent 75%;
+  --brilho-luz: radial-gradient(70px circle at var(--bx) var(--by), var(--brilho-cor));
+}
+[data-brilho]::after, .brilho::before, .brilho-fio, .brilho__volta {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+[data-brilho]::after, .brilho::before { content: ''; background: var(--brilho-luz); opacity: var(--brilho-f); transition: opacity .45s ease; }
+[data-brilho]::after, .brilho-fio { z-index: 1; padding: 1.5px; }
+.brilho { position: absolute; inset: 0; z-index: -2; border-radius: inherit; filter: blur(7px); opacity: .9; pointer-events: none; }
+.brilho::before, .brilho__volta { inset: -3px; padding: 5px; }
+.brilho-fio, .brilho__volta { opacity: 0; }
+.brilho__ponto { position: absolute; inset: 0; }
+.brilho__ponto::before { content: ''; position: absolute; left: -70px; top: -70px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(closest-side, var(--brilho-cor)); }
+.brilho-mouse[data-brilho] { --brilho-f: 1; }
+/* a volta roda nas camadas de luz, nunca no botão: no botão ela toma o lugar da animação de
+   entrada, e ao passar o mouse a entrada volta a valer e roda de novo (o botão some) */
+.brilho-vivo[data-brilho]:not(.brilho-mouse) > .brilho-fio,
+.brilho-vivo[data-brilho]:not(.brilho-mouse) > .brilho > .brilho__volta { animation: brilho-acende 5s linear 1.2s infinite; }
+.brilho-vivo[data-brilho]:not(.brilho-mouse) .brilho__ponto { animation: brilho-anda 5s linear 1.2s infinite; }
+/* topo da esquerda pra direita, ponta direita, base de volta, ponta esquerda, some */
+@keyframes brilho-anda {
+  0% { transform: translate(12%, 0); }
+  14% { transform: translate(88%, 0); }
+  19% { transform: translate(100%, 50%); }
+  24% { transform: translate(88%, 100%); }
+  33% { transform: translate(12%, 100%); }
+  38% { transform: translate(0, 50%); }
+  43%, 100% { transform: translate(12%, 0); }
+}
+@keyframes brilho-acende {
+  0% { opacity: 0; }
+  5%, 38% { opacity: 1; }
+  43%, 100% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------------- movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .js [data-revela], .js [data-palavras] .pc, .js .anim-hero-texto { opacity: 1; transform: none; filter: none; transition: none; animation: none; }
+  .js .anim-hero[data-palavras] .pc { animation: none; }
+  .brilho-fio, .brilho__volta, .brilho__ponto { animation: none !important; }
+}

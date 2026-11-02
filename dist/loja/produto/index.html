@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produto | Loja United Florida FC</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/loja/loja.css">
+</head>
+<body>
+<div data-cabecalho></div>
+<main class="sem-banner"><div class="caixa" id="pagina"></div></main>
+<div data-rodape></div>
+<script src="/loja/loja.js"></script>
+<script>
+const pedido = new URLSearchParams(location.search).get('p')
+const id = Object.hasOwn(PRODUTOS, pedido || '') ? pedido : 'marinho'
+const p = PRODUTOS[id]
+document.title = `${p.nome} | Loja United Florida FC`
+const camisa = p.cat === 'camisa'
+// galeria: [arquivo, se a foto é peça sobre fundo claro]
+const fotos = camisa
+  ? [...(id === 'marinho' ? [[p.jogador, false], [p.foto, true]] : [[p.foto, true], [p.jogador, false]]), ['detalhe-escudo-640', false], ['detalhe-gola-640', false]] // branca e celeste: a foto do jogador sai do banner, sem nitidez pra ser a principal
+  : [[p.foto, true]]
+const tamanhos = camisa ? TAMANHOS : ['Único']
+const parcela = brl(p.preco / 6)
+const lista = camisa
+  ? ['Gola polo em V com friso', 'Escudo bordado no peito', 'Logo Reebok bordado', 'Patch lateral EST. 2027', 'Tecido leve de secagem rápida']
+  : ['Escudo bordado na frente', 'Logo Reebok na lateral', 'Ajuste traseiro', 'Tamanho único']
+const abas = {
+  Detalhes: `<p>${p.desc}</p><ul>${lista.map((l) => `<li>${l}</li>`).join('')}</ul>`,
+  Tecido: '<p>Composição e cuidados de lavagem entram aqui, com os dados oficiais da Reebok.</p>',
+  Medidas: '<p>A tabela de medidas de cada tamanho entra aqui, com os dados oficiais da Reebok.</p>',
+  'Envio e trocas': '<p>Prazos, frete e regras de troca entram aqui, conforme a operação definida pelo clube.</p>',
+}
+const outros = Object.entries(PRODUTOS).filter(([k]) => k !== id)
+document.getElementById('pagina').innerHTML = `
+  <nav class="trilha" aria-label="Caminho"><a href="/">Início</a> / <a href="/loja/">Loja</a> / ${p.nome}</nav>
+  <section class="prod">
+    <div class="galeria">
+      <div class="miniaturas">${fotos.map(([f, c], i) => `<button type="button" class="${i ? '' : 'ativo'}" data-foto="${f}" data-clara="${c}" aria-label="Ver foto ${i + 1}"><img class="${c ? 'contem' : ''}" src="${IMG}${f}.webp" alt=""></button>`).join('')}</div>
+      <div class="principal ${fotos[0][1] ? 'clara' : ''}" id="principal"><img class="${fotos[0][1] ? 'contem' : ''}" src="${IMG}${fotos[0][0]}.webp" alt="${p.nome}"></div>
+    </div>
+    <div class="compra-col">
+      <span class="etiqueta">Novo · Temporada 2027</span>
+      <h1>${p.a} <b>${p.b}</b></h1>
+      <p class="preco">${brl(p.preco)}</p>
+      <p class="parcela">ou 6x de ${parcela} sem juros · 5% off no Pix</p>
+      <p class="desc">${p.desc}</p>
+      ${camisa ? `<p class="rotulo">Cor: ${p.cor}</p><div class="cores">${Object.entries(PRODUTOS).filter(([, x]) => x.cat === 'camisa').map(([k, x]) => `<a class="${k === id ? 'ativo' : ''}" href="?p=${k}" style="background:${x.hex}" aria-label="${x.cor}"></a>`).join('')}</div>` : ''}
+      <p class="rotulo"><span>Tamanho: <span id="tam">${camisa ? 'M' : 'Único'}</span></span>${camisa ? '<a href="#abas" data-ir-aba="Medidas">Tabela de medidas</a>' : ''}</p>
+      <div class="tamanhos" id="tamanhos">${tamanhos.map((t) => `<button type="button" class="${t === (camisa ? 'M' : 'Único') ? 'ativo' : ''}">${t}</button>`).join('')}</div>
+      <div class="acao"><button type="button" class="vidro-azul" id="adicionar">Adicionar à sacola →</button><button type="button" class="fav" id="fav" aria-label="Favoritar" aria-pressed="false">♡</button></div>
+      <ul class="selos"><li>Produto oficial Reebok</li><li>Troca em 30 dias</li><li>Compra 100% segura</li></ul>
+    </div>
+  </section>
+  <section id="abas">
+    <div class="abas" role="tablist">${Object.keys(abas).map((a, i) => `<button type="button" role="tab" class="${i ? '' : 'ativo'}" data-aba="${a}">${a}</button>`).join('')}</div>
+    <div class="aba"><div id="aba-texto">${abas.Detalhes}</div><div class="aba__foto"><img src="${IMG}detalhe-escudo-640.webp" alt="Escudo do United Florida FC bordado" loading="lazy"></div></div>
+  </section>
+  <section class="mais">
+    <h2>Você também <b>pode gostar</b></h2>
+    <div class="grade grade--3">${outros.map(([k, x]) => `<article class="card"><a class="foto" href="?p=${k}"><span class="tag">Novo</span><img src="${IMG}${x.foto}.webp" alt="${x.nome}" loading="lazy"></a><a class="info" href="?p=${k}"><h3>${x.nome}</h3><strong>${brl(x.preco)}</strong></a></article>`).join('')}</div>
+  </section>`
+let tamanho = camisa ? 'M' : 'Único'
+document.getElementById('tamanhos').addEventListener('click', (e) => {
+  const b = e.target.closest('button')
+  if (!b) return
+  tamanho = b.textContent
+  document.getElementById('tam').textContent = tamanho
+  b.parentNode.querySelectorAll('button').forEach((x) => x.classList.toggle('ativo', x === b))
+})
+document.getElementById('adicionar').addEventListener('click', () => adicionar(id, tamanho))
+document.getElementById('fav').addEventListener('click', (e) => {
+  const on = e.currentTarget.classList.toggle('ativo')
+  e.currentTarget.textContent = on ? '♥' : '♡'
+  e.currentTarget.setAttribute('aria-pressed', String(on))
+})
+document.querySelector('.miniaturas').addEventListener('click', (e) => {
+  const b = e.target.closest('button')
+  if (!b) return
+  const clara = b.dataset.clara === 'true'
+  const caixa = document.getElementById('principal')
+  caixa.classList.toggle('clara', clara)
+  const img = caixa.querySelector('img')
+  img.src = `${IMG}${b.dataset.foto}.webp`
+  img.className = clara ? 'contem' : ''
+  b.parentNode.querySelectorAll('button').forEach((x) => x.classList.toggle('ativo', x === b))
+})
+const irAba = (nome) => {
+  document.querySelectorAll('[data-aba]').forEach((x) => x.classList.toggle('ativo', x.dataset.aba === nome))
+  document.getElementById('aba-texto').innerHTML = abas[nome]
+}
+document.querySelector('.abas').addEventListener('click', (e) => { const b = e.target.closest('[data-aba]'); if (b) irAba(b.dataset.aba) })
+document.querySelector('[data-ir-aba]')?.addEventListener('click', (e) => irAba(e.currentTarget.dataset.irAba))
+</script>
+</body>
+</html>

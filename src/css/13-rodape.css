@@ -1,0 +1,68 @@
+/* ---------------------------------------------------------------- rodapé (marinho profundo) */
+.rodape { background: var(--marinho-profundo); color: #fff; padding: 56px 0 26px; }
+.rodape__grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 48px; }
+.rodape__marca { display: flex; gap: 22px; align-items: flex-start; }
+.rodape__marca img { width: 78px; height: auto; flex: none; }
+.rodape__frase { font: 300 26px/1.1 var(--f-titulo); letter-spacing: -.02em; max-width: 12em; }
+.rodape__local { margin-top: 8px; font-size: 15px; color: rgb(255 255 255 / .66); }
+.rodape__redes { display: flex; gap: 8px; margin-top: 16px; }
+.rodape__redes a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .2);
+  transition: background-color .3s var(--ease-hover), color .3s var(--ease-hover);
+}
+.rodape__redes a:hover { background: var(--celeste); color: var(--marinho); }
+.rodape__menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rodape__titulo { font: 600 14px/1 var(--f-rotulo); color: var(--celeste); }
+.rodape__menu ul { display: grid; gap: 10px; margin-top: 16px; }
+.rodape__menu a { font: 600 18px/1.2 var(--f-rotulo); letter-spacing: .03em; color: rgb(255 255 255 / .86); transition: color .3s var(--ease-hover); }
+.rodape__menu a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.rodape__base {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid var(--linha-escura);
+  font-size: 14px;
+  color: rgb(255 255 255 / .6);
+}
+.rodape__base a { color: rgb(255 255 255 / .86); text-decoration: underline; text-underline-offset: 3px; }
+
+/* botão flutuante do WhatsApp: aparece depois do hero (classe .rolou no <html>, 00-header.js) */
+.flutuante {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #0A2A16;
+  font-size: 32px;
+  box-shadow: 0 12px 28px rgb(8 22 52 / .35);
+  opacity: 0;
+  transform: translateY(16px) scale(.9);
+  pointer-events: none;
+  transition: opacity .4s var(--ease-hover), transform .5s var(--ease);
+}
+.rolou .flutuante { opacity: 1; transform: none; pointer-events: auto; }
+.flutuante:hover { transform: scale(1.06); }
+
+@media (max-width: 74.99em) {
+  .rodape__grade { grid-template-columns: 1fr; gap: 36PX; }
+}
+@media (max-width: 47.99em) {
+  .rodape { padding: 44PX 0 90PX; }
+  .rodape__menu { grid-template-columns: 1fr 1fr; row-gap: 28PX; }
+  .rodape__base { flex-direction: column; gap: 6PX; margin-top: 32PX; }
+  .flutuante { right: 16PX; bottom: 16PX; width: 54PX; height: 54PX; font-size: 28PX; }
+}

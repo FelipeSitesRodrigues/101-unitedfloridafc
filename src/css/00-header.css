@@ -1,0 +1,136 @@
+/* ---------------------------------------------------------------- header
+   Pílula de vidro flutuante (redesenho de 2026-11-02, mockup header-botoes-vidro-v1 com as medidas
+   do header do 02-nubank, que o Felipe pediu: o do mockup ficou alto e largo demais). Em 1440:
+   1000 x 62, a 12 px do topo. É o único vidro com desfoque de verdade da página. Quando o hero
+   sai de baixo dele (.topo--solido, 00-header.js), uma camada marinho acende por opacidade.
+   O item da seção que está na tela ganha uma pílula clara (.ativo, também do 00-header.js).  */
+.topo {
+  position: fixed;
+  inset: 12px 0 auto;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding-inline: 24PX;
+  color: #fff;
+  pointer-events: none;
+}
+.topo__barra {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 1000px);
+  height: 62px;
+  padding: 0 8px 0 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgb(255 255 255 / .16), rgb(255 255 255 / .05));
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / .22),
+    inset 0 1px 0 rgb(255 255 255 / .34),
+    0 18px 40px -18px rgb(2 8 30 / .7);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  pointer-events: auto;
+}
+.topo__barra::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgb(8 22 52 / .72);
+  opacity: 0;
+  transition: opacity .4s var(--ease-hover);
+}
+.topo--solido .topo__barra::before, .topo--aberto .topo__barra::before { opacity: 1; }
+.topo__marca { flex: none; display: block; border-radius: 50%; }
+.topo__marca img { height: 44px; width: auto; }
+
+.topo__menu { flex: 1; display: flex; justify-content: center; }
+.topo__menu ul { display: flex; gap: 4px; }
+.topo__menu a:not(.botao) {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font: 500 15px/1 var(--f-rotulo);
+  letter-spacing: .005em;
+  color: rgb(255 255 255 / .9);
+  transition: background-color .3s var(--ease-hover), box-shadow .3s var(--ease-hover), color .3s var(--ease-hover);
+}
+.topo__menu a:not(.botao):hover { background-color: rgb(255 255 255 / .08); color: #fff; }
+.topo__menu a.ativo {
+  color: #fff;
+  background: linear-gradient(180deg, rgb(255 255 255 / .26), rgb(255 255 255 / .1));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28), inset 0 1px 0 rgb(255 255 255 / .45);
+}
+.topo__cta-menu { display: none; }
+
+/* idiomas: as duas bandeiras redondas soltas, a ativa com um aro fino */
+.idiomas { display: flex; align-items: center; gap: 6px; }
+.idiomas__op {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease-hover), opacity .3s var(--ease-hover);
+}
+.idiomas__op:not(.ativo) { opacity: .75; }
+.idiomas__op:hover { transform: scale(1.08); opacity: 1; }
+.idiomas__op.ativo { box-shadow: 0 0 0 1.5px rgb(255 255 255 / .85); }
+
+.topo__cta { min-height: 46px; padding: 0 22px; font-size: 15.5px; }
+.topo__abrir { display: none; }
+
+/* ---------------------------------------------------------------- tablet e celular: gaveta */
+@media (max-width: 74.99em) {
+  .topo { inset: 10PX 0 auto; padding-inline: 14PX; }
+  .topo__barra { gap: 10PX; height: 60PX; width: min(100%, 760PX); padding: 0 8PX 0 10PX; }
+  .topo__marca { margin-right: auto; }
+  .topo__marca img { height: 42PX; }
+  .topo__cta { min-height: 44PX; padding: 0 18PX; font-size: 15PX; }
+  .topo__abrir {
+    display: grid;
+    place-content: center;
+    gap: 6PX;
+    width: 44PX;
+    height: 44PX;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgb(255 255 255 / .18), rgb(255 255 255 / .06));
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28), inset 0 1px 0 rgb(255 255 255 / .4);
+  }
+  .topo__traco { display: block; width: 18PX; height: 2px; background: #fff; border-radius: 2px; transition: transform .35s var(--ease); }
+  .topo--aberto .topo__traco:first-child { transform: translateY(4PX) rotate(45deg); }
+  .topo--aberto .topo__traco:last-child { transform: translateY(-4PX) rotate(-45deg); }
+
+  .topo__menu {
+    position: fixed;
+    inset: 70PX 0 auto; /* o backdrop-filter da barra vira o bloco do fixed: a gaveta se mede pela pílula */
+    z-index: -1;
+    flex-direction: column;
+    gap: 18PX;
+    width: auto;
+    max-width: 760PX;
+    margin-inline: auto;
+    padding: 12PX 18PX 20PX;
+    border-radius: 26PX;
+    background: rgb(8 22 52 / .97);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / .14), 0 24PX 40PX rgb(0 0 0 / .35);
+    opacity: 0;
+    transform: translateY(-10PX);
+    visibility: hidden;
+    pointer-events: auto;
+    transition: opacity .3s var(--ease-hover), transform .4s var(--ease), visibility 0s .4s;
+  }
+  .topo--aberto .topo__menu { opacity: 1; transform: none; visibility: visible; transition: opacity .3s var(--ease-hover), transform .4s var(--ease); }
+  .topo__menu ul { flex-direction: column; gap: 0; }
+  .topo__menu a:not(.botao) { padding: 15PX 4PX; border-radius: 0; font-size: 19PX; border-bottom: 1px solid var(--linha-escura); }
+  .topo__menu a.ativo { background: none; box-shadow: none; border-bottom-color: rgb(255 255 255 / .5); }
+  .topo__cta-menu { display: inline-flex; }
+}
+@media (max-width: 47.99em) {
+  .topo__cta { display: none; }
+  .idiomas__op { width: 32PX; height: 32PX; font-size: 23PX; }
+}

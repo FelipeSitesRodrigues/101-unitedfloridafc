@@ -1,0 +1,95 @@
+/* ---------------------------------------------------------------- franquias
+   Texto e benefícios à esquerda; à direita o Brasil em linha pontilhada, as cidades acesas e
+   as rotas até Orlando. O escudo grande e apagado no canto esquerdo.                         */
+.franquias { overflow: clip; }
+.franquias__marca { position: absolute; left: -110px; top: 50%; width: 420px; height: auto; transform: translateY(-50%); opacity: .05; pointer-events: none; }
+.franquias__grade { display: grid; grid-template-columns: minmax(0, 590px) 1fr; gap: 40px; align-items: center; }
+.franquias__texto .titulo { margin-top: 18px; }
+.franquias__texto .texto { margin-top: 18px; }
+
+.beneficios { display: grid; gap: 10px; margin-top: 26px; }
+.beneficio {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px 12px 12px;
+  border-radius: 14px;
+  background: rgb(255 255 255 / .04);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .1);
+}
+.beneficio__icone { display: grid; place-items: center; width: 50px; height: 50px; flex: none; border-radius: 12px; font-size: 26px; color: var(--celeste); }
+.beneficio p { display: grid; gap: 3px; }
+.beneficio strong { font: 700 20px/1.1 var(--f-rotulo); letter-spacing: .02em; }
+.beneficio span { font-size: 15px; color: rgb(255 255 255 / .74); }
+.franquias__botoes { margin-top: 26px; }
+
+/* mapa (gerado por scripts/mapa-brasil.mjs) */
+.mapa { position: relative; }
+.mapa__svg { width: 100%; height: auto; overflow: visible; }
+.mapa__estados path { fill: rgb(255 255 255 / .02); stroke: rgb(255 255 255 / .3); stroke-width: 1; stroke-dasharray: 1.5 3.5; stroke-linecap: round; }
+.mapa__rotas path { fill: none; stroke: rgb(120 165 255 / .75); stroke-width: 1.4; }
+.mapa__pontos circle { fill: var(--celeste); stroke: var(--azul); stroke-width: 3; }
+.mapa__rotulo, .mapa__sua-rotulo, .mapa__orlando {
+  font: 600 14px/1 var(--f-rotulo);
+  white-space: nowrap;
+}
+.mapa__rotulo {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(16px, calc(-50% + var(--dy) * 10px));
+  padding: 6px 10px 5px;
+  border-radius: 8px;
+  background: rgb(8 22 52 / .82);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .3);
+}
+.mapa__sua { position: absolute; left: var(--x); top: var(--y); }
+.mapa__anel { position: absolute; left: -11px; top: -11px; width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 2px #fff; }
+.mapa__anel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--celeste);
+  animation: pulsa 2.4s var(--ease) infinite;
+}
+@keyframes pulsa { from { transform: scale(1); opacity: .9; } to { transform: scale(2.6); opacity: 0; } }
+.mapa__sua-rotulo {
+  position: absolute;
+  left: 20px;
+  top: -14px;
+  padding: 7px 12px 6px;
+  border-radius: 8px;
+  background: var(--celeste);
+  color: var(--marinho);
+}
+.mapa__orlando {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+.mapa__orlando img { width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 0 2px #fff, 0 0 20px 4px rgb(80 130 230 / .5); }
+
+@media (max-width: 74.99em) {
+  .franquias__grade { grid-template-columns: 1fr; }
+  .franquias__mapa { max-width: 560PX; width: 100%; justify-self: center; }
+}
+@media (max-width: 47.99em) {
+  .beneficio { padding: 10PX 12PX 10PX 10PX; gap: 12PX; }
+  .beneficio__icone { width: 44PX; height: 44PX; font-size: 22PX; }
+  .beneficio strong { font-size: 18PX; }
+  .mapa__rotulo, .mapa__sua-rotulo { font-size: 11.5PX; }
+  .mapa__orlando { font-size: 14PX; }
+  .mapa__orlando img { width: 30PX; height: 30PX; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mapa__anel::after { animation: none; }
+}
+.mapa__rotulo--esq { transform: translate(calc(-100% - 16px), calc(-50% + var(--dy) * 10px)); }
+/* Orlando fica no canto direito: o nome vai à esquerda da bandeira, pra não sair do mapa */
+.mapa__orlando { flex-direction: row-reverse; transform: translate(calc(-100% + 20px), -50%); }
