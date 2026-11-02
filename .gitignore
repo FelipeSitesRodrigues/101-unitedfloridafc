@@ -5,3 +5,6 @@ dist/preview/
 revisao/
 .impeccable/review/
 lighthouse/
+
+.vercel
+.env*
