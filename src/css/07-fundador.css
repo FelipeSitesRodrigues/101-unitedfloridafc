@@ -30,8 +30,6 @@
   color: var(--azul);
 }
 .citacao blockquote p { font: 400 25px/1.35 var(--f-rotulo); letter-spacing: -.01em; color: #fff; }
-.citacao figcaption { margin-top: 20px; }
-.citacao__assinatura { display: inline-block; font: 54px/1 'Assinatura', cursive; color: rgb(255 255 255 / .92); transform: rotate(-4deg); transform-origin: left center; }
 
 .fatos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
 .fato { display: grid; gap: 6px; align-content: start; padding: 16px 16px 15px; border-radius: 14px; }
@@ -71,7 +69,6 @@
   .citacao { padding-left: 38PX; }
   .citacao::before { font-size: 80PX; top: -12PX; }
   .citacao blockquote p { font-size: 22PX; }
-  .citacao__assinatura { font-size: 44PX; }
   .fatos { grid-template-columns: 1fr; }
   .fato { grid-template-columns: auto 1fr; align-items: baseline; gap: 12PX; }
   .release { padding: 26PX 22PX 24PX; }

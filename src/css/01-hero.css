@@ -72,8 +72,9 @@
   .hero__titulo { grid-area: titulo; font-size: clamp(42PX, 12.4vw, 56PX); margin-top: 14PX; max-width: none; }
   .hero__foto { grid-area: foto; position: relative; inset: auto; z-index: 0; margin: 18PX 0 0; }
   .hero__foto img { height: auto; object-fit: fill; }
-  /* a foto emenda no fundo: topo e base somem numa máscara (o fundo do hero é degradê) */
-  .hero__foto { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 84%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 84%, transparent 100%); }
+  /* a foto emenda no fundo: topo e base somem numa máscara (o fundo do hero é degradê). O corte
+     começa no topo da foto e o fade de cima é curto (7%), senão come o cabelo dos atletas */
+  .hero__foto { -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 86%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 86%, transparent 100%); }
   .hero__sub { grid-area: sub; margin-top: -4PX; font-size: 21PX; position: relative; }
   .hero__texto { grid-area: texto; margin-top: 10PX; font-size: 17PX; }
   .hero__botoes { grid-area: botoes; margin-top: 24PX; }

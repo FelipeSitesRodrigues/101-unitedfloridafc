@@ -32,7 +32,7 @@ for (const rota of ['/', '/en/']) {
   })
   const link = await p.evaluate(() => window.__abertos.at(-1) || '')
   const msg = decodeURIComponent(link.split('text=')[1] || '')
-  ok(link.startsWith('https://wa.me/5521972061009') && msg.includes('João Teste') && msg.includes('05/03/2008') && msg.includes('Sub-20'), `${rota} inscrição manda pro WhatsApp`)
+  ok(link.startsWith('https://wa.me/5521999581009') && msg.includes('João Teste') && msg.includes('05/03/2008') && msg.includes('Sub-20'), `${rota} inscrição manda pro WhatsApp`)
   if (rota === '/') console.log('     mensagem:', JSON.stringify(msg))
   if (saida && rota === '/') await p.screenshot({ path: `${saida}/inscricao.png` })
 }

@@ -65,8 +65,13 @@ async function variantes(nome, origem, larguras, op = {}) {
 const IA2 = `${R}/ia2`
 await variantes('hero', `${IA2}/01-hero.png`, [1280, 1942], { q: 48, qw: 72 })
 {
-  const buf = await sharp(`${IA2}/01-hero.png`).extract({ left: 880, top: 70, width: 980, height: 739 }).toBuffer()
-  await variantes('hero-celular', buf, [480, 840])
+  // celular: os três atletas desde o topo da foto (x 880, largura 980, altura 809), sem cortar o
+  // cabelo. A foto é de 1942 e o recorte fica com 980, pouco pra tela de 3x: a versão
+  // 01-hero-celular-2x.png é esse recorte ampliado 4x com Swin2SR e reduzido pra 1960 (2026-11-08)
+  const ampliada = `${IA2}/01-hero-celular-2x.png`
+  const buf = existsSync(ampliada) ? await sharp(ampliada).toBuffer()
+    : await sharp(`${IA2}/01-hero.png`).extract({ left: 880, top: 0, width: 980, height: 809 }).toBuffer()
+  await variantes('hero-atletas', buf, [480, 840, 1170], { q: 58, qw: 80 })
 }
 // as três fotos redondas da seletiva: rostos dos garotos da foto da seletiva
 for (const [i, [l, t, z]] of [[40, 385, 230], [405, 235, 250], [615, 330, 210]].entries()) {

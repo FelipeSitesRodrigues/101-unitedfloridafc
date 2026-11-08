@@ -19,25 +19,35 @@
   "h": 809,
   "kb": 74
  },
- "hero-celular-480.avif": {
+ "hero-atletas-480.avif": {
   "w": 480,
-  "h": 362,
-  "kb": 13
+  "h": 396,
+  "kb": 17
  },
- "hero-celular-480.webp": {
+ "hero-atletas-480.webp": {
   "w": 480,
-  "h": 362,
-  "kb": 22
+  "h": 396,
+  "kb": 28
  },
- "hero-celular-840.avif": {
+ "hero-atletas-840.avif": {
   "w": 840,
-  "h": 633,
-  "kb": 29
+  "h": 693,
+  "kb": 39
  },
- "hero-celular-840.webp": {
+ "hero-atletas-840.webp": {
   "w": 840,
-  "h": 633,
-  "kb": 48
+  "h": 693,
+  "kb": 63
+ },
+ "hero-atletas-1170.avif": {
+  "w": 1170,
+  "h": 966,
+  "kb": 58
+ },
+ "hero-atletas-1170.webp": {
+  "w": 1170,
+  "h": 966,
+  "kb": 96
  },
  "avatar-1-96.avif": {
   "w": 96,

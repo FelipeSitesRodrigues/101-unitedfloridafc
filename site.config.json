@@ -1,7 +1,7 @@
 {
   "dominio": "",
   "indexar": false,
-  "whatsapp": "5521972061009",
+  "whatsapp": "5521999581009",
   "instagramArroba": "@unitedfloridafc",
   "redes": {
     "instagram": "https://www.instagram.com/unitedfloridafc",
@@ -14,7 +14,6 @@
   "descricaoEn": "United Florida FC, the Brazilian club in Florida. Based in Orlando, debuting in the UPSL in 2027, with Reebok shirts, soccer tryouts in Brazil for players aged 14 to 23 and official franchises.",
   "pendencias": [
     "indexar false e dominio vazio até publicar",
-    "WhatsApp 21 97206-1009 veio do site antigo (Khone): confirmar com o Maicon",
     "preço de cada produto da loja: hoje a loja não mostra preço e o pedido fecha no WhatsApp",
     "endereço completo e CNPJ da empresa do Brasil, endereço e registro (EIN) da empresa dos EUA: entram em empresas no site.config.json",
     "seletiva: Sub-13 entra? (vídeo fala Sub-13 a Sub-23; o texto dele, Sub-15 a Sub-23, que é o que está no site)",

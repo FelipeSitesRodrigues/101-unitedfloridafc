@@ -3,7 +3,6 @@
    Rebrand" do Chelsea). Títulos com uma parte leve (300) e a outra em negrito (700, o <em>). */
 @font-face { font-family: 'Inter Tight'; src: url(/assets/fonts/inter-tight.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: 'Inter'; src: url(/assets/fonts/inter-400-700.woff2) format('woff2'); font-weight: 400 700; font-display: swap; }
-@font-face { font-family: 'Assinatura'; src: url(/assets/fonts/assinatura.woff2) format('woff2'); font-display: swap; }
 /* reserva com a métrica da Inter Tight, pra a troca de fonte não empurrar o título */
 @font-face { font-family: 'Inter Tight fallback'; src: local('Arial'); size-adjust: 97%; ascent-override: 100%; descent-override: 25%; line-gap-override: 0%; }
 

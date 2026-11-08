@@ -16,7 +16,7 @@
     // as fontes da citação do fundador só baixam quando a seção é desenhada; se chegam no meio da
     // rolagem, o fundador encolhe ~40 px e a rolagem passa do alvo. Espera elas (até 700 ms).
     const fontes = document.fonts
-      ? Promise.race([Promise.all([document.fonts.load('300 20px "Inter Tight"'), document.fonts.load('40px Assinatura')]), new Promise((r) => setTimeout(r, 700))])
+      ? Promise.race([document.fonts.load('300 20px "Inter Tight"'), new Promise((r) => setTimeout(r, 700))])
       : Promise.resolve()
     fontes.catch(() => {}).then(() => requestAnimationFrame(() => {
       alvo.scrollIntoView({ behavior: reduzir.matches ? 'auto' : 'smooth', block: 'start' })

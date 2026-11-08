@@ -3,7 +3,7 @@
 // clube, que confirma valor, frete e pagamento. Preço ainda não definido: o campo preco fica null
 // e a loja mostra "Pedido pelo WhatsApp" no lugar (quando o Maicon mandar, é só preencher).
 const IMG = '/assets/img/'
-const WHATSAPP = '5521972061009' // o mesmo do site.config.json
+const WHATSAPP = '5521999581009' // o mesmo do site.config.json
 const PRODUTOS = {
   marinho: { nome: 'Camisa 1 · Marinho 2027', a: 'Camisa 1', b: 'Marinho 2027', preco: null, cat: 'camisa', cor: 'Marinho', hex: '#0E2664', foto: 'camisa-marinho-560', desc: 'A camisa titular da estreia na UPSL. Dry Fit Jacquard com estampa tom sobre tom, gola polo retrô com friso branco duplo, escudo e logo Reebok em TPU emborrachado.' },
   celeste: { nome: 'Camisa 2 · Celeste 2027', a: 'Camisa 2', b: 'Celeste 2027', preco: null, cat: 'camisa', cor: 'Celeste', hex: '#9CCBEB', foto: 'camisa-celeste-560', desc: 'A camisa reserva da temporada de estreia. Celeste com gola polo e punhos marinho de friso branco, escudo e logo Reebok em TPU emborrachado.' },
