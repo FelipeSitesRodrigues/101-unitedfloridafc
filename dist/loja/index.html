@@ -14,13 +14,13 @@
 <section class="banner"><div class="caixa banner__txt">
   <p class="selo">Loja oficial</p>
   <h1>Coleção <b>2027</b></h1>
-  <p class="t">As camisas oficiais Reebok do United Florida FC.</p>
+  <p class="t">Camisas oficiais Reebok, moletom, camisetas e boné do United Florida FC. Você escolhe aqui e fecha o pedido com o clube no WhatsApp.</p>
   <a class="vidro-azul botao" href="#colecao">Ver a coleção →</a>
 </div></section>
-<div class="chips" role="group" aria-label="Categorias"><button type="button" class="ativo" data-f="todos">Todos</button><button type="button" data-f="camisa">Camisas</button><button type="button" data-f="bone">Bonés</button></div>
+<div class="chips" role="group" aria-label="Categorias"><button type="button" class="ativo" data-f="todos">Todos</button><button type="button" data-f="camisa">Camisas</button><button type="button" data-f="agasalho">Moletom</button><button type="button" data-f="camiseta">Camisetas</button><button type="button" data-f="bone">Boné</button></div>
 <section class="vitrine" id="colecao"><div class="caixa">
   <h2>Coleção <b>2027</b></h2>
-  <p class="s">Uniformes oficiais e acessórios da temporada de estreia.</p>
+  <p class="s">Uniformes oficiais, agasalho e acessórios da temporada de estreia.</p>
   <div class="grade" id="grade"></div>
 </div></section>
 </main>
@@ -30,8 +30,8 @@
 const g = document.getElementById('grade')
 g.innerHTML = Object.entries(PRODUTOS).map(([id, p]) => `<article class="card" data-c="${p.cat}">
   <a class="foto" href="/loja/produto/?p=${id}"><span class="tag">Novo</span><img src="${IMG}${p.foto}.webp" alt="${p.nome}" loading="lazy"></a>
-  <div class="compra">${p.cat === 'camisa' ? '<div class="tams">' + ['P', 'M', 'G', 'GG'].map((t, k) => `<button type="button" class="${k === 1 ? 'ativo' : ''}">${t}</button>`).join('') + '</div>' : ''}<button type="button" class="vidro-azul add" data-add="${id}">Adicionar à sacola →</button></div>
-  <a class="info" href="/loja/produto/?p=${id}"><h3>${p.nome}</h3><strong>${brl(p.preco)}</strong></a></article>`).join('')
+  <div class="compra">${temTamanho(p) ? '<div class="tams">' + ['P', 'M', 'G', 'GG'].map((t, k) => `<button type="button" class="${k === 1 ? 'ativo' : ''}">${t}</button>`).join('') + '</div>' : ''}<button type="button" class="vidro-azul add" data-add="${id}">Adicionar à sacola →</button></div>
+  <a class="info" href="/loja/produto/?p=${id}"><h3>${p.nome}</h3><strong class="${p.preco == null ? 'sem-preco' : ''}">${precoTexto(p)}</strong></a></article>`).join('')
 g.addEventListener('click', (e) => {
   const b = e.target.closest('button')
   if (!b) return

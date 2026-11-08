@@ -1,40 +1,28 @@
 /* ---------------------------------------------------------------- fundador
-   Texto à esquerda; o Maicon à direita, recortado, encostado na borda direita e na base da
-   seção (a foto do Instagram termina reta nesses dois lados), com o sobrenome gigante quase
-   invisível atrás e um halo de luz.                                                         */
+   Rodada do Maicon (2026-11-08): sai a foto grande; o rosto dele entra num círculo pequeno ao lado
+   do cargo. À esquerda o nome, a citação e os fatos; à direita o release num cartão de vidro, com
+   "Ler o release completo" abrindo a janela (_janelas.js). O sobrenome gigante fica atrás.     */
 .fundador { overflow: clip; padding: 76px 0; }
-.fundador__foto {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: min(44vw, 560px);
-  pointer-events: none;
-}
-.fundador__foto::before {
-  content: '';
-  position: absolute;
-  left: -10%;
-  right: -20%;
-  top: 6%;
-  height: 80%;
-  background: radial-gradient(closest-side, rgb(80 130 230 / .42), rgb(14 38 100 / 0));
-}
-.fundador__foto picture, .fundador__foto img { position: relative; width: 100%; height: auto; }
 .fundador__sobrenome {
   position: absolute;
   right: -2%;
-  top: -6%;
+  top: 4%;
   font: 700 230px/.8 var(--f-titulo);
   color: rgb(255 255 255 / .045);
   white-space: nowrap;
   letter-spacing: -.05em;
+  pointer-events: none;
 }
-.fundador__texto { position: relative; z-index: 1; max-width: 620px; }
+.fundador__grade { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; }
+
+.fundador__quem { display: flex; align-items: center; gap: 18px; }
+.fundador__foto, .fundador__foto img { display: block; width: 112px; height: 112px; flex: none; border-radius: 50%; object-fit: cover; }
+.fundador__foto { box-shadow: 0 0 0 3px var(--celeste), 0 0 0 9px rgb(156 203 235 / .16), 0 18px 40px rgb(4 12 40 / .5); }
 .fundador__texto .titulo { margin-top: 18px; font-size: 76px; }
 
 .citacao { position: relative; margin-top: 26px; padding-left: 56px; }
 .citacao::before {
-  content: '“';
+  content: '\201C';
   position: absolute;
   left: -4px;
   top: -18px;
@@ -50,37 +38,46 @@
 .fato strong { font: 700 24px/1.05 var(--f-titulo); letter-spacing: -.025em; }
 .fato span { font-size: 14.5px; line-height: 1.4; color: rgb(255 255 255 / .78); }
 
-.contratacoes { margin-top: 26px; }
-.contratacoes__rotulo {
+/* release */
+.release { display: grid; justify-items: start; padding: 34px 34px 32px; border-radius: var(--raio-painel); }
+.release__rotulo { font: 600 14px/1 var(--f-rotulo); letter-spacing: .04em; text-transform: uppercase; color: var(--celeste); }
+.release__titulo { margin-top: 14px; font: 700 30px/1.08 var(--f-titulo); letter-spacing: -.025em; }
+.release__linha { margin-top: 12px; font: 600 17px/1.35 var(--f-rotulo); color: rgb(255 255 255 / .9); }
+.release__resumo { margin-top: 12px; font-size: 16px; line-height: 1.6; color: rgb(255 255 255 / .76); }
+.release__contratacoes { width: 100%; margin-top: 20px; }
+.release__rotulo2 {
   display: flex;
   align-items: center;
   gap: 14px;
-  font: 600 15px/1 var(--f-rotulo);
+  font: 600 14px/1 var(--f-rotulo);
   color: var(--celeste);
 }
-.contratacoes__rotulo::after { content: ''; flex: 1; height: 1px; background: rgb(156 203 235 / .4); }
-.contratacoes ul { display: flex; gap: 32px; margin-top: 14px; }
-.contratacoes li { display: grid; gap: 4px; }
-.contratacoes li + li { padding-left: 32px; border-left: 1px solid var(--linha-escura); }
-.contratacoes strong { font: 700 26px/1.05 var(--f-titulo); letter-spacing: -.025em; }
-.contratacoes span { font-size: 15px; color: rgb(255 255 255 / .78); }
+.release__rotulo2::after { content: ''; flex: 1; height: 1px; background: rgb(156 203 235 / .4); }
+.release__contratacoes ul { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 22px; margin-top: 12px; }
+.release__contratacoes li { display: grid; gap: 3px; }
+.release__contratacoes li + li { padding-left: 22px; border-left: 1px solid var(--linha-escura); }
+.release__contratacoes strong { font: 700 19px/1.1 var(--f-titulo); letter-spacing: -.02em; }
+.release__contratacoes span { font-size: 13.5px; line-height: 1.35; color: rgb(255 255 255 / .72); }
+.release__abrir { margin-top: 24px; }
 
 @media (max-width: 74.99em) {
-  .fundador__foto { width: 42vw; }
-  .fundador__texto { max-width: 54%; }
-  .fatos { grid-template-columns: 1fr; }
-  .fato { grid-template-columns: auto 1fr; align-items: baseline; gap: 12PX; }
+  .fundador__grade { grid-template-columns: 1fr; gap: 40PX; }
+  .release { max-width: 640PX; }
 }
 @media (max-width: 47.99em) {
-  .fundador { padding: var(--pad) 0 0; }
-  .fundador__texto { max-width: none; }
+  .fundador { padding: var(--pad) 0; }
+  .fundador__foto, .fundador__foto img { width: 84PX; height: 84PX; }
   .fundador__texto .titulo { font-size: clamp(46PX, 13vw, 58PX); }
   .citacao { padding-left: 38PX; }
   .citacao::before { font-size: 80PX; top: -12PX; }
   .citacao blockquote p { font-size: 22PX; }
   .citacao__assinatura { font-size: 44PX; }
-  .contratacoes ul { flex-direction: column; gap: 14PX; }
-  .contratacoes li + li { padding-left: 0; border-left: 0; }
-  .fundador__foto { position: relative; width: 86%; margin: 28PX 0 0 auto; }
-  .fundador__sobrenome { font-size: 120PX; top: 0; }
+  .fatos { grid-template-columns: 1fr; }
+  .fato { grid-template-columns: auto 1fr; align-items: baseline; gap: 12PX; }
+  .release { padding: 26PX 22PX 24PX; }
+  .release__titulo { font-size: 25PX; }
+  .release__contratacoes ul { grid-template-columns: 1fr; gap: 10PX; }
+  .release__contratacoes li + li { padding-left: 0; border-left: 0; }
+  .release__abrir { width: 100%; }
+  .fundador__sobrenome { font-size: 120PX; }
 }

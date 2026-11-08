@@ -1,39 +1,95 @@
-    <section class="peneira secao claro" id="peneira" aria-labelledby="peneira-titulo">
+    <section class="peneira secao claro" id="seletiva" aria-labelledby="seletiva-titulo">
       <div class="peneira__foto">
-        <img data-img="peneira" sizes="(max-width: 47.99em) 100vw, 40vw" loading="lazy" decoding="async"
-          alt="Jovens atletas com a camisa do United Florida FC e colete de treino azul numa peneira em campo society, um deles conduzindo a bola"
+        <img data-img="seletiva" sizes="(max-width: 47.99em) 100vw, 40vw" loading="lazy" decoding="async"
+          alt="Jovens atletas com a camisa do United Florida FC e colete de treino azul numa seletiva em campo society, um deles conduzindo a bola"
           data-i18n-attr="alt:peneira.alt">
       </div>
 
       <div class="caixa peneira__grade">
         <div class="peneira__conteudo">
-          <h2 class="peneira__titulo" id="peneira-titulo">
-            <span class="peneira__grande" data-revela="zoom" data-i18n="peneira.titulo">Peneira</span>
+          <h2 class="peneira__titulo" id="seletiva-titulo">
+            <span class="peneira__grande" data-revela="zoom" data-i18n="peneira.titulo">Seletiva</span>
             <span class="peneira__sub" data-revela data-i18n="peneira.sub">United Florida FC no Brasil</span>
           </h2>
-          <p class="texto" data-revela data-i18n="peneira.texto">Da base ao adulto. Se você sonha em vestir essa camisa e jogar nos Estados Unidos, a porta está aberta.</p>
+          <p class="texto" data-revela data-i18n="peneira.texto">Seletiva oficial de futebol para atletas de 14 a 23 anos. Quem é aprovado treina 12 meses com a gente no Brasil, e os destaques são avaliados para jogar a UPSL nos Estados Unidos.</p>
 
+          <ol class="fases" data-revela style="--atraso:.1s">
+            <li class="fase">
+              <span class="fase__n" data-i18n="peneira.f1n">1ª fase · Brasil</span>
+              <strong data-i18n="peneira.f1">12 meses de desenvolvimento e alto rendimento</strong>
+              <span data-i18n="peneira.f1t">Competições e metodologia no padrão americano, aqui no Brasil.</span>
+            </li>
+            <li class="fase fase--eua">
+              <span class="fase__n" data-i18n="peneira.f2n">2ª fase · Estados Unidos</span>
+              <strong data-i18n="peneira.f2">Os destaques são avaliados para a UPSL</strong>
+              <span data-i18n="peneira.f2t">Para defender o United Florida FC na liga onde atuam academias como Inter Miami, Orlando City e DME Academy.</span>
+            </li>
+          </ol>
+          <p class="fases__obs" data-revela data-i18n="peneira.obs">Passar na seletiva não garante a ida aos Estados Unidos: a seleção para a 2ª fase segue critérios técnicos, comportamentais e de desenvolvimento do atleta ao longo do projeto.</p>
+
+          <p class="categorias__rotulo" data-revela data-i18n="peneira.escolha">Escolha a sua categoria e faça a inscrição</p>
           <ul class="categorias" aria-label="Categorias" data-i18n-attr="aria-label:peneira.categorias" data-revela style="--atraso:.1s">
-            <li data-i18n="peneira.c11">Sub-11</li><li data-i18n="peneira.c13">Sub-13</li><li data-i18n="peneira.c15">Sub-15</li><li data-i18n="peneira.c17">Sub-17</li>
-            <li class="categorias__adulto" data-i18n="peneira.adulto">Adulto · sem limite de idade</li>
+            <li><button type="button" data-abrir="inscricao" data-categoria="Sub-15">Sub-15</button></li>
+            <li><button type="button" data-abrir="inscricao" data-categoria="Sub-17">Sub-17</button></li>
+            <li><button type="button" data-abrir="inscricao" data-categoria="Sub-20">Sub-20</button></li>
+            <li><button type="button" data-abrir="inscricao" data-categoria="Sub-23">Sub-23</button></li>
           </ul>
 
-          <ul class="cidades">
-            <li class="cidade" data-revela="grade" style="--i:0"><i data-i="map-pin" data-w="fill" class="cidade__pino"></i><strong>Rio de Janeiro · RJ</strong><span data-i18n="peneira.breve">Data em breve</span></li>
-            <li class="cidade" data-revela="grade" style="--i:1"><i data-i="map-pin" data-w="fill" class="cidade__pino"></i><strong>Niterói · RJ</strong><span data-i18n="peneira.breve">Data em breve</span></li>
-            <li class="cidade" data-revela="grade" style="--i:2"><i data-i="map-pin" data-w="fill" class="cidade__pino"></i><strong>São Paulo · SP</strong><span data-i18n="peneira.breve">Data em breve</span></li>
-          </ul>
-
-          <div class="passos" data-revela style="--atraso:.1s">
-            <p class="passos__titulo" data-i18n="peneira.como">Como funciona</p>
-            <ol>
-              <li><span class="passos__n">1</span><span data-i18n="peneira.s1">Inscrição pelo WhatsApp</span></li>
-              <li><span class="passos__n">2</span><span data-i18n="peneira.s2">Avaliação em campo</span></li>
-              <li><span class="passos__n">3</span><span data-i18n="peneira.s3">Convocação para Orlando</span></li>
-            </ol>
+          <div class="evento" data-revela style="--atraso:.15s">
+            <div class="evento__onde">
+              <i data-i="map-pin" data-w="fill" class="evento__pino"></i>
+              <div>
+                <strong>Rio de Janeiro · RJ</strong>
+                <span data-i18n="peneira.local">Campo da Nike, Aterro do Flamengo</span>
+              </div>
+            </div>
+            <div class="evento__quando"><strong data-i18n="peneira.data">10 de dezembro</strong><span data-i18n="peneira.hora">às 10h</span></div>
+            <div class="evento__lotes">
+              <span data-i18n="peneira.lote1">1º lote <b>R$ 97</b></span>
+              <span data-i18n="peneira.lote2">2º lote <b>R$ 147</b></span>
+            </div>
           </div>
 
-          <a class="botao botao--azul peneira__cta" href="{{wa:Olá! Vim pelo site do United Florida FC e quero me inscrever na peneira. Minha idade e cidade são: }}" data-i18n-attr="href:peneira.wa" target="_blank" rel="noopener" data-brilho><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span><i data-i="whatsapp-logo" data-w="bold"></i><span data-i18n="peneira.cta">Quero me inscrever</span></a>
+          <details class="levar" data-revela style="--atraso:.15s">
+            <summary><span data-i18n="peneira.levar">O que levar no dia</span><i data-i="plus" data-w="bold"></i></summary>
+            <div class="levar__miolo" data-i18n="peneira.levarTexto">
+              <ol>
+                <li>Vir todo de preto: camisa, short e meião pretos</li>
+                <li>Documento com foto</li>
+                <li>Atestado médico</li>
+                <li>Chuteira, com ou sem travas</li>
+                <li>Caneleiras</li>
+              </ol>
+              <p>Não é permitido jogar com camisa de clube. O uniforme pode ter marca esportiva, mas não pode ter escudo de clube: quem descumprir não participa e o valor não é devolvido. Menores de 18 anos vêm com o responsável.</p>
+            </div>
+          </details>
+
+          <button class="botao botao--azul peneira__cta" type="button" data-abrir="inscricao" data-brilho><span class="brilho" aria-hidden="true"><span class="brilho__volta"><span class="brilho__ponto"></span></span></span><span class="brilho-fio" aria-hidden="true"><span class="brilho__ponto"></span></span><span data-i18n="peneira.cta">Quero me inscrever</span><i data-i="arrow-right" data-w="bold" class="i--seta"></i></button>
         </div>
       </div>
+
+      <dialog class="janela janela--form" id="inscricao" aria-labelledby="inscricao-titulo">
+        <div class="janela__caixa">
+          <button class="janela__fechar" type="button" data-fechar aria-label="Fechar" data-i18n-attr="aria-label:geral.fechar"><i data-i="x" data-w="bold"></i></button>
+          <p class="release__rotulo" data-i18n="inscricao.rotulo">Seletiva oficial · Rio de Janeiro</p>
+          <h3 class="janela__titulo" id="inscricao-titulo" data-i18n="inscricao.titulo">Inscrição na seletiva</h3>
+          <p class="janela__intro" data-i18n="inscricao.intro">Preencha os dados do atleta. Ao enviar, a inscrição vai para o WhatsApp do clube, que responde com o link do Pix para garantir a vaga.</p>
+          <form class="inscricao" data-inscricao data-wa="{{cfg.whatsapp}}" novalidate>
+            <label class="campo campo--largo"><span data-i18n="inscricao.nome">Nome completo do atleta</span><input name="nome" autocomplete="name" required></label>
+            <label class="campo"><span data-i18n="inscricao.nascimento">Data de nascimento</span><input name="nascimento" type="date" required></label>
+            <label class="campo"><span data-i18n="inscricao.categoria">Categoria</span>
+              <select name="categoria" required>
+                <option value="Sub-15">Sub-15</option><option value="Sub-17">Sub-17</option><option value="Sub-20">Sub-20</option><option value="Sub-23">Sub-23</option>
+              </select>
+            </label>
+            <label class="campo"><span data-i18n="inscricao.posicao">Posição</span><input name="posicao" placeholder="Ex.: meia, zagueiro" data-i18n-attr="placeholder:inscricao.posicaoEx"></label>
+            <label class="campo"><span data-i18n="inscricao.cidade">Cidade onde mora</span><input name="cidade" autocomplete="address-level2" required></label>
+            <label class="campo"><span data-i18n="inscricao.whats">WhatsApp</span><input name="whats" type="tel" inputmode="tel" autocomplete="tel" required></label>
+            <label class="campo"><span data-i18n="inscricao.responsavel">Responsável (menor de 18)</span><input name="responsavel" placeholder="Nome do pai, mãe ou responsável" data-i18n-attr="placeholder:inscricao.responsavelEx"></label>
+            <p class="inscricao__erro" data-erro role="alert" hidden data-i18n="inscricao.erro">Preencha nome, data de nascimento, cidade e WhatsApp.</p>
+            <button class="botao botao--azul inscricao__enviar" type="submit"><i data-i="whatsapp-logo" data-w="bold"></i><span data-i18n="inscricao.enviar">Enviar inscrição pelo WhatsApp</span></button>
+          </form>
+          <template data-msg-inscricao data-i18n="inscricao.msg">Olá! Vim pelo site do United Florida FC e quero me inscrever na seletiva do Rio de Janeiro (10/12, 10h, Aterro do Flamengo).</template>
+        </div>
+      </dialog>
     </section>

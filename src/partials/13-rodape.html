@@ -1,17 +1,14 @@
   <footer class="rodape">
     <div class="caixa rodape__grade">
       <div class="rodape__marca">
-        <img src="/assets/img/escudo-240.webp" alt="United Florida FC" width="240" height="278" loading="lazy" decoding="async">
-        <div>
-          <p class="rodape__frase" data-i18n="rodape.frase">O clube dos brasileiros na Flórida.</p>
-          <p class="rodape__local">Orlando, Florida, USA</p>
-          <ul class="rodape__redes">
-            <li><a href="{{cfg.redes.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><i data-i="instagram-logo" data-w="regular"></i></a></li>
-            <li><a href="{{cfg.redes.tiktok}}" target="_blank" rel="noopener" aria-label="TikTok"><i data-i="tiktok-logo" data-w="regular"></i></a></li>
-            <li><a href="{{cfg.redes.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><i data-i="facebook-logo" data-w="regular"></i></a></li>
-            <li><a href="{{cfg.redes.x}}" target="_blank" rel="noopener" aria-label="X"><i data-i="x-logo" data-w="regular"></i></a></li>
-          </ul>
-        </div>
+        <img class="rodape__logo" data-img="logo-uffc" sizes="150px" alt="UFFC, United Florida Football Club" loading="lazy" decoding="async">
+        <p class="rodape__frase" data-i18n="rodape.frase">O clube dos brasileiros na Flórida.</p>
+        <ul class="rodape__redes">
+          <li><a href="{{cfg.redes.instagram}}" target="_blank" rel="noopener" aria-label="Instagram"><i data-i="instagram-logo" data-w="regular"></i></a></li>
+          <li><a href="{{cfg.redes.tiktok}}" target="_blank" rel="noopener" aria-label="TikTok"><i data-i="tiktok-logo" data-w="regular"></i></a></li>
+          <li><a href="{{cfg.redes.facebook}}" target="_blank" rel="noopener" aria-label="Facebook"><i data-i="facebook-logo" data-w="regular"></i></a></li>
+          <li><a href="{{cfg.redes.x}}" target="_blank" rel="noopener" aria-label="X"><i data-i="x-logo" data-w="regular"></i></a></li>
+        </ul>
       </div>
 
       <nav class="rodape__menu" aria-label="Rodapé" data-i18n-attr="aria-label:rodape.rotulo">
@@ -34,12 +31,36 @@
         <div>
           <p class="rodape__titulo" data-i18n="rodape.c3">Atleta e negócios</p>
           <ul>
-            <li><a href="#peneira" data-i18n="nav.peneiras">Peneiras</a></li>
+            <li><a href="#seletiva" data-i18n="nav.peneiras">Seletiva</a></li>
             <li><a href="#franquias" data-i18n="nav.franquias">Franquias</a></li>
             <li><a href="{{wa:Olá! Vim pelo site do United Florida FC e quero falar com o clube.}}" data-i18n-attr="href:cta.wa" target="_blank" rel="noopener">WhatsApp</a></li>
           </ul>
         </div>
       </nav>
+    </div>
+
+    <div class="caixa rodape__info">
+      <div class="rodape__empresas">
+        <address class="empresa">
+          <span class="empresa__pais"><img class="bandeira" src="/assets/img/bandeiras/eua.svg" alt="" width="22" height="22" loading="lazy"><span data-i18n="rodape.eua">Sede nos Estados Unidos</span></span>
+          <strong>United Florida FC</strong>
+          <span>{{cfg.empresas.eua.endereco}}</span>
+          <span>{{cfg.empresas.eua.registro}}</span>
+        </address>
+        <address class="empresa">
+          <span class="empresa__pais"><img class="bandeira" src="/assets/img/bandeiras/brasil.svg" alt="" width="22" height="22" loading="lazy"><span data-i18n="rodape.brasil">Escritório no Brasil</span></span>
+          <strong>United Florida FC</strong>
+          <span>{{cfg.empresas.brasil.endereco}}</span>
+          <span>{{cfg.empresas.brasil.registro}}</span>
+        </address>
+      </div>
+      <div class="rodape__parceiros">
+        <p class="rodape__titulo" data-i18n="rodape.parceiros">Parceiros oficiais</p>
+        <ul>
+          <li><img data-img="logo-upsl" sizes="96px" alt="UPSL, United Premier Soccer League" loading="lazy" decoding="async"></li>
+          <li><img data-img="logo-reebok" sizes="150px" alt="Reebok" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
     </div>
 
     <div class="caixa rodape__base">

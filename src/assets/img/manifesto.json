@@ -1,63 +1,43 @@
 {
- "hero-fundo-1280.avif": {
+ "hero-1280.avif": {
   "w": 1280,
-  "h": 720,
-  "kb": 45
+  "h": 533,
+  "kb": 24
  },
- "hero-fundo-1280.webp": {
+ "hero-1280.webp": {
   "w": 1280,
-  "h": 720,
-  "kb": 89
+  "h": 533,
+  "kb": 43
  },
- "hero-fundo-1672.avif": {
-  "w": 1672,
-  "h": 941,
-  "kb": 65
+ "hero-1942.avif": {
+  "w": 1942,
+  "h": 809,
+  "kb": 42
  },
- "hero-fundo-1672.webp": {
-  "w": 1672,
-  "h": 941,
-  "kb": 129
- },
- "hero-jogadores-640.avif": {
-  "w": 640,
-  "h": 649,
-  "kb": 50
- },
- "hero-jogadores-640.webp": {
-  "w": 640,
-  "h": 649,
-  "kb": 99
- },
- "hero-jogadores-884.avif": {
-  "w": 884,
-  "h": 897,
-  "kb": 72
- },
- "hero-jogadores-884.webp": {
-  "w": 884,
-  "h": 897,
-  "kb": 134
+ "hero-1942.webp": {
+  "w": 1942,
+  "h": 809,
+  "kb": 74
  },
  "hero-celular-480.avif": {
   "w": 480,
-  "h": 514,
-  "kb": 21
+  "h": 362,
+  "kb": 13
  },
  "hero-celular-480.webp": {
   "w": 480,
-  "h": 514,
-  "kb": 38
+  "h": 362,
+  "kb": 22
  },
  "hero-celular-840.avif": {
   "w": 840,
-  "h": 900,
-  "kb": 48
+  "h": 633,
+  "kb": 29
  },
  "hero-celular-840.webp": {
   "w": 840,
-  "h": 900,
-  "kb": 83
+  "h": 633,
+  "kb": 48
  },
  "avatar-1-96.avif": {
   "w": 96,
@@ -92,12 +72,12 @@
  "clube-480.avif": {
   "w": 480,
   "h": 386,
-  "kb": 14
+  "kb": 13
  },
  "clube-480.webp": {
   "w": 480,
   "h": 386,
-  "kb": 22
+  "kb": 21
  },
  "clube-760.avif": {
   "w": 760,
@@ -107,7 +87,7 @@
  "clube-760.webp": {
   "w": 760,
   "h": 611,
-  "kb": 42
+  "kb": 40
  },
  "clube-1170.avif": {
   "w": 1170,
@@ -117,7 +97,7 @@
  "clube-1170.webp": {
   "w": 1170,
   "h": 941,
-  "kb": 72
+  "kb": 69
  },
  "vestiario-960.avif": {
   "w": 960,
@@ -142,389 +122,489 @@
  "etapa-upsl-760.avif": {
   "w": 760,
   "h": 428,
-  "kb": 16
+  "kb": 18
  },
  "etapa-upsl-760.webp": {
   "w": 760,
   "h": 428,
-  "kb": 23
+  "kb": 26
  },
  "etapa-upsl-1280.avif": {
   "w": 1280,
-  "h": 720,
-  "kb": 33
+  "h": 721,
+  "kb": 38
  },
  "etapa-upsl-1280.webp": {
   "w": 1280,
-  "h": 720,
-  "kb": 47
+  "h": 721,
+  "kb": 57
  },
  "etapa-opencup-760.avif": {
   "w": 760,
   "h": 428,
-  "kb": 12
+  "kb": 16
  },
  "etapa-opencup-760.webp": {
   "w": 760,
   "h": 428,
-  "kb": 15
+  "kb": 21
  },
  "etapa-opencup-1280.avif": {
   "w": 1280,
-  "h": 721,
-  "kb": 24
+  "h": 720,
+  "kb": 33
  },
  "etapa-opencup-1280.webp": {
   "w": 1280,
-  "h": 721,
-  "kb": 31
+  "h": 720,
+  "kb": 43
  },
  "etapa-mls-760.avif": {
   "w": 760,
   "h": 428,
-  "kb": 20
+  "kb": 19
  },
  "etapa-mls-760.webp": {
   "w": 760,
   "h": 428,
-  "kb": 30
+  "kb": 29
  },
  "etapa-mls-1280.avif": {
   "w": 1280,
   "h": 720,
-  "kb": 41
+  "kb": 40
  },
  "etapa-mls-1280.webp": {
   "w": 1280,
   "h": 720,
-  "kb": 61
+  "kb": 58
  },
  "camisa-marinho-280.avif": {
   "w": 280,
-  "h": 365,
-  "kb": 8
+  "h": 363,
+  "kb": 10
  },
  "camisa-marinho-280.webp": {
   "w": 280,
-  "h": 365,
-  "kb": 14
+  "h": 363,
+  "kb": 16
  },
  "camisa-marinho-420.avif": {
   "w": 420,
-  "h": 547,
-  "kb": 13
+  "h": 544,
+  "kb": 16
  },
  "camisa-marinho-420.webp": {
   "w": 420,
-  "h": 547,
-  "kb": 23
+  "h": 544,
+  "kb": 26
  },
  "camisa-marinho-560.avif": {
   "w": 560,
-  "h": 729,
-  "kb": 19
+  "h": 725,
+  "kb": 23
  },
  "camisa-marinho-560.webp": {
   "w": 560,
-  "h": 729,
-  "kb": 34
+  "h": 725,
+  "kb": 37
  },
  "camisa-marinho-840.avif": {
   "w": 840,
-  "h": 1094,
-  "kb": 32
+  "h": 1088,
+  "kb": 36
  },
  "camisa-marinho-840.webp": {
   "w": 840,
-  "h": 1094,
-  "kb": 64
+  "h": 1088,
+  "kb": 62
  },
  "camisa-marinho-borrada-420.avif": {
   "w": 420,
-  "h": 547,
-  "kb": 7
+  "h": 544,
+  "kb": 8
  },
  "camisa-marinho-borrada-420.webp": {
   "w": 420,
-  "h": 547,
-  "kb": 21
+  "h": 544,
+  "kb": 22
  },
  "camisa-branca-280.avif": {
   "w": 280,
-  "h": 365,
-  "kb": 9
+  "h": 363,
+  "kb": 10
  },
  "camisa-branca-280.webp": {
   "w": 280,
-  "h": 365,
-  "kb": 16
+  "h": 363,
+  "kb": 17
  },
  "camisa-branca-420.avif": {
   "w": 420,
-  "h": 547,
-  "kb": 15
+  "h": 544,
+  "kb": 16
  },
  "camisa-branca-420.webp": {
   "w": 420,
-  "h": 547,
-  "kb": 27
+  "h": 544,
+  "kb": 28
  },
  "camisa-branca-560.avif": {
   "w": 560,
-  "h": 729,
-  "kb": 20
+  "h": 725,
+  "kb": 22
  },
  "camisa-branca-560.webp": {
   "w": 560,
-  "h": 729,
-  "kb": 39
+  "h": 725,
+  "kb": 41
  },
  "camisa-branca-840.avif": {
   "w": 840,
-  "h": 1094,
-  "kb": 33
+  "h": 1088,
+  "kb": 36
  },
  "camisa-branca-840.webp": {
   "w": 840,
-  "h": 1094,
-  "kb": 70
+  "h": 1088,
+  "kb": 71
  },
  "camisa-branca-borrada-420.avif": {
   "w": 420,
-  "h": 547,
-  "kb": 8
+  "h": 544,
+  "kb": 9
  },
  "camisa-branca-borrada-420.webp": {
   "w": 420,
-  "h": 547,
+  "h": 544,
   "kb": 24
  },
  "camisa-celeste-280.avif": {
   "w": 280,
-  "h": 365,
-  "kb": 10
+  "h": 363,
+  "kb": 11
  },
  "camisa-celeste-280.webp": {
   "w": 280,
-  "h": 365,
-  "kb": 18
+  "h": 363,
+  "kb": 21
  },
  "camisa-celeste-420.avif": {
   "w": 420,
-  "h": 547,
-  "kb": 17
+  "h": 544,
+  "kb": 18
  },
  "camisa-celeste-420.webp": {
   "w": 420,
-  "h": 547,
-  "kb": 30
+  "h": 544,
+  "kb": 39
  },
  "camisa-celeste-560.avif": {
   "w": 560,
-  "h": 729,
-  "kb": 23
+  "h": 725,
+  "kb": 26
  },
  "camisa-celeste-560.webp": {
   "w": 560,
-  "h": 729,
-  "kb": 45
+  "h": 725,
+  "kb": 59
  },
  "camisa-celeste-840.avif": {
   "w": 840,
-  "h": 1094,
-  "kb": 39
+  "h": 1088,
+  "kb": 43
  },
  "camisa-celeste-840.webp": {
   "w": 840,
-  "h": 1094,
-  "kb": 88
+  "h": 1088,
+  "kb": 109
  },
  "camisa-celeste-borrada-420.avif": {
   "w": 420,
-  "h": 547,
+  "h": 544,
   "kb": 10
  },
  "camisa-celeste-borrada-420.webp": {
   "w": 420,
-  "h": 547,
-  "kb": 25
+  "h": 544,
+  "kb": 26
+ },
+ "moletom-280.avif": {
+  "w": 280,
+  "h": 333,
+  "kb": 10
+ },
+ "moletom-280.webp": {
+  "w": 280,
+  "h": 333,
+  "kb": 16
+ },
+ "moletom-420.avif": {
+  "w": 420,
+  "h": 499,
+  "kb": 16
+ },
+ "moletom-420.webp": {
+  "w": 420,
+  "h": 499,
+  "kb": 28
+ },
+ "moletom-560.avif": {
+  "w": 560,
+  "h": 665,
+  "kb": 23
+ },
+ "moletom-560.webp": {
+  "w": 560,
+  "h": 665,
+  "kb": 41
+ },
+ "camiseta-branca-280.avif": {
+  "w": 280,
+  "h": 399,
+  "kb": 9
+ },
+ "camiseta-branca-280.webp": {
+  "w": 280,
+  "h": 399,
+  "kb": 15
+ },
+ "camiseta-branca-420.avif": {
+  "w": 420,
+  "h": 598,
+  "kb": 15
+ },
+ "camiseta-branca-420.webp": {
+  "w": 420,
+  "h": 598,
+  "kb": 27
+ },
+ "camiseta-branca-560.avif": {
+  "w": 560,
+  "h": 797,
+  "kb": 21
+ },
+ "camiseta-branca-560.webp": {
+  "w": 560,
+  "h": 797,
+  "kb": 39
+ },
+ "camiseta-preta-280.avif": {
+  "w": 280,
+  "h": 398,
+  "kb": 9
+ },
+ "camiseta-preta-280.webp": {
+  "w": 280,
+  "h": 398,
+  "kb": 15
+ },
+ "camiseta-preta-420.avif": {
+  "w": 420,
+  "h": 597,
+  "kb": 14
+ },
+ "camiseta-preta-420.webp": {
+  "w": 420,
+  "h": 597,
+  "kb": 26
+ },
+ "camiseta-preta-560.avif": {
+  "w": 560,
+  "h": 796,
+  "kb": 20
+ },
+ "camiseta-preta-560.webp": {
+  "w": 560,
+  "h": 796,
+  "kb": 38
+ },
+ "bone-280.avif": {
+  "w": 280,
+  "h": 256,
+  "kb": 11
+ },
+ "bone-280.webp": {
+  "w": 280,
+  "h": 256,
+  "kb": 19
+ },
+ "bone-420.avif": {
+  "w": 420,
+  "h": 384,
+  "kb": 19
+ },
+ "bone-420.webp": {
+  "w": 420,
+  "h": 384,
+  "kb": 35
+ },
+ "bone-560.avif": {
+  "w": 560,
+  "h": 512,
+  "kb": 30
+ },
+ "bone-560.webp": {
+  "w": 560,
+  "h": 512,
+  "kb": 56
  },
  "detalhe-escudo-420.avif": {
   "w": 420,
   "h": 460,
-  "kb": 26
+  "kb": 17
  },
  "detalhe-escudo-420.webp": {
   "w": 420,
   "h": 460,
-  "kb": 50
+  "kb": 31
  },
  "detalhe-escudo-640.avif": {
   "w": 640,
   "h": 701,
-  "kb": 63
+  "kb": 31
  },
  "detalhe-escudo-640.webp": {
   "w": 640,
   "h": 701,
-  "kb": 117
+  "kb": 60
  },
  "detalhe-reebok-420.avif": {
   "w": 420,
   "h": 460,
-  "kb": 20
+  "kb": 15
  },
  "detalhe-reebok-420.webp": {
   "w": 420,
   "h": 460,
-  "kb": 36
+  "kb": 27
  },
  "detalhe-reebok-640.avif": {
   "w": 640,
   "h": 701,
-  "kb": 46
+  "kb": 35
  },
  "detalhe-reebok-640.webp": {
   "w": 640,
   "h": 701,
-  "kb": 87
+  "kb": 66
  },
  "detalhe-gola-420.avif": {
   "w": 420,
   "h": 460,
-  "kb": 15
+  "kb": 14
  },
  "detalhe-gola-420.webp": {
   "w": 420,
   "h": 460,
-  "kb": 27
+  "kb": 25
  },
  "detalhe-gola-640.avif": {
   "w": 640,
   "h": 701,
-  "kb": 37
+  "kb": 38
  },
  "detalhe-gola-640.webp": {
   "w": 640,
   "h": 701,
-  "kb": 66
+  "kb": 72
  },
  "detalhe-patch-420.avif": {
   "w": 420,
   "h": 460,
-  "kb": 23
+  "kb": 20
  },
  "detalhe-patch-420.webp": {
   "w": 420,
   "h": 460,
-  "kb": 45
+  "kb": 41
  },
  "detalhe-patch-640.avif": {
   "w": 640,
   "h": 701,
-  "kb": 52
+  "kb": 47
  },
  "detalhe-patch-640.webp": {
   "w": 640,
   "h": 701,
   "kb": 99
  },
- "bone-360.avif": {
-  "w": 360,
-  "h": 280,
-  "kb": 10
- },
- "bone-360.webp": {
-  "w": 360,
-  "h": 280,
-  "kb": 16
- },
- "bone-560.avif": {
-  "w": 560,
-  "h": 435,
-  "kb": 24
- },
- "bone-560.webp": {
-  "w": 560,
-  "h": 435,
-  "kb": 42
- },
  "loja-800.avif": {
   "w": 800,
   "h": 450,
-  "kb": 21
+  "kb": 22
  },
  "loja-800.webp": {
   "w": 800,
   "h": 450,
-  "kb": 33
+  "kb": 35
  },
  "loja-1280.avif": {
   "w": 1280,
   "h": 720,
-  "kb": 41
+  "kb": 45
  },
  "loja-1280.webp": {
   "w": 1280,
   "h": 720,
-  "kb": 64
+  "kb": 71
  },
  "loja-1672.avif": {
   "w": 1672,
   "h": 941,
-  "kb": 61
+  "kb": 67
  },
  "loja-1672.webp": {
   "w": 1672,
   "h": 941,
-  "kb": 92
+  "kb": 105
  },
- "maicon-480.avif": {
-  "w": 480,
-  "h": 598,
-  "kb": 26
+ "maicon-112.avif": {
+  "w": 112,
+  "h": 112,
+  "kb": 1
  },
- "maicon-480.webp": {
-  "w": 480,
-  "h": 598,
-  "kb": 49
+ "maicon-112.webp": {
+  "w": 112,
+  "h": 112,
+  "kb": 1
  },
- "maicon-720.avif": {
-  "w": 720,
-  "h": 897,
-  "kb": 45
+ "maicon-224.avif": {
+  "w": 224,
+  "h": 224,
+  "kb": 3
  },
- "maicon-720.webp": {
-  "w": 720,
-  "h": 897,
-  "kb": 90
+ "maicon-224.webp": {
+  "w": 224,
+  "h": 224,
+  "kb": 4
  },
- "maicon-963.avif": {
-  "w": 963,
-  "h": 1200,
-  "kb": 69
+ "maicon-336.avif": {
+  "w": 336,
+  "h": 336,
+  "kb": 6
  },
- "maicon-963.webp": {
-  "w": 963,
-  "h": 1200,
-  "kb": 132
+ "maicon-336.webp": {
+  "w": 336,
+  "h": 336,
+  "kb": 7
  },
- "peneira-560.avif": {
+ "seletiva-560.avif": {
   "w": 560,
   "h": 756,
   "kb": 39
  },
- "peneira-560.webp": {
+ "seletiva-560.webp": {
   "w": 560,
   "h": 756,
   "kb": 73
  },
- "peneira-900.avif": {
+ "seletiva-900.avif": {
   "w": 900,
   "h": 1215,
   "kb": 79
  },
- "peneira-900.webp": {
+ "seletiva-900.webp": {
   "w": 900,
   "h": 1215,
   "kb": 145
@@ -568,5 +648,65 @@
   "w": 192,
   "h": 96,
   "kb": 4
+ },
+ "logo-uffc-150.avif": {
+  "w": 150,
+  "h": 42,
+  "kb": 2
+ },
+ "logo-uffc-150.webp": {
+  "w": 150,
+  "h": 42,
+  "kb": 3
+ },
+ "logo-uffc-300.avif": {
+  "w": 300,
+  "h": 84,
+  "kb": 4
+ },
+ "logo-uffc-300.webp": {
+  "w": 300,
+  "h": 84,
+  "kb": 7
+ },
+ "logo-upsl-64.avif": {
+  "w": 64,
+  "h": 66,
+  "kb": 2
+ },
+ "logo-upsl-64.webp": {
+  "w": 64,
+  "h": 66,
+  "kb": 3
+ },
+ "logo-upsl-128.avif": {
+  "w": 128,
+  "h": 131,
+  "kb": 4
+ },
+ "logo-upsl-128.webp": {
+  "w": 128,
+  "h": 131,
+  "kb": 7
+ },
+ "logo-reebok-128.avif": {
+  "w": 128,
+  "h": 64,
+  "kb": 2
+ },
+ "logo-reebok-128.webp": {
+  "w": 128,
+  "h": 64,
+  "kb": 3
+ },
+ "logo-reebok-256.avif": {
+  "w": 256,
+  "h": 128,
+  "kb": 4
+ },
+ "logo-reebok-256.webp": {
+  "w": 256,
+  "h": 128,
+  "kb": 6
  }
 }

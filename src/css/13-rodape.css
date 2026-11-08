@@ -1,10 +1,9 @@
 /* ---------------------------------------------------------------- rodapé (marinho profundo) */
 .rodape { background: var(--marinho-profundo); color: #fff; padding: 56px 0 26px; }
 .rodape__grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 48px; }
-.rodape__marca { display: flex; gap: 22px; align-items: flex-start; }
-.rodape__marca img { width: 78px; height: auto; flex: none; }
-.rodape__frase { font: 300 26px/1.1 var(--f-titulo); letter-spacing: -.02em; max-width: 12em; }
-.rodape__local { margin-top: 8px; font-size: 15px; color: rgb(255 255 255 / .66); }
+.rodape__marca { display: grid; justify-items: start; align-content: start; }
+.rodape__logo, .rodape__logo img { display: block; width: 150px; height: auto; }
+.rodape__frase { margin-top: 18px; font: 300 26px/1.1 var(--f-titulo); letter-spacing: -.02em; max-width: 12em; }
 .rodape__redes { display: flex; gap: 8px; margin-top: 16px; }
 .rodape__redes a {
   display: grid;
@@ -22,11 +21,23 @@
 .rodape__menu ul { display: grid; gap: 10px; margin-top: 16px; }
 .rodape__menu a { font: 600 18px/1.2 var(--f-rotulo); letter-spacing: .03em; color: rgb(255 255 255 / .86); transition: color .3s var(--ease-hover); }
 .rodape__menu a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+/* endereços das duas empresas e os parceiros (UPSL e Reebok) */
+.rodape__info { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--linha-escura); }
+.rodape__empresas { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.empresa { display: grid; align-content: start; gap: 4px; font-style: normal; font-size: 15px; line-height: 1.45; color: rgb(255 255 255 / .7); }
+.empresa span:empty { display: none; }
+.empresa__pais { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font: 600 14px/1 var(--f-rotulo); color: var(--celeste); }
+.empresa__pais .bandeira { font-size: 22px; }
+.empresa strong { font: 600 17px/1.2 var(--f-rotulo); color: #fff; }
+.rodape__parceiros ul { display: flex; align-items: center; gap: 36px; margin-top: 16px; }
+.rodape__parceiros li:first-child img { width: 64px; height: auto; }
+.rodape__parceiros li:last-child img { width: 128px; height: auto; }
+
 .rodape__base {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 44px;
+  margin-top: 36px;
   padding-top: 20px;
   border-top: 1px solid var(--linha-escura);
   font-size: 14px;
@@ -59,10 +70,12 @@
 
 @media (max-width: 74.99em) {
   .rodape__grade { grid-template-columns: 1fr; gap: 36PX; }
+  .rodape__info { grid-template-columns: 1fr; gap: 32PX; }
 }
 @media (max-width: 47.99em) {
   .rodape { padding: 44PX 0 90PX; }
   .rodape__menu { grid-template-columns: 1fr 1fr; row-gap: 28PX; }
+  .rodape__empresas { grid-template-columns: 1fr; }
   .rodape__base { flex-direction: column; gap: 6PX; margin-top: 32PX; }
   .flutuante { right: 16PX; bottom: 16PX; width: 54PX; height: 54PX; font-size: 28PX; }
 }

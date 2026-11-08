@@ -267,7 +267,10 @@ function palavras(html) {
       .map((parte) => (parte.startsWith('<') ? parte : parte.replace(/\S+/g, (w) => `<span class="pw"><span class="pw__i">${letras(w)}</span></span>`)))
       .join('')
     const aria = nome === 'p' || /\baria-label=/.test(attrs) ? '' : ` aria-label="${rotulo}"`
-    return `<${nome}${attrs}${aria}>${out}</${nome}>`
+    // o tradutor do Chrome traduz letra por letra e embaralha o título ("The Brumzeu leuumn club"):
+    // o site já tem o inglês próprio em /en/, então o título quebrado em letras não é traduzido
+    const naoTraduzir = nome === 'p' ? '' : ' translate="no"'
+    return `<${nome}${attrs}${aria}${naoTraduzir}>${out}</${nome}>`
   })
 }
 

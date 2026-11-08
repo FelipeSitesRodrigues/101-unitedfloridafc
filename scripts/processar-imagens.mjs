@@ -4,6 +4,8 @@
  *
  * Origens (../0101 - United Florida FC/Recursos Site):
  * - ia/: fotos geradas no ChatGPT em 2026-11-01 e 02, aprovadas pelo Felipe seção por seção
+ * - ia2/: fotos refeitas na rodada do Maicon (2026-11-08), com o escudo oficial por cima
+ *   (scripts/trocar-escudos.py); produtos/: fotos dos produtos que o Maicon mandou
  * - site-antigo-khone/: escudo, logos da Reebok e da UPSL (do site que o Maicon rejeitou)
  * - maicon/: print do Instagram do Maicon (provisória até ele mandar a original)
  * - insumos/: recortes sem fundo (scripts/recortar.mjs do 0100, @imgly/background-removal-node)
@@ -58,41 +60,38 @@ async function variantes(nome, origem, larguras, op = {}) {
 }
 
 // ---------------------------------------------------------------- hero
-// Redesenho de 2026-11-02: cenário do estádio azul (ia/01-hero-fundo.png) e os jogadores que o
-// ChatGPT gerou no fundo cinza, recortados pelo scripts/hero-jogadores-v2.mjs. Celular: os
-// jogadores já compostos sobre o cenário (insumos/hero-celular.png, do mesmo script).
-await variantes('hero-fundo', `${IA}/01-hero-fundo.png`, [1280, 1672], { q: 46, qw: 70 })
-await variantes('hero-jogadores', 'insumos/hero-jogadores.png', [640, 884], { alfa: true })
-await variantes('hero-celular', 'insumos/hero-celular.png', [480, 840])
-// as três fotos redondas de "Peneiras abertas": rostos dos garotos da foto da peneira
+// Rodada do Maicon (2026-11-08): uma foto só, larga (ia2/01-hero.png, 1942x809, escudos trocados
+// pelo oficial no scripts/trocar-escudos.py). Celular: corte só dos três atletas.
+const IA2 = `${R}/ia2`
+await variantes('hero', `${IA2}/01-hero.png`, [1280, 1942], { q: 48, qw: 72 })
+{
+  const buf = await sharp(`${IA2}/01-hero.png`).extract({ left: 880, top: 70, width: 980, height: 739 }).toBuffer()
+  await variantes('hero-celular', buf, [480, 840])
+}
+// as três fotos redondas da seletiva: rostos dos garotos da foto da seletiva
 for (const [i, [l, t, z]] of [[40, 385, 230], [405, 235, 250], [615, 330, 210]].entries()) {
-  const buf = await sharp(`${IA}/13-peneira.png`).extract({ left: l, top: t, width: z, height: z }).toBuffer()
+  const buf = await sharp(`${IA2}/13-seletiva.png`).extract({ left: l, top: t, width: z, height: z }).toBuffer()
   await variantes(`avatar-${i + 1}`, buf, [96])
 }
 
 // ---------------------------------------------------------------- o clube
-// foto nova do redesenho (ia/03-clube-v3.png); o degradê pro azul é CSS
-await variantes('clube', `${IA}/03-clube-v3.png`, [480, 760, 1170], { corte: [0, 0, 0.7, 1] })
+// grupo à esquerda; o degradê pro azul é CSS
+await variantes('clube', `${IA2}/02-clube.png`, [480, 760, 1170], { corte: [0, 0, 0.7, 1] })
 
 // ---------------------------------------------------------------- uniformes: o vestiário
 await variantes('vestiario', `${IA}/14-vestiario-fundo.png`, [960, 1672], { q: 44, qw: 68 })
 
 // ---------------------------------------------------------------- o caminho (faixas)
-await variantes('etapa-upsl', `${IA}/04-etapa-upsl.png`, [760, 1280])
-await variantes('etapa-opencup', `${IA}/05-etapa-opencup.png`, [760, 1280])
-await variantes('etapa-mls', 'insumos/06-etapa-mls-v2.png', [760, 1280]) // scripts/etapa-mls.mjs: número e detalhes pintados
+await variantes('etapa-upsl', `${IA2}/03-etapa-upsl.png`, [760, 1280])
+await variantes('etapa-opencup', `${IA2}/04-etapa-opencup.png`, [760, 1280])
+await variantes('etapa-mls', `${IA2}/05-etapa-mls.png`, [760, 1280])
 
-// ---------------------------------------------------------------- camisas
-// As três vieram no mesmo enquadramento (1024x1536). A marinho já veio sem fundo; a branca e a
-// celeste foram recortadas. Corta as três no MESMO retângulo (a união dos alfas), pra elas
-// trocarem de lugar no carrossel sem pular de tamanho.
-const camisas = {
-  marinho: `${IA}/07-camisa-marinho.png`,
-  branca: 'insumos/08-camisa-branca-recorte.png',
-  celeste: 'insumos/09-camisa-celeste-recorte.png',
-}
-let caixa = null
-for (const arq of Object.values(camisas)) {
+// ---------------------------------------------------------------- camisas e produtos
+// Fotos dos produtos que o Maicon mandou (Recursos Site/produtos), recortadas pelo
+// scripts/recortar.mjs em insumos/produto-*-recorte.png. As três camisas vêm no mesmo
+// enquadramento: corta as três no MESMO retângulo (a união dos alfas), pra elas trocarem de lugar
+// no carrossel sem pular de tamanho.
+const caixaAlfa = async (arq) => {
   const { data, info } = await sharp(arq).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
   let [x0, y0, x1, y1] = [info.width, info.height, 0, 0]
   for (let y = 0; y < info.height; y++)
@@ -103,87 +102,60 @@ for (const arq of Object.values(camisas)) {
         if (x > x1) x1 = x
         if (y > y1) y1 = y
       }
-  caixa = caixa ? [Math.min(caixa[0], x0), Math.min(caixa[1], y0), Math.max(caixa[2], x1), Math.max(caixa[3], y1)] : [x0, y0, x1, y1]
+  return { caixa: [x0, y0, x1, y1], w: info.width, h: info.height }
 }
-const [cx0, cy0, cx1, cy1] = [Math.max(0, caixa[0] - 8), Math.max(0, caixa[1] - 8), Math.min(1023, caixa[2] + 8), Math.min(1535, caixa[3] + 8)]
+const camisas = ['marinho', 'branca', 'celeste']
+let caixa = null
+let dim = null
+for (const nome of camisas) {
+  const r = await caixaAlfa(`insumos/produto-camisa-${nome}-recorte.png`)
+  dim = r
+  caixa = caixa ? [Math.min(caixa[0], r.caixa[0]), Math.min(caixa[1], r.caixa[1]), Math.max(caixa[2], r.caixa[2]), Math.max(caixa[3], r.caixa[3])] : r.caixa
+}
+const [cx0, cy0, cx1, cy1] = [Math.max(0, caixa[0] - 8), Math.max(0, caixa[1] - 8), Math.min(dim.w - 1, caixa[2] + 8), Math.min(dim.h - 1, caixa[3] + 8)]
 console.log('caixa das camisas', [cx0, cy0, cx1, cy1].join(', '))
-for (const [nome, arq] of Object.entries(camisas)) {
-  const buf = await sharp(arq).ensureAlpha().extract({ left: cx0, top: cy0, width: cx1 - cx0, height: cy1 - cy0 }).png().toBuffer()
+for (const nome of camisas) {
+  const buf = await sharp(`insumos/produto-camisa-${nome}-recorte.png`).ensureAlpha().extract({ left: cx0, top: cy0, width: cx1 - cx0, height: cy1 - cy0 }).png().toBuffer()
   await variantes(`camisa-${nome}`, buf, [280, 420, 560, 840], { alfa: true })
   // versão desfocada das laterais do carrossel: troca por opacidade, nunca filter animado
   const borrada = await sharp(buf).resize({ width: 420 }).blur(7).png().toBuffer()
   await variantes(`camisa-${nome}-borrada`, borrada, [420], { alfa: true })
 }
-
-// ---------------------------------------------------------------- detalhes, boné e loja
-await variantes('detalhe-escudo', `${IA}/10a-escudo.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
-await variantes('detalhe-reebok', `${IA}/10b-reebok.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
-await variantes('detalhe-gola', `${IA}/10c-gola.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
-await variantes('detalhe-patch', `${IA}/10d-patch.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
-{
-  const buf = await sharp('insumos/11-bone-recorte.png').trim({ threshold: 1 }).png().toBuffer()
-  await variantes('bone', buf, [360, 560], { alfa: true })
+for (const nome of ['moletom', 'camiseta-branca', 'camiseta-preta', 'bone-frente']) {
+  const buf = await sharp(`insumos/produto-${nome}-recorte.png`).trim({ threshold: 1 }).png().toBuffer()
+  await variantes(nome === 'bone-frente' ? 'bone' : nome, buf, [280, 420, 560], { alfa: true })
 }
-await variantes('loja', `${IA}/12-loja-amigos.png`, [800, 1280, 1672])
+
+// ---------------------------------------------------------------- detalhes e loja
+// detalhes refeitos no ChatGPT em 2026-11-08: escudo e Reebok em TPU, gola com Dry Fit Jacquard, patch Reebok
+await variantes('detalhe-escudo', `${IA2}/10a-escudo-tpu.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
+await variantes('detalhe-reebok', `${IA2}/10b-reebok-tpu.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
+await variantes('detalhe-gola', `${IA2}/10c-gola-jacquard.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
+await variantes('detalhe-patch', `${IA2}/10d-patch-reebok.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
+await variantes('loja', `${IA2}/06-loja-amigos.png`, [800, 1280, 1672])
 
 // ---------------------------------------------------------------- fundador
-// Print do Instagram (642x833) com as setas do carrossel por cima: cada seta (círculo de ~16 px)
-// é preenchida por difusão a partir da borda (RGBA, então do lado de fora vira transparente), e
-// a base com os pontinhos de página sai no corte. Provisória: pedir a original ao Maicon.
-{
-  const { data, info } = await sharp('insumos/maicon-recorte.png').ensureAlpha().raw().toBuffer({ resolveWithObject: true })
-  const { width: W } = info
-  const setas = [[29, 417, 18, true], [611, 417, 18, false]]
-  for (const [cx, cy, r, borda] of setas) {
-    const dentro = []
-    for (let y = cy - r; y <= cy + r; y++)
-      for (let x = cx - r; x <= cx + r; x++) if (x >= 0 && x < W && Math.hypot(x - cx, y - cy) <= r) dentro.push([x, y])
-    // pré-multiplica, difunde 400 vezes e desfaz
-    const px = new Float32Array(data.length)
-    for (let i = 0; i < data.length; i += 4) {
-      const a = data[i + 3] / 255
-      px[i] = data[i] * a
-      px[i + 1] = data[i + 1] * a
-      px[i + 2] = data[i + 2] * a
-      px[i + 3] = data[i + 3]
-    }
-    for (let it = 0; it < 400; it++)
-      for (const [x, y] of dentro) {
-        const i = (y * W + x) * 4
-        for (let c = 0; c < 4; c++) {
-          const v = [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]].filter(([a]) => a >= 0 && a < W).map(([a, b]) => px[(b * W + a) * 4 + c])
-          px[i + c] = v.reduce((s, n) => s + n, 0) / v.length
-        }
-      }
-    for (const [x, y] of dentro) {
-      const i = (y * W + x) * 4
-      const a = px[i + 3]
-      // seta na borda da manga: alfa meio a meio vira mancha cinza; ali é manga ou é vazio
-      data[i + 3] = borda ? (a > 150 ? 255 : 0) : Math.round(a)
-      for (let c = 0; c < 3; c++) data[i + c] = a > 1 ? Math.min(255, Math.round((px[i + c] / a) * 255)) : 0
-    }
-  }
-  const limpo = await sharp(data, { raw: info }).png().toBuffer()
-  const corte = await sharp(limpo).extract({ left: 0, top: 0, width: 642, height: 800 }).png().toBuffer()
-  writeFileSync('insumos/maicon-limpo.png', corte)
-  const ampliada = await sharp(corte).resize({ width: 963, kernel: 'lanczos3' }).sharpen({ sigma: 0.6 }).png().toBuffer()
-  await variantes('maicon', ampliada, [480, 720, 963], { alfa: true })
-}
+// foto profissional de terno (Recursos Site/maicon/maicon-terno.png), só o rosto, num círculo
+await variantes('maicon', 'insumos/maicon-rosto.png', [112, 224, 336])
 
-// ---------------------------------------------------------------- peneira
-await variantes('peneira', `${IA}/13-peneira.png`, [560, 900], { corte: [0, 0.04, 1, 0.9] })
+// ---------------------------------------------------------------- seletiva
+await variantes('seletiva', `${IA2}/13-seletiva.png`, [560, 900], { corte: [0, 0.04, 1, 0.9] })
 
 // ---------------------------------------------------------------- marcas
 const K = `${R}/site-antigo-khone`
 await variantes('escudo', `${K}/logo-escudo-900.webp`, [120, 240, 480], { alfa: true })
 await variantes('reebok', `${K}/logo-reebok-branco.webp`, [192], { alfa: true })
+// rodapé: logo UFFC (alternativa que o Maicon mandou) e os parceiros, em fundo transparente
+await variantes('logo-uffc', 'insumos/logo-uffc.png', [150, 300], { alfa: true, ampliar: false })
+await variantes('logo-upsl', 'insumos/logo-upsl.png', [64, 128], { alfa: true })
+await variantes('logo-reebok', 'insumos/logo-reebok-branco.png', [128, 256], { alfa: true })
 
 // ---------------------------------------------------------------- banner da loja (/loja/)
-await sharp('insumos/loja-banner-1920x720.png').webp({ quality: 78 }).toFile(path.join(OUT, 'loja-banner.webp'))
+await sharp(`${IA2}/07-loja-banner.png`).webp({ quality: 78 }).toFile(path.join(OUT, 'loja-banner.webp'))
 
 // ---------------------------------------------------------------- og e ícones
 {
-  const og = await sharp('insumos/hero-og.png').resize({ width: 1200, height: 630, fit: 'cover' }).jpeg({ quality: 82, mozjpeg: true }).toBuffer()
+  const og = await sharp(`${R}/ia2/01-hero.png`).resize({ width: 1200, height: 630, fit: 'cover', position: 'right' }).jpeg({ quality: 82, mozjpeg: true }).toBuffer()
   writeFileSync(path.join(OUT, 'og.jpg'), og)
   const raiz = 'src/raiz'
   mkdirSync(raiz, { recursive: true })
@@ -200,9 +172,7 @@ await sharp('insumos/loja-banner-1920x720.png').webp({ quality: 78 }).toFile(pat
   writeFileSync(`${raiz}/favicon.ico`, Buffer.concat([ico, png]))
 }
 
-await import('./loja-fotos.mjs')
 
 writeFileSync(path.join(OUT, 'manifesto.json'), JSON.stringify(manifesto, null, 1))
 const total = Object.values(manifesto).reduce((s, m) => s + m.kb, 0)
 console.log(`ok ${Object.keys(manifesto).length} arquivos, ${total} KB no total`)
-if (!existsSync(`${R}/maicon/maicon-original.jpg`)) console.log('pendente: foto original do Maicon (hoje é o print do Instagram, 642 px)')

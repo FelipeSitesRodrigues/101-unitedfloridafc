@@ -19,22 +19,22 @@ const id = Object.hasOwn(PRODUTOS, pedido || '') ? pedido : 'marinho'
 const p = PRODUTOS[id]
 document.title = `${p.nome} | Loja United Florida FC`
 const camisa = p.cat === 'camisa'
-// galeria: [arquivo, se a foto é peça sobre fundo claro]
-const fotos = camisa
-  ? [...(id === 'marinho' ? [[p.jogador, false], [p.foto, true]] : [[p.foto, true], [p.jogador, false]]), ['detalhe-escudo-640', false], ['detalhe-gola-640', false]] // branca e celeste: a foto do jogador sai do banner, sem nitidez pra ser a principal
-  : [[p.foto, true]]
-const tamanhos = camisa ? TAMANHOS : ['Único']
-const parcela = brl(p.preco / 6)
-const lista = camisa
-  ? ['Gola polo em V com friso', 'Escudo bordado no peito', 'Logo Reebok bordado', 'Patch lateral EST. 2027', 'Tecido leve de secagem rápida']
-  : ['Escudo bordado na frente', 'Logo Reebok na lateral', 'Ajuste traseiro', 'Tamanho único']
+const comTam = temTamanho(p)
+// galeria: [arquivo, se a foto é peça sobre fundo claro]; camisa leva também os detalhes
+const fotos = camisa ? [[p.foto, true], ['detalhe-escudo-640', false], ['detalhe-gola-640', false], ['detalhe-reebok-640', false]] : [[p.foto, true]]
+const tamanhos = comTam ? TAMANHOS : ['Único']
+const lista = {
+  camisa: ['Dry Fit Jacquard, leve e de secagem rápida', 'Gola polo retrô com friso branco duplo', 'Escudo em TPU emborrachado', 'Logo e patch Reebok em TPU'],
+  agasalho: ['Moletom com capuz e bolso canguru', 'Escudo no peito', 'Logo Reebok'],
+  camiseta: ['Camiseta de algodão', 'Arte Extreme Time United Florida FC'],
+  bone: ['Escudo na frente', 'Ajuste traseiro', 'Tamanho único'],
+}[p.cat]
 const abas = {
   Detalhes: `<p>${p.desc}</p><ul>${lista.map((l) => `<li>${l}</li>`).join('')}</ul>`,
-  Tecido: '<p>Composição e cuidados de lavagem entram aqui, com os dados oficiais da Reebok.</p>',
-  Medidas: '<p>A tabela de medidas de cada tamanho entra aqui, com os dados oficiais da Reebok.</p>',
-  'Envio e trocas': '<p>Prazos, frete e regras de troca entram aqui, conforme a operação definida pelo clube.</p>',
+  Medidas: '<p>A tabela de medidas de cada tamanho entra aqui, com os dados oficiais da Reebok. Na dúvida, pergunte ao clube no WhatsApp.</p>',
+  'Pedido e entrega': '<p>Você monta o pedido na sacola e envia pelo WhatsApp. O clube confirma o valor, o frete e a forma de pagamento com você.</p>',
 }
-const outros = Object.entries(PRODUTOS).filter(([k]) => k !== id)
+const outros = Object.entries(PRODUTOS).filter(([k]) => k !== id).slice(0, 3)
 document.getElementById('pagina').innerHTML = `
   <nav class="trilha" aria-label="Caminho"><a href="/">Início</a> / <a href="/loja/">Loja</a> / ${p.nome}</nav>
   <section class="prod">
@@ -45,31 +45,34 @@ document.getElementById('pagina').innerHTML = `
     <div class="compra-col">
       <span class="etiqueta">Novo · Temporada 2027</span>
       <h1>${p.a} <b>${p.b}</b></h1>
-      <p class="preco">${brl(p.preco)}</p>
-      <p class="parcela">ou 6x de ${parcela} sem juros · 5% off no Pix</p>
+      <p class="preco ${p.preco == null ? 'sem-preco' : ''}">${precoTexto(p)}</p>
       <p class="desc">${p.desc}</p>
       ${camisa ? `<p class="rotulo">Cor: ${p.cor}</p><div class="cores">${Object.entries(PRODUTOS).filter(([, x]) => x.cat === 'camisa').map(([k, x]) => `<a class="${k === id ? 'ativo' : ''}" href="?p=${k}" style="background:${x.hex}" aria-label="${x.cor}"></a>`).join('')}</div>` : ''}
-      <p class="rotulo"><span>Tamanho: <span id="tam">${camisa ? 'M' : 'Único'}</span></span>${camisa ? '<a href="#abas" data-ir-aba="Medidas">Tabela de medidas</a>' : ''}</p>
-      <div class="tamanhos" id="tamanhos">${tamanhos.map((t) => `<button type="button" class="${t === (camisa ? 'M' : 'Único') ? 'ativo' : ''}">${t}</button>`).join('')}</div>
+      <p class="rotulo"><span>Tamanho: <span id="tam">${comTam ? 'M' : 'Único'}</span></span>${comTam ? '<a href="#abas" data-ir-aba="Medidas">Tabela de medidas</a>' : ''}</p>
+      <div class="tamanhos" id="tamanhos">${tamanhos.map((t) => `<button type="button" class="${t === (comTam ? 'M' : 'Único') ? 'ativo' : ''}">${t}</button>`).join('')}</div>
       <div class="acao"><button type="button" class="vidro-azul" id="adicionar">Adicionar à sacola →</button><button type="button" class="fav" id="fav" aria-label="Favoritar" aria-pressed="false">♡</button></div>
-      <ul class="selos"><li>Produto oficial Reebok</li><li>Troca em 30 dias</li><li>Compra 100% segura</li></ul>
+      <a class="pedir-agora" id="pedir-agora" href="#" target="_blank" rel="noopener">${ZAP}Pedir só este pelo WhatsApp</a>
+      <ul class="selos"><li>Produto oficial</li><li>Pedido direto com o clube</li><li>Atendimento no WhatsApp</li></ul>
     </div>
   </section>
   <section id="abas">
     <div class="abas" role="tablist">${Object.keys(abas).map((a, i) => `<button type="button" role="tab" class="${i ? '' : 'ativo'}" data-aba="${a}">${a}</button>`).join('')}</div>
-    <div class="aba"><div id="aba-texto">${abas.Detalhes}</div><div class="aba__foto"><img src="${IMG}detalhe-escudo-640.webp" alt="Escudo do United Florida FC bordado" loading="lazy"></div></div>
+    <div class="aba"><div id="aba-texto">${abas.Detalhes}</div><div class="aba__foto"><img src="${IMG}${camisa ? 'detalhe-escudo-640' : p.foto}.webp" alt="${camisa ? 'Escudo do United Florida FC em TPU emborrachado' : p.nome}" loading="lazy"></div></div>
   </section>
   <section class="mais">
     <h2>Você também <b>pode gostar</b></h2>
-    <div class="grade grade--3">${outros.map(([k, x]) => `<article class="card"><a class="foto" href="?p=${k}"><span class="tag">Novo</span><img src="${IMG}${x.foto}.webp" alt="${x.nome}" loading="lazy"></a><a class="info" href="?p=${k}"><h3>${x.nome}</h3><strong>${brl(x.preco)}</strong></a></article>`).join('')}</div>
+    <div class="grade grade--3">${outros.map(([k, x]) => `<article class="card"><a class="foto" href="?p=${k}"><span class="tag">Novo</span><img src="${IMG}${x.foto}.webp" alt="${x.nome}" loading="lazy"></a><a class="info" href="?p=${k}"><h3>${x.nome}</h3><strong class="${x.preco == null ? 'sem-preco' : ''}">${precoTexto(x)}</strong></a></article>`).join('')}</div>
   </section>`
-let tamanho = camisa ? 'M' : 'Único'
+let tamanho = comTam ? 'M' : 'Único'
+const pedirAgora = () => { document.getElementById('pedir-agora').href = linkPedido([{ id, tam: tamanho, qtd: 1 }]) }
+pedirAgora()
 document.getElementById('tamanhos').addEventListener('click', (e) => {
   const b = e.target.closest('button')
   if (!b) return
   tamanho = b.textContent
   document.getElementById('tam').textContent = tamanho
   b.parentNode.querySelectorAll('button').forEach((x) => x.classList.toggle('ativo', x === b))
+  pedirAgora()
 })
 document.getElementById('adicionar').addEventListener('click', () => adicionar(id, tamanho))
 document.getElementById('fav').addEventListener('click', (e) => {

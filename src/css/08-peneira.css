@@ -1,6 +1,8 @@
 /* ---------------------------------------------------------------- peneira
    Cartaz de seletiva (referência do walk-on tryout): foto dos garotos à esquerda num painel
-   marinho cortado na diagonal, título gigante e a informação em blocos à direita.            */
+   marinho cortado na diagonal, título gigante e a informação em blocos à direita. Rodada do
+   Maicon (2026-11-08): "peneira" virou seletiva, com as 2 fases, as categorias do Sub-15 ao
+   Sub-23 abrindo a inscrição (janela que manda pro WhatsApp) e a data do Rio.               */
 .peneira { overflow: clip; padding: 64px 0; }
 .peneira__foto {
   position: absolute;
@@ -9,7 +11,7 @@
   background: var(--marinho);
   clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
 }
-.peneira__foto picture, .peneira__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 40%; }
+.peneira__foto picture, .peneira__foto img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 40% 40%; }
 .peneira__foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(8 22 52 / .35), rgb(8 22 52 / 0) 40%); }
 .peneira__grade { display: grid; grid-template-columns: 1fr minmax(0, 650px); }
 .peneira__conteudo { grid-column: 2; }
@@ -19,52 +21,96 @@
 .peneira__sub { margin-top: 8px; font-size: 40px; line-height: 1; color: var(--azul); transform: skewX(-8deg); transform-origin: left bottom; }
 .peneira__conteudo > .texto { margin-top: 16px; max-width: 30em; }
 
-.categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.categorias li {
-  padding: 8px 14px 7px;
-  border-radius: 99px;
-  box-shadow: inset 0 0 0 1.5px var(--marinho);
-  font: 600 15px/1 var(--f-rotulo);
-}
-.categorias__adulto { background: var(--azul); color: #fff; box-shadow: none !important; }
-
-.cidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
-.cidade {
+/* as 2 fases do projeto: Brasil e, para os destaques, Estados Unidos */
+.fases { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.fase {
   display: grid;
-  justify-items: center;
-  gap: 4px;
-  padding: 14px 8px 13px;
+  align-content: start;
+  gap: 6px;
+  padding: 16px 18px 17px;
   border-radius: 14px;
   background: #fff;
   box-shadow: 0 0 0 1px var(--linha-clara), 0 10px 24px rgb(14 38 100 / .06);
-  text-align: center;
 }
-.cidade__pino { font-size: 24px; color: var(--azul); }
-.cidade strong { font: 700 18px/1.1 var(--f-rotulo); letter-spacing: .02em; }
-.cidade span { font-size: 14px; color: var(--tinta-2); }
+.fase--eua { background: var(--marinho); color: #fff; box-shadow: 0 10px 24px rgb(14 38 100 / .18); }
+.fase__n { font: 600 13.5px/1 var(--f-rotulo); letter-spacing: .04em; text-transform: uppercase; color: var(--azul); }
+.fase--eua .fase__n { color: var(--celeste); }
+.fase strong { font: 700 18px/1.2 var(--f-rotulo); letter-spacing: -.005em; }
+.fase > span:last-child { font-size: 14.5px; line-height: 1.45; color: var(--tinta-2); }
+.fase--eua > span:last-child { color: rgb(255 255 255 / .78); }
+.fases__obs { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: var(--tinta-2); }
 
-.passos { margin-top: 18px; }
-.passos__titulo {
-  padding: 9px 16px 8px;
-  border-radius: 10px 10px 0 0;
-  background: var(--marinho);
-  color: #fff;
-  font: 600 17px/1 var(--f-rotulo);
-  text-align: center;
+.categorias__rotulo { margin-top: 20px; font: 600 15px/1.2 var(--f-rotulo); color: var(--marinho); }
+.categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.categorias button {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 99px;
+  box-shadow: inset 0 0 0 1.5px var(--marinho);
+  font: 700 16px/1 var(--f-rotulo);
+  color: var(--marinho);
+  transition: background-color .25s var(--ease-hover), color .25s var(--ease-hover);
 }
-.passos ol { display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 0 0 10px 10px; box-shadow: inset 0 0 0 1px var(--linha-clara); background: #fff; }
-.passos li { display: flex; align-items: center; gap: 10px; padding: 13px 14px; font: 700 16.5px/1.15 var(--f-rotulo); letter-spacing: .02em; }
-.passos li + li { border-left: 1px solid var(--linha-clara); }
-.passos__n { display: grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--azul); color: #fff; font: 400 16px/1 var(--f-titulo); }
-.peneira__cta { margin-top: 22px; min-height: 60px; padding: 0 34px; font-size: 22px; }
-.peneira__cta .i { font-size: 24px; }
+.categorias button:hover { background: var(--marinho); color: #fff; }
+
+/* data, local e lotes da seletiva do Rio */
+.evento {
+  display: grid;
+  grid-template-columns: 1.4fr auto auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--linha-clara), 0 10px 24px rgb(14 38 100 / .06);
+}
+.evento__onde { display: flex; align-items: center; gap: 10px; }
+.evento__pino { font-size: 26px; color: var(--azul); flex: none; }
+.evento strong { display: block; font: 700 17px/1.15 var(--f-rotulo); letter-spacing: .01em; }
+.evento span { font-size: 14px; color: var(--tinta-2); }
+.evento__quando { padding-left: 18px; border-left: 1px solid var(--linha-clara); }
+.evento__lotes { display: grid; gap: 2px; padding-left: 18px; border-left: 1px solid var(--linha-clara); }
+.evento__lotes b { color: var(--marinho); font-weight: 700; }
+
+.levar { margin-top: 10px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--linha-clara); }
+.levar summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 0 18px; font: 600 16px/1 var(--f-rotulo); color: var(--marinho); cursor: pointer; list-style: none; }
+.levar summary::-webkit-details-marker { display: none; }
+.levar summary .i { transition: transform .3s var(--ease); }
+.levar[open] summary .i { transform: rotate(45deg); }
+.levar__miolo { padding: 0 18px 16px; font-size: 15px; line-height: 1.55; color: var(--tinta-2); }
+.levar__miolo ol { padding-left: 20px; list-style: decimal; }
+.levar__miolo p { margin-top: 10px; font-size: 14px; }
+
+.peneira__cta { margin-top: 20px; min-height: 60px; padding: 0 34px; font-size: 22px; }
+
+/* formulário da inscrição (na janela) */
+.janela__intro { margin-top: 12px; font-size: 16px; line-height: 1.55; color: var(--tinta-2); }
+.inscricao { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin-top: 22px; }
+.campo { display: grid; gap: 6px; font: 600 14px/1.2 var(--f-rotulo); color: var(--marinho); }
+.campo--largo { grid-column: 1 / -1; }
+.campo input, .campo select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--neve);
+  box-shadow: inset 0 0 0 1px var(--linha-clara);
+  font: 400 16px/1.2 var(--f-texto);
+  color: var(--tinta);
+}
+.campo input:focus-visible, .campo select:focus-visible { outline: 2px solid var(--azul); outline-offset: 1px; }
+.campo--erro input, .campo--erro select { box-shadow: inset 0 0 0 1.5px #C62828; }
+.inscricao__erro { grid-column: 1 / -1; font-size: 14px; color: #C62828; }
+.inscricao__enviar { grid-column: 1 / -1; margin-top: 6px; min-height: 58px; font-size: 19px; }
+.inscricao__enviar .i { font-size: 22px; }
 
 @media (max-width: 74.99em) {
   .peneira__foto { width: 36%; }
   .peneira__grade { grid-template-columns: 1fr minmax(0, 580PX); }
   .peneira__grande { font-size: 104PX; }
   .peneira__sub { font-size: 34PX; }
-  .passos li { padding: 12PX 10PX; font-size: 15PX; }
 }
 @media (max-width: 47.99em) {
   .peneira { padding: 0 0 var(--pad); }
@@ -74,10 +120,11 @@
   .peneira__conteudo { grid-column: 1; }
   .peneira__grande { font-size: clamp(76PX, 23vw, 96PX); }
   .peneira__sub { font-size: clamp(24PX, 7vw, 30PX); }
-  .categorias li { font-size: 13.5PX; padding: 7PX 11PX 6PX; }
-  .cidades { grid-template-columns: 1fr; }
-  .cidade { grid-template-columns: auto 1fr auto; justify-items: start; align-items: center; gap: 10PX; padding: 12PX 14PX; text-align: left; }
-  .passos ol { grid-template-columns: 1fr; }
-  .passos li + li { border-left: 0; border-top: 1px solid var(--linha-clara); }
+  .fases { grid-template-columns: 1fr; }
+  .categorias button { padding: 0 16PX; font-size: 15PX; }
+  .evento { grid-template-columns: 1fr 1fr; gap: 12PX; }
+  .evento__onde { grid-column: 1 / -1; }
+  .evento__quando { padding-left: 0; border-left: 0; }
   .peneira__cta { width: 100%; font-size: 19PX; }
+  .inscricao { grid-template-columns: 1fr; }
 }

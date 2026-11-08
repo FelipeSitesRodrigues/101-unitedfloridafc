@@ -58,7 +58,7 @@
 .produto__foto--bone picture { height: 74%; }
 .produto:hover .produto__foto img { transform: scale(1.05); }
 .produto__nome { margin-top: 14px; font: 600 17px/1.2 var(--f-rotulo); letter-spacing: -.01em; }
-.produto__preco { margin-top: 4px; font: 700 22px/1.2 var(--f-texto); letter-spacing: -.01em; }
+.produto__preco { margin-top: 4px; font: 500 15px/1.3 var(--f-texto); color: var(--tinta-2, #4A5675); }
 .produto__comprar {
   display: grid;
   place-items: center;
@@ -94,6 +94,6 @@
   .produto { padding: 10PX 10PX 12PX; }
   .produto__foto { height: 140PX; }
   .produto__nome { font-size: 16.5PX; }
-  .produto__preco { font-size: 18PX; }
+  .produto__preco { font-size: 14PX; }
   .produto__comprar { min-height: 44PX; font-size: 16PX; }
 }

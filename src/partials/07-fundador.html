@@ -1,14 +1,13 @@
     <section class="fundador secao escuro" id="fundador" aria-labelledby="fundador-titulo">
-      <div class="fundador__foto">
-        <span class="fundador__sobrenome" aria-hidden="true">Vilela</span>
-        <img data-img="maicon" sizes="(max-width: 47.99em) 86vw, 520px" loading="lazy" decoding="async"
-          alt="Maicon Vilela, presidente e fundador do United Florida FC, sentado, com a camisa celeste do clube e boné marinho"
-          data-i18n-attr="alt:fundador.alt">
-      </div>
-
-      <div class="caixa">
+      <span class="fundador__sobrenome" aria-hidden="true">Vilela</span>
+      <div class="caixa fundador__grade">
         <div class="fundador__texto">
-          <p class="selo" data-revela data-i18n="fundador.selo">Presidente e fundador</p>
+          <div class="fundador__quem" data-revela>
+            <img class="fundador__foto" data-img="maicon" sizes="112px" loading="lazy" decoding="async"
+              alt="Maicon Vilela, presidente e fundador do United Florida FC, de terno azul-marinho e camisa branca"
+              data-i18n-attr="alt:fundador.alt">
+            <p class="selo" data-i18n="fundador.selo">Presidente e fundador</p>
+          </div>
           <h2 class="titulo" id="fundador-titulo" data-palavras data-revela="palavras">Maicon <em>Vilela</em></h2>
           <figure class="citacao" data-revela style="--atraso:.1s">
             <blockquote>
@@ -22,14 +21,46 @@
             <li class="fato vidro" data-revela="grade" style="--i:1"><strong data-i18n="fundador.f2a">Fundador</strong><span data-i18n="fundador.f2">do Clube Atlético Carioca</span></li>
             <li class="fato vidro" data-revela="grade" style="--i:2"><strong data-i18n="fundador.f3a">Refundou</strong><span data-i18n="fundador.f3">o tradicional Niteroiense FC</span></li>
           </ul>
+        </div>
 
-          <div class="contratacoes" data-revela style="--atraso:.2s">
-            <p class="contratacoes__rotulo" data-i18n="fundador.contratacoes">Contratações que pararam a imprensa</p>
+        <article class="release vidro" data-revela="zoom" style="--atraso:.15s" aria-labelledby="release-titulo">
+          <p class="release__rotulo" data-i18n="release.rotulo">Release oficial · Orlando, Flórida</p>
+          <h3 class="release__titulo" id="release-titulo" data-i18n="release.titulo">Brasileiro de São Gonçalo cria o United Florida FC em Orlando e fecha com a Reebok</h3>
+          <p class="release__linha" data-i18n="release.linha">Novo clube terá sede em Orlando e estreia oficial na UPSL em 2027.</p>
+          <p class="release__resumo" data-i18n="release.resumo">O empresário Maicon Vilela, 38 anos, natural de São Gonçalo, no Rio de Janeiro, anuncia a criação do United Florida FC. O clube já nasce grande: a Reebok vai vestir o time principal na UPSL, todas as categorias de base nos EUA e as franquias no Brasil.</p>
+          <div class="release__contratacoes">
+            <p class="release__rotulo2" data-i18n="fundador.contratacoes">Contratações que pararam a imprensa</p>
             <ul>
               <li><strong>Túlio Maravilha</strong><span data-i18n="fundador.tulio">ídolo do Botafogo</span></li>
               <li><strong>Acosta</strong><span data-i18n="fundador.acosta">atacante uruguaio, ex-Corinthians e Náutico</span></li>
+              <li><strong data-i18n="fundador.bruno">Goleiro Bruno</strong><span data-i18n="fundador.brunot">ex-Flamengo</span></li>
             </ul>
           </div>
-        </div>
+          <button class="botao botao--azul release__abrir" type="button" data-abrir="release-completo" aria-haspopup="dialog"><span data-i18n="release.ler">Ler o release completo</span><i data-i="arrow-right" data-w="bold" class="i--seta"></i></button>
+        </article>
       </div>
+
+      <dialog class="janela" id="release-completo" aria-labelledby="release-completo-titulo">
+        <div class="janela__caixa">
+          <button class="janela__fechar" type="button" data-fechar aria-label="Fechar" data-i18n-attr="aria-label:geral.fechar"><i data-i="x" data-w="bold"></i></button>
+          <p class="release__rotulo" data-i18n="release.rotulo">Release oficial · Orlando, Flórida</p>
+          <h3 class="janela__titulo" id="release-completo-titulo" data-i18n="release.tituloLongo">Brasileiro de São Gonçalo anuncia criação do United Florida FC em Orlando, nos Estados Unidos, e fecha com a Reebok para vestir o time</h3>
+          <div class="janela__texto" data-i18n="release.texto">
+            <p><strong>Novo clube terá sede em Orlando e estreia oficial na UPSL em 2027.</strong></p>
+            <p>ORLANDO, FLÓRIDA, ESTADOS UNIDOS. O empresário Maicon Vilela, 38 anos, natural de São Gonçalo, no Rio de Janeiro, anuncia oficialmente a criação do United Florida FC, com sede em Orlando, na Flórida, nos Estados Unidos.</p>
+            <p>O clube já nasce grande: fechou com a Reebok para vestir o time. A marca americana será responsável por vestir o time principal na UPSL, todas as categorias de base nos EUA e as franquias previstas no Brasil.</p>
+            <p>Com previsão de todas as empresas 100% regularizadas em janeiro de 2027, a estreia oficial na UPSL, uma das principais ligas nacionais dos Estados Unidos e porta de entrada para a Lamar Hunt US Open Cup, está marcada para a temporada 2027.</p>
+            <h4>Quem é Maicon Vilela</h4>
+            <p>Maicon Vilela tem mais de 10 anos de futebol no Rio de Janeiro. Começou em grandes rádios do Rio e se tornou um dos nomes mais ousados do futebol carioca nos últimos anos.</p>
+            <p>É fundador do Clube Atlético Carioca e o responsável por refundar o tradicional Niteroiense Futebol Clube.</p>
+            <p>Ficou conhecido nacionalmente pelas contratações de grande repercussão que pararam a imprensa esportiva, como Túlio Maravilha, ídolo do Botafogo; Acosta, atacante uruguaio com passagens por Corinthians e Náutico; e o goleiro Bruno, ex-Flamengo.</p>
+            <p>Em meados deste ano, vendeu a marca Clube Atlético Carioca para o grupo G10 e agora foca 100% no projeto americano em Orlando.</p>
+            <h4>O objetivo: ser o clube dos brasileiros na Flórida</h4>
+            <p>A grande aposta do United Florida FC é se tornar o clube dos brasileiros na Flórida e disputar a US Open Cup, torneio que dá chance real de enfrentar clubes da MLS como o Inter Miami de Messi, o Orlando City e o Los Angeles FC.</p>
+            <blockquote><p>“Passei por grandes rádios do Rio, fundei o Atlético Carioca, refundei o Niteroiense e contratei jogadores que o Brasil inteiro comentou. Vendi o Atlético este ano e agora meu foco total é Orlando, nos Estados Unidos. Em janeiro todas as empresas já estarão certinhas aqui em Orlando e nossa estreia oficial na UPSL será em 2027. Fechamos com a Reebok para vestir o time. É esse sonho de jogar a US Open Cup contra os grandes da MLS que vamos oferecer”, afirma Maicon Vilela, presidente do United Florida FC.</p></blockquote>
+            <h4>Franquias no Brasil</h4>
+            <p>O projeto prevê franquias oficiais em todo o Brasil. O franqueado terá exclusividade na cidade, uso da marca internacional e presença no site oficial dos EUA.</p>
+          </div>
+        </div>
+      </dialog>
     </section>

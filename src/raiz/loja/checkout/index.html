@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Checkout | Loja United Florida FC</title>
+<title>Finalizar pedido | Loja United Florida FC</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="/loja/loja.css">
@@ -11,76 +11,55 @@
 <body>
 <header class="chk-topo"><div class="caixa">
   <a href="/loja/" aria-label="Voltar para a loja"><img src="/assets/img/escudo-120.webp" alt="" width="120" height="133"></a>
-  <span class="seguro">Compra segura</span>
+  <span class="seguro">Pedido pelo WhatsApp</span>
   <button class="sacola-btn" type="button" data-abrir-sacola aria-label="Abrir a sacola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-qtd>0</span></button>
 </div></header>
 <main class="caixa chk">
-  <form id="form">
-    <fieldset><legend>Con<b>tato</b></legend><div class="campos">
-      <input type="email" aria-label="E-mail" placeholder="E-mail" autocomplete="email">
-      <label class="marca"><input type="checkbox" style="width:20px;height:20px"> Quero receber as novidades do clube</label>
-    </div></fieldset>
-    <fieldset><legend>En<b>trega</b></legend><div class="campos">
-      <input class="c3" aria-label="Nome" placeholder="Nome" autocomplete="given-name"><input class="c3" aria-label="Sobrenome" placeholder="Sobrenome" autocomplete="family-name">
-      <input aria-label="CPF" placeholder="CPF" inputmode="numeric">
-      <input aria-label="CEP" placeholder="CEP" inputmode="numeric" autocomplete="postal-code">
-      <input class="c4" aria-label="Endereço" placeholder="Endereço" autocomplete="address-line1"><input class="c2" aria-label="Número" placeholder="Número">
-      <input class="c3" aria-label="Complemento" placeholder="Complemento (opcional)"><input class="c3" aria-label="Bairro" placeholder="Bairro">
-      <input class="c3" aria-label="Cidade" placeholder="Cidade" autocomplete="address-level2"><select class="c3" aria-label="Estado"><option>São Paulo</option><option>Rio de Janeiro</option><option>Minas Gerais</option><option>Bahia</option><option>Outro estado</option></select>
-      <input aria-label="WhatsApp" placeholder="WhatsApp" inputmode="tel" autocomplete="tel">
-    </div></fieldset>
-    <fieldset id="frete"><legend><b>Frete</b></legend>
-      <label class="opcao"><input type="radio" name="frete" value="19.9" data-nome="PAC" checked><div><b>PAC</b><small>5 a 8 dias úteis</small></div><span>R$ 19,90</span></label>
-      <label class="opcao"><input type="radio" name="frete" value="34.9" data-nome="SEDEX"><div><b>SEDEX</b><small>2 a 3 dias úteis</small></div><span>R$ 34,90</span></label>
+  <form id="form" novalidate>
+    <fieldset><legend>Seus <b>dados</b></legend>
+      <p class="chk__aviso">Sem pagamento aqui no site: o pedido vai para o WhatsApp do clube, que confirma o valor, o frete e a forma de pagamento com você.</p>
+      <div class="campos">
+        <input class="c3" name="nome" aria-label="Nome" placeholder="Seu nome" autocomplete="name" required>
+        <input class="c3" name="cidade" aria-label="Cidade e estado" placeholder="Cidade e estado" autocomplete="address-level2" required>
+        <input name="cep" aria-label="CEP" placeholder="CEP (para o frete)" inputmode="numeric" autocomplete="postal-code">
+        <textarea name="obs" aria-label="Observação" placeholder="Observação (opcional): nome e número na camisa, outra cor, dúvidas" rows="3"></textarea>
+      </div>
+      <p class="chk__erro" id="erro" role="alert" hidden>Preencha seu nome e sua cidade.</p>
     </fieldset>
-    <fieldset id="pagamento"><legend><b>Pagamento</b></legend>
-      <p class="marca">Ambiente seguro e criptografado</p>
-      <label class="opcao"><input type="radio" name="pag" value="pix" checked><div><b>Pix</b><span class="off">5% off</span><small>O QR Code aparece na próxima tela. Aprovação na hora.</small></div></label>
-      <label class="opcao"><input type="radio" name="pag" value="cartao"><div><b>Cartão de crédito</b><small>até 6x sem juros</small></div></label>
-      <label class="opcao"><input type="radio" name="pag" value="carteira"><div><b>Apple Pay / Google Pay</b></div></label>
-    </fieldset>
-    <button class="vidro-azul pagar" type="submit" id="pagar"></button>
-    <a class="termos" href="/loja/">Termos e políticas</a>
+    <button class="vidro-azul pagar whats" type="submit" id="enviar"></button>
+    <a class="termos" href="/loja/">Continuar comprando</a>
   </form>
   <aside class="resumo" aria-label="Resumo do pedido">
     <h2>Seu <b>pedido</b> (<span data-qtd>0</span>)</h2>
     <div id="itens"></div>
-    <div class="cupom"><input aria-label="Cupom de desconto" placeholder="Cupom de desconto"><button type="button">Aplicar</button></div>
     <div class="linhas" id="linhas"></div>
-    <div class="total"><span>Total</span><b id="total"></b></div>
-    <p class="resumo__selo">Produto oficial Reebok · Envio para todo o Brasil</p>
+    <p class="resumo__selo">Produto oficial · Envio para todo o Brasil</p>
   </aside>
 </main>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-t"><div>
-  <h2 id="modal-t">Pedido de <b>demonstração</b></h2>
-  <p>Esta é uma prévia da loja: nada foi cobrado e nenhum pedido foi enviado. O pagamento entra quando o clube definir como quer receber.</p>
-  <a class="vidro-azul" href="/loja/">Voltar para a loja</a>
-</div></div>
 <script src="/loja/loja.js"></script>
 <script>
-function calcular() {
+const form = document.getElementById('form')
+function desenhar() {
   const itens = ler()
-  const sub = subtotal(itens)
-  const freteEl = document.querySelector('[name=frete]:checked')
-  const frete = Number(freteEl.value)
-  const pag = document.querySelector('[name=pag]:checked').value
-  const desconto = pag === 'pix' ? Math.round(sub * 5) / 100 : 0
-  const total = sub ? sub + frete - desconto : 0
   document.getElementById('itens').innerHTML = itens.length ? itens.map((i) => itemHtml(i, false)).join('') : '<p class="vazio" style="color:#fff">Sua sacola está vazia. <a href="/loja/" style="text-decoration:underline;display:inline;margin:0;padding:0;min-height:0">Ver a coleção</a></p>'
-  document.getElementById('linhas').innerHTML = `<div><span>Subtotal (${contagem(itens)} ${contagem(itens) === 1 ? 'item' : 'itens'})</span><span>${brl(sub)}</span></div><div><span>Frete (${freteEl.dataset.nome})</span><span>${brl(sub ? frete : 0)}</span></div>${desconto ? `<div><span>Desconto Pix (5%)</span><span>− ${brl(desconto)}</span></div>` : ''}`
-  document.getElementById('total').textContent = brl(total)
-  const botao = document.getElementById('pagar')
-  botao.textContent = pag === 'pix' ? `Pagar ${brl(total)} no Pix` : `Pagar ${brl(total)}`
+  document.getElementById('linhas').innerHTML = `<div><span>${contagem(itens)} ${contagem(itens) === 1 ? 'item' : 'itens'}</span><span>${comPreco(itens) && itens.length ? brl(subtotal(itens)) : 'valor no WhatsApp'}</span></div>`
+  const botao = document.getElementById('enviar')
+  botao.innerHTML = `${ZAP}Enviar pedido pelo WhatsApp`
   botao.disabled = !itens.length
   botao.style.opacity = itens.length ? '' : '.5'
 }
-document.getElementById('form').addEventListener('change', calcular)
-document.addEventListener('sacola', calcular)
-document.getElementById('form').addEventListener('submit', (e) => {
+document.addEventListener('sacola', desenhar)
+form.addEventListener('submit', (e) => {
   e.preventDefault()
-  document.getElementById('modal').classList.add('on')
+  const itens = ler()
+  if (!itens.length) return
+  const faltando = [...form.querySelectorAll('[required]')].filter((c) => !c.value.trim())
+  document.getElementById('erro').hidden = !faltando.length
+  if (faltando.length) return faltando[0].focus()
+  const dados = Object.fromEntries([...new FormData(form)].map(([k, v]) => [k, String(v).trim()]))
+  window.open(linkPedido(itens, dados), '_blank', 'noopener')
 })
-calcular()
+desenhar()
 </script>
 </body>
 </html>

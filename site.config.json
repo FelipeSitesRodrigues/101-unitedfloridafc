@@ -10,16 +10,28 @@
     "x": "https://x.com/unitedfloridafc"
   },
   "credito": "https://www.instagram.com/feliperodrigues.sites/",
-  "descricao": "United Florida FC, o clube dos brasileiros na Flórida. Sede em Orlando, estreia na UPSL em 2027, uniformes Reebok, peneiras e franquias oficiais no Brasil.",
-  "descricaoEn": "United Florida FC, the Brazilian club in Florida. Based in Orlando, debuting in the UPSL in 2027, with Reebok kits, tryouts and official franchises in Brazil.",
+  "descricao": "United Florida FC, o clube dos brasileiros na Flórida. Sede em Orlando, estreia na UPSL em 2027, camisas Reebok, seletiva de futebol no Brasil para atletas de 14 a 23 anos e franquias oficiais.",
+  "descricaoEn": "United Florida FC, the Brazilian club in Florida. Based in Orlando, debuting in the UPSL in 2027, with Reebok shirts, soccer tryouts in Brazil for players aged 14 to 23 and official franchises.",
   "pendencias": [
     "indexar false e dominio vazio até publicar",
     "WhatsApp 21 97206-1009 veio do site antigo (Khone): confirmar com o Maicon",
-    "preços e moeda da loja (hoje R$ 299,90 e R$ 129,90 de exemplo); a compra vai pelo WhatsApp",
-    "cidades e categorias das peneiras (hoje Rio, Niterói e São Paulo, Sub-11 a Sub-17 e adulto)",
-    "kit 3 celeste: confirmar que existe",
-    "foto da etapa MLS (06): o adversário de rosa saiu com cara do Messi, gerado por IA. No ar só com foto editorial licenciada ou trocando a foto",
-    "foto do Maicon: hoje é o print do Instagram (642 px), pedir a original",
+    "preço de cada produto da loja: hoje a loja não mostra preço e o pedido fecha no WhatsApp",
+    "endereço completo e CNPJ da empresa do Brasil, endereço e registro (EIN) da empresa dos EUA: entram em empresas no site.config.json",
+    "seletiva: Sub-13 entra? (vídeo fala Sub-13 a Sub-23; o texto dele, Sub-15 a Sub-23, que é o que está no site)",
+    "seletiva: link ou chave Pix dos lotes de R$ 97 e R$ 147 (hoje o clube manda pelo WhatsApp depois da inscrição)",
+    "boné: o site usa só a foto da frente; a foto de trás tem a Reebok e ele disse que o boné não terá Reebok",
+    "paleta oficial: o Maicon vai mandar as cores",
+    "Training Center: 4 imagens e texto recebidos, sem seção no site até ele confirmar",
     "fundação em 2026 no schema e na linha do tempo: confirmar a data"
-  ]
+  ],
+  "empresas": {
+    "eua": {
+      "endereco": "Orlando, Florida, USA",
+      "registro": ""
+    },
+    "brasil": {
+      "endereco": "Rio de Janeiro, RJ, Brasil",
+      "registro": ""
+    }
+  }
 }
