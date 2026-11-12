@@ -1,53 +1,53 @@
 {
- "hero-1280.avif": {
+ "hero-v3-1280.avif": {
   "w": 1280,
   "h": 533,
   "kb": 24
  },
- "hero-1280.webp": {
+ "hero-v3-1280.webp": {
   "w": 1280,
   "h": 533,
   "kb": 43
  },
- "hero-1942.avif": {
+ "hero-v3-1942.avif": {
   "w": 1942,
   "h": 809,
-  "kb": 42
+  "kb": 41
  },
- "hero-1942.webp": {
+ "hero-v3-1942.webp": {
   "w": 1942,
   "h": 809,
-  "kb": 74
+  "kb": 73
  },
- "hero-atletas-480.avif": {
+ "hero-atletas-v3-480.avif": {
   "w": 480,
   "h": 396,
   "kb": 17
  },
- "hero-atletas-480.webp": {
+ "hero-atletas-v3-480.webp": {
   "w": 480,
   "h": 396,
   "kb": 28
  },
- "hero-atletas-840.avif": {
+ "hero-atletas-v3-840.avif": {
   "w": 840,
   "h": 693,
-  "kb": 39
+  "kb": 38
  },
- "hero-atletas-840.webp": {
+ "hero-atletas-v3-840.webp": {
   "w": 840,
   "h": 693,
   "kb": 63
  },
- "hero-atletas-1170.avif": {
+ "hero-atletas-v3-1170.avif": {
   "w": 1170,
   "h": 966,
   "kb": 58
  },
- "hero-atletas-1170.webp": {
+ "hero-atletas-v3-1170.webp": {
   "w": 1170,
   "h": 966,
-  "kb": 96
+  "kb": 93
  },
  "avatar-1-96.avif": {
   "w": 96,
@@ -79,35 +79,35 @@
   "h": 96,
   "kb": 2
  },
- "clube-480.avif": {
+ "clube-v3-480.avif": {
   "w": 480,
   "h": 386,
   "kb": 13
  },
- "clube-480.webp": {
+ "clube-v3-480.webp": {
   "w": 480,
   "h": 386,
   "kb": 21
  },
- "clube-760.avif": {
+ "clube-v3-760.avif": {
   "w": 760,
   "h": 611,
   "kb": 25
  },
- "clube-760.webp": {
+ "clube-v3-760.webp": {
   "w": 760,
   "h": 611,
-  "kb": 40
+  "kb": 39
  },
- "clube-1170.avif": {
+ "clube-v3-1170.avif": {
   "w": 1170,
   "h": 941,
   "kb": 45
  },
- "clube-1170.webp": {
+ "clube-v3-1170.webp": {
   "w": 1170,
   "h": 941,
-  "kb": 69
+  "kb": 68
  },
  "vestiario-960.avif": {
   "w": 960,
@@ -129,22 +129,22 @@
   "h": 941,
   "kb": 15
  },
- "etapa-upsl-760.avif": {
+ "etapa-upsl-v3-760.avif": {
   "w": 760,
   "h": 428,
   "kb": 18
  },
- "etapa-upsl-760.webp": {
+ "etapa-upsl-v3-760.webp": {
   "w": 760,
   "h": 428,
   "kb": 26
  },
- "etapa-upsl-1280.avif": {
+ "etapa-upsl-v3-1280.avif": {
   "w": 1280,
   "h": 721,
   "kb": 38
  },
- "etapa-upsl-1280.webp": {
+ "etapa-upsl-v3-1280.webp": {
   "w": 1280,
   "h": 721,
   "kb": 57
@@ -539,35 +539,35 @@
   "h": 701,
   "kb": 99
  },
- "loja-800.avif": {
+ "loja-amigos-800.avif": {
   "w": 800,
   "h": 450,
   "kb": 22
  },
- "loja-800.webp": {
+ "loja-amigos-800.webp": {
   "w": 800,
   "h": 450,
   "kb": 35
  },
- "loja-1280.avif": {
+ "loja-amigos-1280.avif": {
   "w": 1280,
   "h": 720,
-  "kb": 45
+  "kb": 44
  },
- "loja-1280.webp": {
+ "loja-amigos-1280.webp": {
   "w": 1280,
   "h": 720,
-  "kb": 71
+  "kb": 70
  },
- "loja-1672.avif": {
+ "loja-amigos-1672.avif": {
   "w": 1672,
   "h": 941,
-  "kb": 67
+  "kb": 66
  },
- "loja-1672.webp": {
+ "loja-amigos-1672.webp": {
   "w": 1672,
   "h": 941,
-  "kb": 105
+  "kb": 102
  },
  "maicon-112.avif": {
   "w": 112,
@@ -599,22 +599,22 @@
   "h": 336,
   "kb": 7
  },
- "seletiva-560.avif": {
+ "seletiva-v3-560.avif": {
   "w": 560,
   "h": 756,
   "kb": 39
  },
- "seletiva-560.webp": {
+ "seletiva-v3-560.webp": {
   "w": 560,
   "h": 756,
-  "kb": 73
+  "kb": 72
  },
- "seletiva-900.avif": {
+ "seletiva-v3-900.avif": {
   "w": 900,
   "h": 1215,
   "kb": 79
  },
- "seletiva-900.webp": {
+ "seletiva-v3-900.webp": {
   "w": 900,
   "h": 1215,
   "kb": 145

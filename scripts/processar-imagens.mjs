@@ -63,7 +63,7 @@ async function variantes(nome, origem, larguras, op = {}) {
 // Rodada do Maicon (2026-11-08): uma foto só, larga (ia2/01-hero.png, 1942x809, escudos trocados
 // pelo oficial no scripts/trocar-escudos.py). Celular: corte só dos três atletas.
 const IA2 = `${R}/ia2`
-await variantes('hero', `${IA2}/01-hero.png`, [1280, 1942], { q: 48, qw: 72 })
+await variantes('hero-v3', `${IA2}/01-hero.png`, [1280, 1942], { q: 48, qw: 72 })
 {
   // celular: os três atletas desde o topo da foto (x 880, largura 980, altura 809), sem cortar o
   // cabelo. A foto é de 1942 e o recorte fica com 980, pouco pra tela de 3x: a versão
@@ -71,7 +71,7 @@ await variantes('hero', `${IA2}/01-hero.png`, [1280, 1942], { q: 48, qw: 72 })
   const ampliada = `${IA2}/01-hero-celular-2x.png`
   const buf = existsSync(ampliada) ? await sharp(ampliada).toBuffer()
     : await sharp(`${IA2}/01-hero.png`).extract({ left: 880, top: 0, width: 980, height: 809 }).toBuffer()
-  await variantes('hero-atletas', buf, [480, 840, 1170], { q: 58, qw: 80 })
+  await variantes('hero-atletas-v3', buf, [480, 840, 1170], { q: 58, qw: 80 })
 }
 // as três fotos redondas da seletiva: rostos dos garotos da foto da seletiva
 for (const [i, [l, t, z]] of [[40, 385, 230], [405, 235, 250], [615, 330, 210]].entries()) {
@@ -81,13 +81,13 @@ for (const [i, [l, t, z]] of [[40, 385, 230], [405, 235, 250], [615, 330, 210]].
 
 // ---------------------------------------------------------------- o clube
 // grupo à esquerda; o degradê pro azul é CSS
-await variantes('clube', `${IA2}/02-clube.png`, [480, 760, 1170], { corte: [0, 0, 0.7, 1] })
+await variantes('clube-v3', `${IA2}/02-clube.png`, [480, 760, 1170], { corte: [0, 0, 0.7, 1] })
 
 // ---------------------------------------------------------------- uniformes: o vestiário
 await variantes('vestiario', `${IA}/14-vestiario-fundo.png`, [960, 1672], { q: 44, qw: 68 })
 
 // ---------------------------------------------------------------- o caminho (faixas)
-await variantes('etapa-upsl', `${IA2}/03-etapa-upsl.png`, [760, 1280])
+await variantes('etapa-upsl-v3', `${IA2}/03-etapa-upsl.png`, [760, 1280])
 await variantes('etapa-opencup', `${IA2}/04-etapa-opencup.png`, [760, 1280])
 await variantes('etapa-mls', `${IA2}/05-etapa-mls.png`, [760, 1280])
 
@@ -137,14 +137,14 @@ await variantes('detalhe-escudo', `${IA2}/10a-escudo-tpu.png`, [420, 640], { cor
 await variantes('detalhe-reebok', `${IA2}/10b-reebok-tpu.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
 await variantes('detalhe-gola', `${IA2}/10c-gola-jacquard.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
 await variantes('detalhe-patch', `${IA2}/10d-patch-reebok.png`, [420, 640], { corte: [0.08, 0.04, 0.84, 0.92] })
-await variantes('loja', `${IA2}/06-loja-amigos.png`, [800, 1280, 1672])
+await variantes('loja-amigos', `${IA2}/06-loja-amigos.png`, [800, 1280, 1672])
 
 // ---------------------------------------------------------------- fundador
 // foto profissional de terno (Recursos Site/maicon/maicon-terno.png), só o rosto, num círculo
 await variantes('maicon', 'insumos/maicon-rosto.png', [112, 224, 336])
 
 // ---------------------------------------------------------------- seletiva
-await variantes('seletiva', `${IA2}/13-seletiva.png`, [560, 900], { corte: [0, 0.04, 1, 0.9] })
+await variantes('seletiva-v3', `${IA2}/13-seletiva.png`, [560, 900], { corte: [0, 0.04, 1, 0.9] })
 
 // ---------------------------------------------------------------- marcas
 const K = `${R}/site-antigo-khone`
@@ -156,7 +156,7 @@ await variantes('logo-upsl', 'insumos/logo-upsl.png', [64, 128], { alfa: true })
 await variantes('logo-reebok', 'insumos/logo-reebok-branco.png', [128, 256], { alfa: true })
 
 // ---------------------------------------------------------------- banner da loja (/loja/)
-await sharp(`${IA2}/07-loja-banner.png`).webp({ quality: 78 }).toFile(path.join(OUT, 'loja-banner.webp'))
+await sharp(`${IA2}/07-loja-banner.png`).webp({ quality: 78 }).toFile(path.join(OUT, 'loja-banner-v3.webp'))
 
 // ---------------------------------------------------------------- og e ícones
 {

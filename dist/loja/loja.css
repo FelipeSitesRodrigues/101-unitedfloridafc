@@ -25,7 +25,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:aut
 .sem-banner{padding-top:92px}
 
 /* vitrine */
-.banner{position:relative;aspect-ratio:1942/809;min-height:480px;width:100%;background:#071536 url(/assets/img/loja-banner.webp?v=2) 72% 50%/cover no-repeat;color:#fff;display:flex;align-items:center}
+.banner{position:relative;aspect-ratio:1942/809;min-height:480px;width:100%;background:#071536 url(/assets/img/loja-banner-v3.webp?v=2) 72% 50%/cover no-repeat;color:#fff;display:flex;align-items:center}
 .banner::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgb(4 12 36/.55),rgb(4 12 36/0) 50%);pointer-events:none}
 .banner__txt{position:relative;z-index:1;padding-top:50px}
 .selo{display:flex;align-items:center;gap:14px;font-weight:500;font-size:17px}.selo::before{content:'';width:40px;height:1.5px;background:currentColor}

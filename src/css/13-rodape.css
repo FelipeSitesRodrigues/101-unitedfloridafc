@@ -79,3 +79,9 @@
   .rodape__base { flex-direction: column; gap: 6PX; margin-top: 32PX; }
   .flutuante { right: 16PX; bottom: 16PX; width: 54PX; height: 54PX; font-size: 28PX; }
 }
+
+/* telefone e email do escritório (pedido do Maicon, 2026-11-11) */
+.empresa__contato { display: inline-flex; align-items: center; gap: 8px; width: fit-content; min-height: 32px; color: #fff; transition: color .25s var(--ease-hover); }
+.empresa__contato:first-of-type { margin-top: 8px; }
+.empresa__contato .i { font-size: 18px; color: var(--celeste); }
+.empresa__contato:hover { color: var(--celeste); }

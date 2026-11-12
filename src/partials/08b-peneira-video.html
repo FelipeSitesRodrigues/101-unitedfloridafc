@@ -1,0 +1,34 @@
+    <section class="pvideo claro" aria-labelledby="pvideo-titulo">
+      <div class="caixa pvideo__grade">
+        <div class="pvideo__topo">
+          <p class="selo pvideo__selo" data-revela data-i18n="pvideo.selo">Seletiva United Florida FC</p>
+          <h2 class="titulo pvideo__titulo" id="pvideo-titulo" data-revela data-i18n="pvideo.titulo">Veja a seletiva <em>em campo</em></h2>
+          <p class="texto" data-revela data-i18n="pvideo.texto">Treino, avaliação e o padrão do clube de perto, com o presidente Maicon Vilela acompanhando cada atleta.</p>
+        </div>
+
+        <figure class="pvideo__quadro" data-pvideo data-revela style="--atraso:.1s">
+          <video class="pvideo__video" preload="none" playsinline width="848" height="478"
+            poster="/assets/video/seletiva-uffc-capa.webp" src="/assets/video/seletiva-uffc.mp4"
+            aria-label="Vídeo da seletiva do United Florida FC" data-i18n-attr="aria-label:pvideo.rotulo"></video>
+          <button class="pvideo__play" type="button" data-pvideo-play aria-label="Assistir ao vídeo da seletiva" data-i18n-attr="aria-label:pvideo.play">
+            <span class="pvideo__bola"><i data-i="play" data-w="fill"></i></span>
+            <span class="pvideo__legenda"><strong data-i18n="pvideo.assistir">Assistir ao vídeo</strong><span>0:54</span></span>
+          </button>
+
+          <!-- player próprio, na cor do clube (pedido do Felipe, 2026-11-12) -->
+          <div class="pctl" data-pctl>
+            <button class="pctl__bt pctl__tocar" type="button" data-pctl-tocar aria-label="Pausar" data-i18n-attr="aria-label:pvideo.pausar">
+              <i data-i="pause" data-w="fill" class="pctl__pausa"></i><i data-i="play" data-w="fill" class="pctl__toca"></i>
+            </button>
+            <span class="pctl__tempo" data-pctl-tempo>0:00 / 0:54</span>
+            <input class="pctl__barra" type="range" min="0" max="1000" step="1" value="0" data-pctl-barra aria-label="Posição do vídeo" data-i18n-attr="aria-label:pvideo.posicao">
+            <button class="pctl__bt" type="button" data-pctl-som aria-label="Tirar o som" data-i18n-attr="aria-label:pvideo.mudo">
+              <i data-i="speaker-high" data-w="fill" class="pctl__comsom"></i><i data-i="speaker-slash" data-w="fill" class="pctl__semsom"></i>
+            </button>
+            <button class="pctl__bt" type="button" data-pctl-tela aria-label="Tela cheia" data-i18n-attr="aria-label:pvideo.tela">
+              <i data-i="corners-out" data-w="bold"></i>
+            </button>
+          </div>
+        </figure>
+      </div>
+    </section>

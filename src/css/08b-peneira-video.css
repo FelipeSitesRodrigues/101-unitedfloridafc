@@ -1,0 +1,154 @@
+/* ---------------------------------------------------------------- vídeo da seletiva
+   Logo abaixo da seletiva (pedido do Maicon, 2026-11-11). Mesmo fundo claro, então a seção
+   continua a seletiva sem respiro duplo. O vídeo só baixa no clique (preload none): a capa
+   é o 1º quadro do pôr do sol e o botão de vidro fica no canto, sem cobrir os jogadores.  */
+.pvideo { padding: 8px 0 72px; }
+.pvideo__grade { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 56px; align-items: center; }
+.pvideo__selo { color: var(--azul); }
+.pvideo__titulo { margin-top: 14px; font-size: 48px; color: var(--marinho); }
+.pvideo__topo .texto { margin-top: 14px; font-size: 17px; }
+
+.pvideo__quadro {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 848 / 478;
+  border-radius: 20px;
+  background: var(--marinho);
+  box-shadow: 0 0 0 1px rgb(14 38 100 / .08), 0 30px 60px -20px rgb(14 38 100 / .45);
+}
+.pvideo__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pvideo__quadro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(8 22 52 / .55), rgb(8 22 52 / 0) 45%);
+  pointer-events: none;
+  transition: opacity .4s var(--ease);
+}
+.pvideo__play {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 28px;
+  color: #fff;
+  text-align: left;
+}
+.pvideo__bola {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / .16);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .45), 0 10px 30px rgb(0 0 0 / .25);
+  font-size: 28px;
+  transition: transform .35s var(--ease-hover), background-color .35s var(--ease-hover);
+}
+.pvideo__bola .i { transform: translateX(2px); }
+.pvideo__play:hover .pvideo__bola { transform: scale(1.08); background: var(--azul); }
+.pvideo__legenda { display: grid; gap: 4px; padding-bottom: 10px; }
+.pvideo__legenda strong { font: 700 20px/1.1 var(--f-rotulo); }
+.pvideo__legenda span { font: 500 14px/1 var(--f-rotulo); color: rgb(255 255 255 / .75); }
+.pvideo__play:focus-visible { outline: 2px solid var(--celeste); outline-offset: -6px; }
+
+.pvideo--tocando .pvideo__play { display: none; }
+.pvideo--tocando .pvideo__quadro::after { opacity: 0; }
+
+/* player próprio (2026-11-12): barra no azul do clube com brilho celeste, botões de vidro
+   e o tempo na fonte do site. Só aparece depois do 1º play; some com o vídeo tocando parado. */
+.pctl {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 20px 16px;
+  background: linear-gradient(0deg, rgb(8 22 52 / .82), rgb(8 22 52 / 0));
+  color: #fff;
+  transition: opacity .35s var(--ease), transform .35s var(--ease);
+}
+.pvideo--tocando .pctl { display: flex; }
+.pctl--oculto .pctl { opacity: 0; transform: translateY(8px); }
+.pctl--oculto { cursor: none; }
+.pctl__bt {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / .12);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28);
+  font-size: 19px;
+  color: #fff;
+  transition: background-color .25s var(--ease-hover), transform .25s var(--ease-hover);
+}
+.pctl__bt:hover { background: var(--azul); transform: scale(1.06); }
+.pctl__tocar { width: 50px; height: 50px; font-size: 21px; background: var(--azul); box-shadow: 0 6px 18px rgb(31 91 255 / .45), inset 0 1px 0 rgb(255 255 255 / .35); }
+.pctl__tocar:hover { background: var(--azul-hover); }
+.pctl__bt:focus-visible { outline: 2px solid var(--celeste); outline-offset: 2px; }
+.pctl__toca, .pctl__semsom { display: none; }
+.pctl--pausado .pctl__toca, .pctl--mudo .pctl__semsom { display: block; }
+.pctl--pausado .pctl__pausa, .pctl--mudo .pctl__comsom { display: none; }
+.pctl__toca { transform: translateX(1px); }
+.pctl__tempo { flex: none; min-width: 84px; font: 600 14px/1 var(--f-rotulo); font-variant-numeric: tabular-nums; letter-spacing: .01em; color: rgb(255 255 255 / .9); }
+
+/* barra: trilho de vidro, preenchimento azul até --p, bolinha branca com anel azul */
+.pctl__barra {
+  --p: 0%;
+  flex: 1;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.pctl__barra::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--azul), #4F8BFF var(--p), rgb(255 255 255 / .22) var(--p));
+}
+.pctl__barra::-moz-range-track { height: 6px; border-radius: 99px; background: rgb(255 255 255 / .22); }
+.pctl__barra::-moz-range-progress { height: 6px; border-radius: 99px; background: linear-gradient(90deg, var(--azul), #4F8BFF); }
+.pctl__barra::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgb(31 91 255 / .55), 0 2px 8px rgb(0 0 0 / .35);
+  transition: transform .2s var(--ease-hover);
+}
+.pctl__barra::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgb(31 91 255 / .55), 0 2px 8px rgb(0 0 0 / .35); }
+.pctl__barra:hover::-webkit-slider-thumb { transform: scale(1.15); }
+.pctl__barra:focus-visible { outline: 2px solid var(--celeste); outline-offset: 4px; border-radius: 99px; }
+
+/* tela cheia: o quadro inteiro, vídeo sem corte */
+.pvideo__quadro:fullscreen { border-radius: 0; aspect-ratio: auto; }
+.pvideo__quadro:fullscreen .pvideo__video { object-fit: contain; background: #000; }
+
+@media (max-width: 74.99em) {
+  .pvideo__grade { grid-template-columns: minmax(0, 280PX) minmax(0, 1fr); gap: 40PX; }
+  .pvideo__titulo { font-size: 40PX; }
+}
+@media (max-width: 47.99em) {
+  .pvideo { padding: 0 0 var(--pad); }
+  .pvideo__grade { grid-template-columns: 1fr; gap: 24PX; }
+  .pvideo__titulo { font-size: clamp(32PX, 9vw, 38PX); }
+  .pvideo__quadro { border-radius: 16PX; }
+  .pvideo__play { padding: 16PX; gap: 12PX; }
+  .pvideo__bola { width: 56PX; height: 56PX; font-size: 22PX; }
+  .pvideo__legenda { padding-bottom: 6PX; }
+  .pvideo__legenda strong { font-size: 17PX; }
+  .pctl { gap: 8PX; padding: 28PX 10PX 10PX; }
+  .pctl__bt { width: 38PX; height: 38PX; font-size: 17PX; }
+  .pctl__tocar { width: 42PX; height: 42PX; }
+  .pctl__tempo { min-width: 0; font-size: 12PX; }
+}

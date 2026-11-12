@@ -289,6 +289,8 @@ function schema(html, lang) {
     location: { '@type': 'Place', name: 'Orlando, Florida', address: { '@type': 'PostalAddress', addressLocality: 'Orlando', addressRegion: 'FL', addressCountry: 'US' } },
     founder: { '@type': 'Person', name: 'Maicon Vilela', jobTitle: lang === 'en' ? 'President and founder' : 'Presidente e fundador' },
     memberOf: { '@type': 'SportsOrganization', name: 'United Premier Soccer League (UPSL)' },
+    telephone: cfg.telefoneLink,
+    email: cfg.email,
     sameAs: Object.values(cfg.redes),
   }
   if (base) clube.url = `${base}${url(lang)}`
