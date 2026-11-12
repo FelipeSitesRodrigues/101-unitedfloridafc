@@ -7,6 +7,7 @@
 .pvideo__selo { color: var(--azul); }
 .pvideo__titulo { margin-top: 14px; font-size: 48px; color: var(--marinho); }
 .pvideo__topo .texto { margin-top: 14px; font-size: 17px; }
+.pvideo__nota { margin-top: 10px; font: 500 13px/1.3 var(--f-rotulo); letter-spacing: .01em; color: var(--tinta-2); opacity: .8; }
 
 .pvideo__quadro {
   position: relative;
