@@ -93,3 +93,11 @@
 .mapa__rotulo--esq { transform: translate(calc(-100% - 16px), calc(-50% + var(--dy) * 10px)); }
 /* Orlando fica no canto direito: o nome vai à esquerda da bandeira, pra não sair do mapa */
 .mapa__orlando { flex-direction: row-reverse; transform: translate(calc(-100% + 20px), -50%); }
+
+/* vídeo da franquia (2026-11-13): abaixo do texto e do mapa, centrado, com o player da seletiva */
+.franquias__video { position: relative; max-width: 1028px; margin-top: 56px; }
+.franquias__video .pvideo__quadro { box-shadow: 0 0 0 1px rgb(255 255 255 / .14), 0 30px 70px -24px rgb(0 0 0 / .6); }
+.franquias__nota { margin-top: 12px; text-align: center; color: rgb(255 255 255 / .6); }
+@media (max-width: 47.99em) {
+  .franquias__video { margin-top: 36PX; }
+}

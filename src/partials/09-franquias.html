@@ -30,4 +30,31 @@
           <!-- @parcial _mapa-brasil -->
         </div>
       </div>
+
+      <!-- vídeo da franquia (pedido do Maicon, 2026-11-13): mesmo player do vídeo da seletiva -->
+      <div class="caixa franquias__video">
+        <figure class="pvideo__quadro" data-pvideo data-revela style="--atraso:.1s">
+          <video class="pvideo__video" preload="none" playsinline width="848" height="478"
+            poster="/assets/video/franquia-uffc-capa.webp" src="/assets/video/franquia-uffc.mp4"
+            aria-label="Vídeo de apresentação da franquia United Florida FC" data-i18n-attr="aria-label:fvideo.rotulo"></video>
+          <button class="pvideo__play" type="button" data-pvideo-play aria-label="Assistir ao vídeo da franquia" data-i18n-attr="aria-label:fvideo.play">
+            <span class="pvideo__bola"><i data-i="play" data-w="fill"></i></span>
+            <span class="pvideo__legenda"><strong data-i18n="fvideo.assistir">Como funciona a franquia</strong><span>0:54</span></span>
+          </button>
+          <div class="pctl" data-pctl>
+            <button class="pctl__bt pctl__tocar" type="button" data-pctl-tocar aria-label="Pausar" data-i18n-attr="aria-label:pvideo.pausar">
+              <i data-i="pause" data-w="fill" class="pctl__pausa"></i><i data-i="play" data-w="fill" class="pctl__toca"></i>
+            </button>
+            <span class="pctl__tempo" data-pctl-tempo>0:00 / 0:54</span>
+            <input class="pctl__barra" type="range" min="0" max="1000" step="1" value="0" data-pctl-barra aria-label="Posição do vídeo" data-i18n-attr="aria-label:pvideo.posicao">
+            <button class="pctl__bt" type="button" data-pctl-som aria-label="Tirar o som" data-i18n-attr="aria-label:pvideo.mudo">
+              <i data-i="speaker-high" data-w="fill" class="pctl__comsom"></i><i data-i="speaker-slash" data-w="fill" class="pctl__semsom"></i>
+            </button>
+            <button class="pctl__bt" type="button" data-pctl-tela aria-label="Tela cheia" data-i18n-attr="aria-label:pvideo.tela">
+              <i data-i="corners-out" data-w="bold"></i>
+            </button>
+          </div>
+        </figure>
+        <p class="pvideo__nota franquias__nota" data-i18n="pvideo.nota">Imagens ilustrativas.</p>
+      </div>
     </section>

@@ -2,9 +2,10 @@
 // clube, botões de vidro), não os do navegador. Somem 2,5 s depois do último movimento com o
 // vídeo tocando e voltam ao mexer o mouse, tocar na tela ou usar o teclado.
 ;(() => {
-  const quadro = document.querySelector('[data-pvideo]')
-  if (!quadro) return
-  const secao = quadro.closest('.pvideo')
+  // um player por [data-pvideo]: o da seletiva e o da franquia (2026-11-13)
+  for (const quadro of document.querySelectorAll('[data-pvideo]')) montar(quadro)
+  function montar(quadro) {
+  const secao = quadro.closest('.pvideo') || quadro.parentElement
   const video = quadro.querySelector('video')
   const barra = quadro.querySelector('[data-pctl-barra]')
   const tempo = quadro.querySelector('[data-pctl-tempo]')
@@ -58,6 +59,8 @@
     video.currentTime = (barra.value / 1000) * d
     atualizar()
   })
+  // um vídeo de cada vez: dar play num pausa o outro
+  video.addEventListener('play', () => document.querySelectorAll('[data-pvideo] video').forEach((v) => v !== video && v.pause()))
   video.addEventListener('timeupdate', atualizar)
   video.addEventListener('loadedmetadata', atualizar)
   for (const ev of ['play', 'pause', 'volumechange']) video.addEventListener(ev, estado)
@@ -67,4 +70,5 @@
     if (e.target === barra || e.target.closest('button')) return
     if (e.key === ' ' || e.key === 'k') { e.preventDefault(); alternar() }
   })
+  }
 })()
